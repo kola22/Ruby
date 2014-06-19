@@ -28,7 +28,7 @@ while Time.now.year < 2015
          startTest_addprofile
 
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
-        gets
+        
         addPriceToDistr autArr
 
         forMcOtzivi autArr4mc
