@@ -67,7 +67,7 @@ def addPriceToDistr autharr
             @out_file.puts("Шаг #{step+=1} из #{allstep} Создали конфигурацию для загрузки прайса поставщика")
             asleep 5
             @driver.find_element(:link_text, 'Загрузка файла').click
-            @driver.find_element(:name, 'uploadFile').send_keys '/home/piletskiy/priceautotes.xls'
+            @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             findTextInPage ['Файл поставлен в очередь на обработку'],0
             @out_file.puts("Шаг #{step+=1} из #{allstep} Загружаем файл прайса")
