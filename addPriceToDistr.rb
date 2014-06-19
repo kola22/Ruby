@@ -54,7 +54,7 @@ def addPriceToDistr autharr
 
             @driver.find_element(:name, 'uploadFile').send_keys '/home/piletskiy/priceautotes.xls'
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
-            asleep 22
+            asleep 2
             findTextInPage ['Файл поставлен в очередь на обработку'],0
             @driver.find_element(:link_text, 'Конфигурация прайс-листа').click
             arrDistConf = ['Бренд', 'Каталожный номер', 'Описание', 'Наличие', 'Цена']
