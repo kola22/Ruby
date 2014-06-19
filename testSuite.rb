@@ -21,20 +21,14 @@ while Time.now.year < 2015
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-         @nameCity = 'noKbmGTestDel_6_6_2014'
+
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
-         startTest_addprofile
-
-        startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
-        
         addPriceToDistr autArr
-
         forMcOtzivi autArr4mc
         startTestaddFranch autArr
         forMcOtziviShop autArr4mc
-
 
         choiceBrws
         authPUservice autArr[0], autArr[1], autArr[2], 1
@@ -45,7 +39,11 @@ while Time.now.year < 2015
         end
         @driver.quit
 
-         startTest_addOrder
+        startTest_addprofile
+        startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
+
+
+        startTest_addOrder
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
 
         sum = ((Time.now - a)/60).round 2

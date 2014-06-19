@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="testSuite.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testSuite.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testSuite.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3608137" vertical-offset="203" max-vertical-offset="1278">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1242">
+              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addPriceToDistr.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="addPriceToDistr.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1746">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.59536934" vertical-offset="702" max-vertical-offset="1746">
+              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -108,8 +108,8 @@
         <option value="$PROJECT_DIR$/Addprofile.rb" />
         <option value="$PROJECT_DIR$/forMcOtziviShop.rb" />
         <option value="$PROJECT_DIR$/addOrder.rb" />
-        <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
         <option value="$PROJECT_DIR$/testSuite.rb" />
+        <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
       </list>
     </option>
   </component>
@@ -177,6 +177,9 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -769,18 +772,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
+    <entry file="file://$PROJECT_DIR$/testSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1746">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1242">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testSuite.rb">
+    <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3608137" vertical-offset="203" max-vertical-offset="1278">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.59536934" vertical-offset="702" max-vertical-offset="1746">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
           <folding />
         </state>
       </provider>

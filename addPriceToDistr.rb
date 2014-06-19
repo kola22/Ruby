@@ -52,7 +52,7 @@ def addPriceToDistr autharr
 
             @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
 
-            @driver.find_element(:name, 'uploadFile').send_keys '/home/piletskiy/priceautotes.xls'
+            @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             asleep 2
             findTextInPage ['Файл поставлен в очередь на обработку'],0
