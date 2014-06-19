@@ -59,7 +59,7 @@ def addPriceToDistr autharr
             @driver.find_element(:link_text, 'Конфигурация прайс-листа').click
             arrDistConf = ['Бренд', 'Каталожный номер', 'Описание', 'Наличие', 'Цена']
 
-            z=0
+            z=0 ### это всё Зееееет
             arrDistConf.each do |q|
                 @driver.find_element(:xpath, "//*[@id='skipRowsRadio00']/parent::*/following-sibling::*[#{z+=1}]/select/option[contains(text(),'#{q}')]").click
             end
