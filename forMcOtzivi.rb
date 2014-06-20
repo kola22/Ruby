@@ -101,6 +101,7 @@ def forMcOtzivi autharr
             end
         end
     rescue
+        @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         @driver.save_screenshot("screen/#{a}_ошибка_в_ОТЗЫВЕ_4мс.png")
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"

@@ -45,22 +45,16 @@ def startTestaddFranch autharr
         @driver.find_element(:link_text, 'Клиенты').click
         @driver.find_element(:link_text, 'Франчайзи').click
 
-        #fraEdit=@wait.until{@driver.find_element(:xpath, "//table[@id='tsortable']/tbody/tr[*]/td[contains(text(),'#{@nameCity}')]/preceding-sibling::td[4]/a[*]")}
         fraEdit=@wait.until { @driver.find_element(:xpath, "//*[contains(text(),'#{@nameCity}')]/preceding-sibling::*/a[*]") }
         fraEdit.click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
 
-        #@driver.find_element(:name, 'isDelete').click
-        # @driver.find_element(:class, 'btn').click
-        # asleep 1
-        # вот такой поиск ошибки будет, но это нужно тюнить
-        # findTextInPage ["Ошибка"]
-
-        asleep
+             asleep
         @driver.quit
 
     puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
     rescue
+        @err+=1
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')
     end

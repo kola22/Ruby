@@ -82,6 +82,7 @@ def addPriceToDistr autharr
             @nameDistr = nameDistr
 
     rescue
+        @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
         puts "#{@conslred}Тест Добавления прайска к поставщику не пройден, всё плохо #{@conslwhite}"
