@@ -27,7 +27,7 @@ def forMcOtziviShop autharr
             visibleElement?('Если вы хотите оставить отзыв, войдите в систему или')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Просят залогиниться")
             asleep
-            login4mc 'kola22@mail.ru','kola22'
+            login4mc '+79043459228','kola22'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Входим как клиент на 4мс")
             isElementPresent?(:xpath, "//*[@value='Изменить отзыв'][@id='editCommentButton']", 'clickAlert')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Меняем отзыв")
@@ -66,6 +66,12 @@ def forMcOtziviShop autharr
             asleep
             isElementPresent?(:xpath, "//*[contains(text(),'Николай')]")
             isElementPresent?(:xpath, "//*[contains(text(),'Выход')]")
+
+
+
+
+
+
             login4mc 'autotest@nodapro.tm','398624'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Выходим клиентом, заходим сотрудником 4мс")
             visibleElement?('Ответить',1)

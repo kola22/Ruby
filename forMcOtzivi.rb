@@ -23,19 +23,17 @@ def forMcOtzivi autharr
             randomComment = (randomTxt 90) + (randomTxt 90)
             @driver.get "http://4mycar.ru"
             @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно перешли на 4мс")
-            asleep
-            ## poniatno
+
             isElementPresent?(:class, 'tooltipBtn')
             asleep
-            element = @driver.find_element :id => 'loginEnter'
-            element.click
+            login4mc '+79043459228','kola22'
 
-            login = @driver.find_element :id => 'login'
-            login.send_keys 'kola22@mail.ru'
-            pass = @driver.find_element :id => 'pass'
-            pass.send_keys 'kola22'
-            element = @driver.find_element :class => 'authBottom'
-            element.submit
+            @driver.find_element(:id,'inputPhone1').send_keys '904'
+            @driver.find_element(:id,'inputPhone1').send_keys '3459228'
+            @driver.find_element(:id,'inputPassword').send_keys 'kola22'
+            @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
+            @driver.find_element(:xpath,"//*[@value='Подтвердить']").click
+
             element = @driver.find_element :name => 'pcode'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно авторизовались")
             element.send_keys '724531366'

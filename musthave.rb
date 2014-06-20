@@ -198,15 +198,15 @@ begin
 end
 end
 
-def login4mc login,pass
-    element = @driver.find_element :id => 'loginEnter'
-    element.click
-    l = @driver.find_element :id => 'login'
-    l.send_keys login
-    p = @driver.find_element :id => 'pass'
-    p.send_keys pass
-    element = @driver.find_element :class => 'authBottom'
-    element.submit
+def login4mc phone,pass
+    @driver.find_element(:id,'loginEnter').click
+    @driver.find_element(:id,'inputPhone1').click
+    @driver.find_element(:id,'inputPhone1').send_keys phone
+
+    @driver.find_element(:id,'inputPassword').send_keys pass
+    @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
+    @driver.find_element(:xpath,"//*[@value='Подтвердить']").click
+
 end
 
 def addReportToPage

@@ -25,8 +25,9 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
-        addPriceToDistr autArr
         forMcOtzivi autArr4mc
+        addPriceToDistr autArr
+
         startTestaddFranch autArr
         forMcOtziviShop autArr4mc
 
@@ -49,7 +50,7 @@ while Time.now.year < 2015
         sum = ((Time.now - a)/60).round 2
         puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
         @out_file.puts("Все тесты успешно пройдены,время прохождения: #{sum} минут")
-    rescue
+    ##rescue
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts 'Весь набор не пройдён'
         noRun+=1
