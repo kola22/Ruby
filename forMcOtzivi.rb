@@ -28,12 +28,6 @@ def forMcOtzivi autharr
             asleep
             login4mc '+79043459228','kola22'
 
-            @driver.find_element(:id,'inputPhone1').send_keys '904'
-            @driver.find_element(:id,'inputPhone1').send_keys '3459228'
-            @driver.find_element(:id,'inputPassword').send_keys 'kola22'
-            @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
-            @driver.find_element(:xpath,"//*[@value='Подтвердить']").click
-
             element = @driver.find_element :name => 'pcode'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно авторизовались")
             element.send_keys '724531366'
