@@ -67,18 +67,18 @@ end
 
 # поиск элемента на странице
 def isElementPresentlite(type, selector)
-    begin
+    ##begin
         @driver.find_element(type, selector)
         sleep 0.1
 
     rescue
         ##puts "нет такого элемента #{selector}"
 
-    end
+    ##end
 end
 
 def isElementPresent?(type, selector, whatNeedToDo="Ничего не делаем")
-    begin
+    ##begin
         @driver.find_element(type, selector).click
         case whatNeedToDo
             when "clickAlert"
@@ -89,7 +89,7 @@ def isElementPresent?(type, selector, whatNeedToDo="Ничего не делае
     rescue
 
         ## puts "нет такого элемента #{selector}"
-    end
+    ##end
 end
 
 
@@ -183,7 +183,7 @@ def poniatno(name="Понятно")
 end
 
 def visibleElement? text,neesSee=1
-begin
+##begin
     a = @driver.find_element(:xpath, "//*[contains(text(),'#{text}')]").displayed?
     if a && neesSee==1
         puts "#{@conslgreen} Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
@@ -195,7 +195,7 @@ begin
     rescue
         puts "#{@conslred}Вообще ошибка при попытке поиска отображения элемента/текста #{@conslwhite}"
 
-end
+##end
 end
 
 def login4mc phone,pass
