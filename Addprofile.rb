@@ -83,6 +83,7 @@ def startTest_addprofile
 
         puts "#{@conslgreen}Тест по добавлению профиля успешно пройден#{@conslwhite}"
     rescue
+        @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля.png")
         puts "#{@conslred}Тест по добавлению профиля _____________не пройден, всё плохо #{@conslwhite}"
@@ -157,7 +158,7 @@ def startTest_addprofile_toFranch (sitesGk, cityFr)
 
         puts "#{@conslgreen}Тест по добавлению профиля с наценками у франча успешно пройден#{@conslwhite}"
     rescue
-
+        @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")
         puts "#{@conslred}Тест по добавлению профиля к франчу _____________не пройден, всё плохо #{@conslwhite}"

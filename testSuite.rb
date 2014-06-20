@@ -25,6 +25,8 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+
+
         addPriceToDistr autArr
         forMcOtzivi autArr4mc
         startTestaddFranch autArr
@@ -63,5 +65,5 @@ while Time.now.year < 2015
     @out_file.close
 
     addReportToPage
-    asleep 3600*6
+    asleep 3600*2
 end
