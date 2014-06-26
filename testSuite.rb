@@ -26,6 +26,7 @@ while Time.now.year < 2015
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
+        xxz3123123
 
         addPriceToDistr autArr
         forMcOtzivi autArr4mc

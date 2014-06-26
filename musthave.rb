@@ -78,7 +78,6 @@ def isElementPresentlite(type, selector)
 end
 
 def isElementPresent?(type, selector, whatNeedToDo="Ничего не делаем")
-    ##begin
         @driver.find_element(type, selector).click
         case whatNeedToDo
             when "clickAlert"
@@ -88,8 +87,6 @@ def isElementPresent?(type, selector, whatNeedToDo="Ничего не делае
         sleep 0.1
     rescue
 
-        ## puts "нет такого элемента #{selector}"
-    ##end
 end
 
 
@@ -183,7 +180,6 @@ def poniatno(name="Понятно")
 end
 
 def visibleElement? text,neesSee=1
-##begin
     a = @driver.find_element(:xpath, "//*[contains(text(),'#{text}')]").displayed?
     if a && neesSee==1
         puts "#{@conslgreen} Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
@@ -195,7 +191,6 @@ def visibleElement? text,neesSee=1
     rescue
         puts "#{@conslred}Вообще ошибка при попытке поиска отображения элемента/текста #{@conslwhite}"
 
-##end
 end
 
 def login4mc phone,pass
@@ -219,27 +214,23 @@ def addReportToPage
     @driver.find_element(:link_text,'Страницы').click
     @driver.find_element(:name,'pageName').send_keys 'report'
     @driver.find_element(:xpath,"//*[@value='Найти']").click
-    @driver.find_element(:xpath,"//span[contains(text(),'report')]/../following-sibling::td[2]/a/img").click
-
-##@driver.find_element(:xpath,"//img[@src='http://admin.abcp.ru/common.images/cp.icon/file-htm.png']").click
+    @driver.find_element(:xpath,"//*[contains(text(),'report')]/following-sibling::td[2]/a/img").click
+    @driver.find_element(:link_text,'Редактировать содержимое страницы.').click
     @driver.find_element(:xpath,"//img[@src='http://admin.abcp.ru/common.images/cp.icon/text-edit.png']").click
-##@driver.find_element(:id,'blockText').clear
-    element = @driver.find_element(:id,'blockText_ifr')
+    element = @driver.find_element(:id,'infoBlockText_ifr')
     @driver.switch_to.frame element
-
-    @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('blockText').fire('load');\"]").clear
-##@driver.find_element(:id,'blockText').send_keys @contents
-
+    textArea = @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('infoBlockText').fire('load');\"]")
+    textArea.clear
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
-    @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('blockText').fire('load');\"]").send_keys @contents
+    textArea.send_keys @contents
     @driver.switch_to.default_content
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
     @driver.find_element(:xpath,"//*[*='14pt']").click
 
-    @driver.find_element(:xpath,"//td/input[@class='btn'][@value='Сохранить']").click
+    @driver.find_element(:name,'saveInfoBlock').click
     file.close
     @driver.quit
 end
