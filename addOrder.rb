@@ -12,8 +12,6 @@ def startTest_addOrder
     allstep = 13
 
     begin
-
-
         choiceBrws 1
         authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
 
@@ -41,7 +39,7 @@ def startTest_addOrder
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Покупаем первую позицию в поиске")
-        findTextInPage ["Товар добавлен в корзину"]
+        findTextInPage ["Товар добавлен в корзину"],0
         asleep
         @driver.find_element(:link_text, "Корзина").click
         isElementPresent?(:xpath, "//img[@title='Удалить позицию из корзины']", "clickAlert")
@@ -54,7 +52,7 @@ def startTest_addOrder
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
         @out_file.puts("Шаг #{step+=1} из #{allstep} И ещё раз покупаем")
-        findTextInPage ["Товар добавлен в корзину"]
+        findTextInPage ["Товар добавлен в корзину"],0
         @driver.find_element(:link_text, "Корзина").click
         codePart =@driver.find_element(:class, "brandNumberText").text
         descPart =@driver.find_element(:xpath, "//*[@class='brandNumberText']/parent::*/parent::*/following-sibling::td[1]").text
@@ -100,9 +98,9 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Франчайзи").click
-        puts nameFra
+        ##puts nameFra
         hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-        puts nameFra
+        ##puts nameFra
         @driver.get hrefPUfranch
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ франча")
         @driver.find_element(:link_text, "Клиенты").click
@@ -126,7 +124,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         asleep 2
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
-        findTextInPage ["Товар добавлен в корзину"]
+        findTextInPage ["Товар добавлен в корзину"],0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Добавляем товар в корзину")
 
         asleep 2
@@ -142,7 +140,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         asleep 7
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
-        findTextInPage ["Товар добавлен в корзину"]
+        findTextInPage ["Товар добавлен в корзину"],0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Опять добавляем")
         @driver.find_element(:link_text, "Корзина").click
 
@@ -154,7 +152,6 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         @driver.find_element(:xpath, "//*[@class='brandNumberText']/parent::*/parent::*/following-sibling::td[7]/input").send_keys comment
 
         arrPartOrderinfo = [codePart, descPart, delTimePatr, pricePatr]
-
 
         @driver.find_element(:name, "order_go").click
         @driver.find_element(:class, "orderGo").click
