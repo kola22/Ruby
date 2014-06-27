@@ -38,7 +38,7 @@ def startTestaddFranch autharr
 
         #проверка поставщика в созданном франче
         @driver.get hrefPUfra
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Перешли в ПУ франча")
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Перешли в ПУ франча #{@nameCity}")
         findDistr "#{@sitesName} [online]"
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверили существование поставщика")
         @driver.get @hrefPU
@@ -49,7 +49,7 @@ def startTestaddFranch autharr
         fraEdit.click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
 
-             asleep
+             asleep 3
         @driver.quit
 
     puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
