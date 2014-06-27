@@ -7,7 +7,7 @@ require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
 
-def addPriceToDistr autharr
+def addPriceToDistr autharr,toFranch=0,nameFra=''
 
     begin
         allstep = 5
@@ -20,6 +20,15 @@ def addPriceToDistr autharr
             choiceBrws 1
 
             authPUservice autharr[0], autharr[1], autharr[2], 1
+
+            if toFranch ==1
+                @driver.find_element(:link_text, "Клиенты").click
+                @driver.find_element(:link_text, "Франчайзи").click
+                puts nameFra
+                hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+                puts nameFra
+                @driver.get hrefPUfranch
+            end
 
             @driver.find_element(:link_text, 'Поставщики').click
             def delAlldistr(descDist)
@@ -38,20 +47,15 @@ def addPriceToDistr autharr
                 isElementPresent?(:xpath, "//span[contains(text(),'Да')]/following-sibling::*/a[contains(text(),'выкл')]")
             end
             ##
+
             @driver.find_element(:link_text, 'Добавить поставщика с ручным обновлением').click
-
-
             nameDistr = randomTxt(3)+"_PleaseDelMeBro_#{Time.new.strftime('%Y-%m-%d %H:%M:%S')}"
         ##    puts "Имя поставщика #{nameDistr}"
             @driver.find_element(:id, 'addDistributorName').send_keys nameDistr
             @driver.find_element(:id, 'addDistributorDeadline').send_keys '5'
             @driver.find_element(:class, 'ui-button-text').click
-
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили поставщика")
-
-
             @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
-
             @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             asleep 2
@@ -77,7 +81,9 @@ def addPriceToDistr autharr
             ##       asleep 15 , "Ещё не загрузился файл"
             ##   end
             asleep 3
-            @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
+
+
+        @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Включаем добавленного поставщика")
             @nameDistr = nameDistr
 

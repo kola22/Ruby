@@ -193,20 +193,25 @@ def visibleElement? text,neesSee=1
 
 end
 
-def login4mc phone,pass
+def login4mc phone,pass ## куча костылей из-за кривой и непонятной регистрации на 4мс
     @driver.find_element(:id,'loginEnter').click
+    if isElementPresentlite(:class,'clientNameWrapper')
+        isElementPresent?(:class,'clientNameWrapper')
+        isElementPresent?(:xpath, "//*[contains(text(),'Выход')]")
+        @driver.get 'http://4mycar.ru/'
+        @driver.find_element(:id,'loginEnter').click
+    end
+
     @driver.find_element(:id,'inputPhone1').click
     @driver.find_element(:id,'inputPhone1').send_keys phone
-
     @driver.find_element(:id,'inputPassword').send_keys pass
     @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
-    @driver.find_element(:xpath,"//*[@value='Подтвердить']").click
-
+    isElementPresent?(:xpath,"//*[@value='Подтвердить']")
+    @driver.get 'http://4mycar.ru/'
 end
 
 def addReportToPage
     autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
-
 
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
@@ -235,6 +240,27 @@ def addReportToPage
     @driver.quit
 end
 
+def waitUntilLoadPrice autharr
+
+choiceBrws
+authPUservice autharr[0], autharr[1], autharr[2], 1
+@driver.find_element(:link_text, 'Поставщики').click
+while isElementPresentlite(:xpath, "//*[contains(text(),'Идёт обновление прайс-листа...')]")
+    @driver.find_element(:link_text, 'Поставщики').click
+    asleep 10, 'Ещё не загрузился файл'
+end
+@driver.quit
+end
+
+def verifSendEmailOrder numOrder
+@driver.find_element(:link_text,'Настройка').click
+@driver.find_element(:link_text,'Управление почтой').click
+sendmail =@driver.find_element(:xpath,"//*[contains(text(),'no-reply')]").text
+@driver.get 'http://root.abcp.ru/?page=outbox'
+@driver.find_element(:name,'idFrom').send_keys sendmail
+@driver.find_element(:xpath,"//*[@src='http://admin.abcp.ru/common.images/filter.png']").click
+findTextInPage ["Заказ номер #{numOrder}","Ваш заказ номер #{numOrder}"],1
+end
 
 ######################### Alien
 def show_wait_spinner(fpsx=10)

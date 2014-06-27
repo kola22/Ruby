@@ -18,17 +18,22 @@ def forMcOtziviShop autharr
             @x=1
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
-
             randomComment = (randomTxt 90) + (randomTxt 90)
             @driver.get 'http://4mycar.ru/shop/43170'
+
+
+
             isElementPresent?(:class, 'tooltipBtn')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить отзыв незарегистрированным пользователем")
             @driver.find_element(:xpath, "//*[@value='Написать отзыв']").click
             visibleElement?('Если вы хотите оставить отзыв, войдите в систему или')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Просят залогиниться")
             asleep
+
             login4mc '+79043459228','kola22'
+
             @out_file.puts("Шаг #{step+=1} из #{allstep} Входим как клиент на 4мс")
+            @driver.get 'http://4mycar.ru/shop/43170'
             isElementPresent?(:xpath, "//*[@value='Изменить отзыв'][@id='editCommentButton']", 'clickAlert')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Меняем отзыв")
             @driver.find_element(:id, 'noteText').clear
@@ -64,16 +69,17 @@ def forMcOtziviShop autharr
             @driver.get 'http://4mycar.ru/shop/43170'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Возвращаемся в карточку магазина на 4мс")
             asleep
-            isElementPresent?(:xpath, "//*[contains(text(),'Николай')]")
-            isElementPresent?(:xpath, "//*[contains(text(),'Выход')]")
 
-
-
-
-
-
-            login4mc 'autotest@nodapro.tm','398624'
+        ##############33
+        asleep
+        isElementPresent?(:class, 'clientNameWrapper')
+        asleep
+        @driver.find_element(:xpath, "//*[contains(text(),'Выход')]").click
+        ## until 4mc error
+        ##
+            login4mc '+79091234567','398624'    ### autotest@nodapro.tm
             @out_file.puts("Шаг #{step+=1} из #{allstep} Выходим клиентом, заходим сотрудником 4мс")
+            @driver.get 'http://4mycar.ru/shop/43170'
             visibleElement?('Ответить',1)
             @driver.find_element(:xpath,"//*[contains(text(),'#{randomComment}')]/../../following-sibling::*/*/*/*/*[contains(text(),'Ответить')]").click
             asleep

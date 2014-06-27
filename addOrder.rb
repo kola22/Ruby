@@ -7,14 +7,14 @@ require '/opt/projects/autotest/Ruby/musthave'
 def startTest_addOrder
     #   require '/opt/projects/autotest/Ruby/musthave'
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление заказа#{@conslwhite}"
+    @out_file.puts("\n Отчет прохождения теста по добавлению заказа")
+    step = 0
+    allstep = 13
+
+    begin
 
 
-    @x=0
-    loop do
         choiceBrws 1
-
-
-        @x=@x+1
         authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
 
         pnum = "OC90"
@@ -22,60 +22,67 @@ def startTest_addOrder
 
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:name, "filterCustomersBySearchString").send_keys "xxxx"
+
         @driver.find_element(:xpath, "//input[@value='Найти']").click
         asleep 2.8
 
         @driver.get @driver.find_element(:xpath, "//img[@alt='Вход']/parent::a").attribute("href")
-
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Ищем клиента хххх и входим им на сайт")
 
         @driver.find_element(:link_text, "Корзина").click
 
         isElementPresent?(:xpath, "//img[@title='Удалить позицию из корзины']", "clickAlert")
-
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем из корзины всё позиции, если они там есть")
         @driver.find_element(:id, "pcode").send_keys "#{pnum}"
         @driver.find_element(:id, "pcode").submit
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Выполняем поиск детали по коду #{pnum}")
         asleep 5
         # @driver.find_element(:xpath,"//div[@class='buyButton']").click
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
-
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Покупаем первую позицию в поиске")
         findTextInPage ["Товар добавлен в корзину"]
         asleep 5
         @driver.find_element(:link_text, "Корзина").click
-     ##   @driver.find_element(:xpath, "//img[@title='Удалить позицию из корзины']").click
-      ##  @driver.switch_to.alert.accept
         isElementPresent?(:xpath, "//img[@title='Удалить позицию из корзины']", "clickAlert")
-
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем добавленную позицию из корзины")
         @driver.find_element(:id, "pcode").clear
         @driver.find_element(:id, "pcode").send_keys "#{pnum}"
         @driver.find_element(:id, "pcode").submit
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Ещё раз ищем")
         asleep 2
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
+        @out_file.puts("Шаг #{step+=1} из #{allstep} И ещё раз покупаем")
         findTextInPage ["Товар добавлен в корзину"]
-
         @driver.find_element(:link_text, "Корзина").click
-
         codePart =@driver.find_element(:class, "brandNumberText").text
         descPart =@driver.find_element(:xpath, "//*[@class='brandNumberText']/parent::*/parent::*/following-sibling::td[1]").text
         delTimePatr = @driver.find_element(:xpath, "//*[@class='brandNumberText']/parent::*/parent::*/following-sibling::td[2]").text
         pricePatr = @driver.find_element(:xpath, "//*[@class='brandNumberText']/parent::*/parent::*/following-sibling::td[5]").text
-
         arrPartOrderinfo = [codePart, descPart, delTimePatr, pricePatr]
-
         @driver.find_element(:name, "order_go").click
         @driver.find_element(:class, "orderGo").click
         numOrder =(@driver.find_element(:xpath, "//table[@class='echo_message']").text).match(/([0-9]{1,})/)
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Получаем номер заказа. --> #{numOrder}")
 
         @driver.get @hrefPU
         @driver.find_element(:link_text, "Заказы").click
         @driver.find_element(:link_text, numOrder[0]).click
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ в заказ")
         findTextInPage arrPartOrderinfo, 0
-        sleep 3
-        @driver.quit
-        break if @x==2
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем, что данные в ПУ соответствуют данным при заказе с сайта")
+        verifSendEmailOrder numOrder[0]
+        @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем отосланные письма о заказе")
+        puts "#{@conslgreen}Тест по добавлению ЗАКАЗА успешно пройден#{@conslwhite}"
+    rescue
+        @err+=1
+        a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+        puts "#{@conslred}Тест по добавлению заказа не пройден, всё плохо #{@conslwhite}"
+        @out_file.puts('ERR: тест прерван')
     end
-    puts "#{@conslgreen}Тест по добавлению ЗАКАЗА успешно пройден#{@conslwhite}"
+        @driver.quit
+
 end
 
 def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
@@ -85,7 +92,6 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
     @out_file.puts("\n Отчет прохождения теста по добавлению заказа на сайте Франчайзи и отправке в ГК")
     allstep = 14
     step=0
-    @x=1
 
     begin
         choiceBrws 1
@@ -189,7 +195,6 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         findTextInPage ["Получен", "Статус"], 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем некоторые данные из заказа")
         puts "#{@conslgreen}Тест по добавлению перезаказа успешно пройден#{@conslwhite}"
-        @driver.quit
     rescue
         @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
@@ -197,7 +202,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         puts "#{@conslred}Тест по добавлению заказа на сайте Франчайзи и отправке в ГК не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: тест прерван')
     end
-
+    @driver.quit
 end
 
 
