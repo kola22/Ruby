@@ -26,20 +26,26 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+
+
+
+        @nameCity = 'LelXPOTestDel_20_6_2014'
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+
+
         startTest_addOrder
         startTestaddFranch autArr
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+
+
 
         addPriceToDistr autArr,1,@nameCity
         addPriceToDistr autArr
         waitUntilLoadPrice autArr
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
-
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
 
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
         @out_file.puts("Время прохождения: #{sum} минут")
@@ -56,5 +62,7 @@ while Time.now.year < 2015
     @out_file.close
 
     addReportToPage
-    asleep 3600*2
+    asleep 3600*6
+
+
 end

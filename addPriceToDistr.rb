@@ -24,9 +24,9 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
             if toFranch ==1
                 @driver.find_element(:link_text, "Клиенты").click
                 @driver.find_element(:link_text, "Франчайзи").click
-                puts nameFra
+             ##   puts nameFra
                 hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-                puts nameFra
+               ## puts nameFra
                 @driver.get hrefPUfranch
             end
 
