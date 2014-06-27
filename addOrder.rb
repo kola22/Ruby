@@ -36,13 +36,13 @@ def startTest_addOrder
         @driver.find_element(:id, "pcode").send_keys "#{pnum}"
         @driver.find_element(:id, "pcode").submit
         @out_file.puts("Шаг #{step+=1} из #{allstep} Выполняем поиск детали по коду #{pnum}")
-        asleep 5
+        asleep
         # @driver.find_element(:xpath,"//div[@class='buyButton']").click
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Покупаем первую позицию в поиске")
         findTextInPage ["Товар добавлен в корзину"]
-        asleep 5
+        asleep
         @driver.find_element(:link_text, "Корзина").click
         isElementPresent?(:xpath, "//img[@title='Удалить позицию из корзины']", "clickAlert")
         @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем добавленную позицию из корзины")
@@ -50,7 +50,7 @@ def startTest_addOrder
         @driver.find_element(:id, "pcode").send_keys "#{pnum}"
         @driver.find_element(:id, "pcode").submit
         @out_file.puts("Шаг #{step+=1} из #{allstep} Ещё раз ищем")
-        asleep 2
+        asleep
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
         @out_file.puts("Шаг #{step+=1} из #{allstep} И ещё раз покупаем")
@@ -171,12 +171,14 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         @driver.find_element(:xpath, "//input[@class='placeOrder']").click
 
         @driver.find_element(:xpath, "//input[@value='Отправить заказ поставщику']").click
-        asleep 3
+        asleep
         @driver.find_element(:xpath, "//span[contains(text(),'Отправить')]").click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Отправляем заказ поставщику")
-        asleep 3
+        asleep
         findTextInPage ["Получен"], 0
+        @driver.find_element(:xpath, "//span[contains(text(),'Закрыть')]").click
 
+        verifSendEmailOrder numOrder[0]
 
         @driver.get @hrefPU
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ ГК")
@@ -194,6 +196,8 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в найденный заказ")
         findTextInPage ["Получен", "Статус"], 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем некоторые данные из заказа")
+
+
         puts "#{@conslgreen}Тест по добавлению перезаказа успешно пройден#{@conslwhite}"
     rescue
         @err+=1

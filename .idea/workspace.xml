@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="" />
+    <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:36_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:39_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:40_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:44_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:46_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:48_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:49_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:58_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:0_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_12:56_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:11_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:25_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:42_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:44_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:47_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:50_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:52_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_8:59_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:10_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:13_27_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:14_27_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:16_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:17_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:20_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:21_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:21_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:22_20_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:23_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:24_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:27_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:29_26_June.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/10:37_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/10:40_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/10:41_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/10:53_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/10:56_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/11:20_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/11:21_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/11:48_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/11:52_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/12:57_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/13:57_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/13:7_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:13_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:25_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:36_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:38_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:43_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/14:6_26_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/15:46 день_17месяц_6_ошибка_в_добавлении_заказа на ГК через франча.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/16:14_17_June_ошибка_в_добавлении_заказа на ГК через франча.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/16:16_ошибка_в_добавлении_прайса.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/16:20_17_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/16:31_ошибка_в_добавлении_профиля к франчу.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/16:32_ошибка_в_добавлении_профиля.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:20_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:21_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:22_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:23_27_June_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:23_ошибка_в_ОТЗЫВЕ_4мс.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screen/9:24_ошибка_в_добавлении_профиля.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addOrder.rb" afterPath="$PROJECT_DIR$/addOrder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +94,8 @@
             <file leaf-file-name="testSuite.rb" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/testSuite.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.07377049" vertical-offset="0" max-vertical-offset="1188">
-                    <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+                  <state vertical-scroll-proportion="0.48360655" vertical-offset="122" max-vertical-offset="1170">
+                    <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
                     <folding />
                   </state>
                 </provider>
@@ -38,8 +104,8 @@
             <file leaf-file-name="musthave.rb" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/musthave.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="5454">
-                    <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+                  <state vertical-scroll-proportion="0.0" vertical-offset="4247" max-vertical-offset="5454">
+                    <caret line="257" column="78" selection-start-line="257" selection-start-column="78" selection-end-line="257" selection-end-column="78" />
                     <folding />
                   </state>
                 </provider>
@@ -48,7 +114,7 @@
             <file leaf-file-name="forMcOtziviShop.rb" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/forMcOtziviShop.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="1148" max-vertical-offset="2124">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="1962" max-vertical-offset="2124">
                     <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
                     <folding />
                   </state>
@@ -79,7 +145,7 @@
       <file leaf-file-name="Addprofile.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Addprofile.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.0" vertical-offset="1233" max-vertical-offset="3114">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="3114">
               <caret line="85" column="15" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="15" />
               <folding />
             </state>
@@ -99,7 +165,7 @@
       <file leaf-file-name="addFranchToPiletskiy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addFranchToPiletskiy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+            <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1224">
               <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="59" />
               <folding />
             </state>
@@ -109,8 +175,8 @@
       <file leaf-file-name="addPriceToDistr.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="1872">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="1872">
+              <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -119,8 +185,8 @@
       <file leaf-file-name="addOrder.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addOrder.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7649619" vertical-offset="2951" max-vertical-offset="3870">
-              <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7649619" vertical-offset="2519" max-vertical-offset="3942">
+              <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,6 +198,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -149,8 +218,8 @@
         <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
         <option value="$PROJECT_DIR$/forMcOtziviShop.rb" />
         <option value="$PROJECT_DIR$/musthave.rb" />
-        <option value="$PROJECT_DIR$/testSuite.rb" />
         <option value="$PROJECT_DIR$/addOrder.rb" />
+        <option value="$PROJECT_DIR$/testSuite.rb" />
       </list>
     </option>
   </component>
@@ -159,7 +228,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1055" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -185,7 +254,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,12 +274,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -355,14 +424,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1055" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1826411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18423855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33785194" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -370,11 +439,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -732,17 +801,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth4mc.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="706" max-vertical-offset="1638">
-          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Addprofile.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0" vertical-offset="1233" max-vertical-offset="3114">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="3114">
           <caret line="85" column="15" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="15" />
           <folding />
         </state>
@@ -756,18 +817,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addFranchToPiletskiy.rb">
+    <entry file="file://$PROJECT_DIR$/auth4mc.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="706" max-vertical-offset="1638">
+          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="1872">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1872">
+          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addFranchToPiletskiy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -782,24 +851,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="5454">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4247" max-vertical-offset="5454">
+          <caret line="257" column="78" selection-start-line="257" selection-start-column="78" selection-end-line="257" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07377049" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.48360655" vertical-offset="122" max-vertical-offset="1170">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addOrder.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7649619" vertical-offset="2951" max-vertical-offset="3870">
-          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7649619" vertical-offset="2519" max-vertical-offset="3942">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding />
         </state>
       </provider>
