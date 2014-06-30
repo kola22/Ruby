@@ -27,22 +27,15 @@ while Time.now.year < 2015
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
-
-
-        @nameCity = 'LelXPOTestDel_20_6_2014'
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-
-
-        startTest_addOrder
         startTestaddFranch autArr
-
-
-
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+        startTest_addOrder
         addPriceToDistr autArr,1,@nameCity
         addPriceToDistr autArr
         waitUntilLoadPrice autArr
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
+
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
 

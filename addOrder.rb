@@ -9,7 +9,7 @@ def startTest_addOrder
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление заказа#{@conslwhite}"
     @out_file.puts("\n Отчет прохождения теста по добавлению заказа")
     step = 0
-    allstep = 13
+    allstep = 11
 
     begin
         choiceBrws 1

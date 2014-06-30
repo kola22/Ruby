@@ -212,7 +212,6 @@ end
 
 def addReportToPage
     autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
-
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
     @driver.find_element(:link_text,'Внешний вид и контент').click
@@ -229,14 +228,39 @@ def addReportToPage
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
     textArea.send_keys @contents
+
     @driver.switch_to.default_content
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
     @driver.find_element(:xpath,"//*[*='14pt']").click
-
     @driver.find_element(:name,'saveInfoBlock').click
     file.close
+
+    @driver.get 'http://cp.abcp.ru/?page=content&pages'
+    @driver.find_element(:name,'pageName').send_keys 'report'
+    @driver.find_element(:xpath,"//*[@value='Найти']").click
+    @driver.find_element(:xpath,"//*[contains(text(),'report')]/following-sibling::td[2]/a/img").click
+    @driver.find_element(:link_text,'Редактировать содержимое страницы.').click
+    @driver.find_element(:xpath,"//img[@src='http://admin.abcp.ru/common.images/cp.icon/file-htm.png']").click
+    element = @driver.find_element(:id,'infoBlockText')
+   ## element.clear
+
+    ## Такой вот забавный жИкверь, помогает выделить в уже существующем тексте необходимые строки и значения
+    element.send_keys "<script type=\"text/javascript\">
+        $(function(){
+            $('span:contains(\"Отчет\")').css('border', '1px solid red' );
+            $('span:contains(\"Отчет\")').css('font-size', '32px' );
+            $('span:contains(\"Время прохождения:\")').css('font-weight','bold' );
+            $('span:contains(\"Не прошло тестов:\")').css('color','red' );
+            $('span:contains(\"Тестовый набор не прошел:\")').css('color','red' );
+            $('span:contains(\"ERR\")').css('color','red' );
+            $('span:contains(\"ERR\")').css('font-size', '32px' );
+        });
+    </script>
+"
+    @driver.find_element(:name,'saveInfoBlock').click
+asleep
     @driver.quit
 end
 

@@ -126,7 +126,7 @@ def startTest_addprofile_toFranch (sitesGk, cityFr)
                 #отталкиваемся от имени, так как код у нас с подчеркиванием!
                 @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td[contains(text(),'#{@nameProfile}')]/following-sibling::td[6]/a/img").click
                 @driver.find_element(:id, 'popup_msg_ok').click # пытаемся удалить родительский профиль
-                findTextInPage ['Количество клиентов, которым назначен этот профиль: 1.'] # такое поведение из-за ошибки 46423
+                ##№№findTextInPage ['Количество клиентов, которым назначен этот профиль: 1.'] # такое поведение из-за ошибки 46423
                 @ff = 'comment+'+@nameProfile+'doch'
                 if i == 1 # удаляем только при первом добавлении
 
