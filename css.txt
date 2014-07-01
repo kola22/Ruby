@@ -1,5 +1,6 @@
 
 
+
 <script type=\"text/javascript\">
         $(function(){
             $('span:contains(\"Отчет\")').css('border', '1px solid red' );
@@ -9,5 +10,7 @@
             $('span:contains(\"Тестовый набор не прошел:\")').css('color','red' );
             $('span:contains(\"ERR\")').css('color','red' );
             $('span:contains(\"ERR\")').css('font-size', '32px' );
+            $('span:contains(\"Время запуска теста:\")').css('font-weight','bold' );
+
         });
 </script>
