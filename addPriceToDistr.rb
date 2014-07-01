@@ -58,7 +58,7 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
             @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
             @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
-            asleep 2
+            asleep
             findTextInPage ['Файл поставлен в очередь на обработку'],0
             @driver.find_element(:link_text, 'Конфигурация прайс-листа').click
             arrDistConf = ['Бренд', 'Каталожный номер', 'Описание', 'Наличие', 'Цена']
@@ -80,18 +80,19 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
             ##       @driver.find_element(:link_text, 'Поставщики').click
             ##       asleep 15 , "Ещё не загрузился файл"
             ##   end
-            asleep 3
-
-
+            asleep
         @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Включаем добавленного поставщика")
             @nameDistr = nameDistr
-
     rescue
         @err+=1
-        a = Time.now.hour.to_s + ':' + Time.now.min.to_s
-        @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
-        puts "#{@conslred}Тест Добавления прайска к поставщику не пройден, всё плохо #{@conslwhite}"
+        ###a = Time.now.hour.to_s + ':' + Time.now.min.to_s
+        ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
+        if toFranch ==1
+            puts "#{@conslred}Тест Добавления прайска к поставщику на ФРАНЧЕ не пройден, всё плохо #{@conslwhite}"
+        else
+            puts "#{@conslred}Тест Добавления прайска к поставщику на ГК не пройден, всё плохо #{@conslwhite}"
+        end
         @out_file.puts('ERR: тест прерван')
     end
     @driver.quit

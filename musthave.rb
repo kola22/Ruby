@@ -227,6 +227,11 @@ def addReportToPage
     textArea.clear
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
+    if @err == 0
+        @contents = '|||| все тесты пройдены успешно
+
+' + @contents
+    end
     textArea.send_keys @contents
 
     @driver.switch_to.default_content
@@ -248,6 +253,7 @@ def addReportToPage
 
     file = File.open('css.txt', "rb:UTF-8")
     @contents = file.read
+
     file.close
     ## Такой вот забавный жИкверь, помогает выделить в уже существующем тексте необходимые строки и значения
     element.send_keys @contents

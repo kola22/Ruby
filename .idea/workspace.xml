@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Addprofile.rb" afterPath="$PROJECT_DIR$/Addprofile.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_14:15_1_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_14:7_1_July.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addPriceToDistr.rb" afterPath="$PROJECT_DIR$/addPriceToDistr.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css.txt" afterPath="$PROJECT_DIR$/css.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ruby.iws" />
@@ -29,11 +33,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="testSuite.rb" pinned="false" current="false" current-in-tab="false">
+            <file leaf-file-name="testSuite.rb" pinned="false" current="true" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/testSuite.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1188">
-                    <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+                  <state vertical-scroll-proportion="0.7602459" vertical-offset="32" max-vertical-offset="1224">
+                    <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
                     <folding />
                   </state>
                 </provider>
@@ -42,8 +46,8 @@
             <file leaf-file-name="musthave.rb" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/musthave.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-22.037037" vertical-offset="3239" max-vertical-offset="5040">
-                    <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+                  <state vertical-scroll-proportion="-21.037037" vertical-offset="2834" max-vertical-offset="5148">
+                    <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
                     <folding>
                       <element signature="e#881#1339#0" expanded="false" />
                       <element signature="e#1368#1950#0" expanded="false" />
@@ -53,10 +57,10 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="forMcOtziviShop.rb" pinned="false" current="false" current-in-tab="true">
+            <file leaf-file-name="forMcOtziviShop.rb" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/forMcOtziviShop.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.20864068" vertical-offset="0" max-vertical-offset="2142">
+                  <state vertical-scroll-proportion="2.6666667" vertical-offset="270" max-vertical-offset="2142">
                     <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="12" selection-end-column="20" />
                     <folding />
                   </state>
@@ -74,10 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Addprofile.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Addprofile.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Addprofile.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77627116" vertical-offset="807" max-vertical-offset="2880">
+            <state vertical-scroll-proportion="-14.617022" vertical-offset="807" max-vertical-offset="2880">
               <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
               <folding />
             </state>
@@ -87,8 +91,8 @@
       <file leaf-file-name="css.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -104,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addPriceToDistr.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="addPriceToDistr.rb" pinned="false" current="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1872">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.960827" vertical-offset="701" max-vertical-offset="1890">
+              <caret line="88" column="59" selection-start-line="88" selection-start-column="59" selection-end-line="88" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -148,14 +152,14 @@
         <option value="$PROJECT_DIR$/addFranchToPiletskiy.rb" />
         <option value="$PROJECT_DIR$/addOrder.rb" />
         <option value="$PROJECT_DIR$/out_17:37_30_June.txt" />
-        <option value="$PROJECT_DIR$/musthave.rb" />
-        <option value="$PROJECT_DIR$/testSuite.rb" />
-        <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
         <option value="$PROJECT_DIR$/forMcOtziviShop.rb" />
         <option value="$PROJECT_DIR$/c.css" />
         <option value="$PROJECT_DIR$/css.js" />
-        <option value="$PROJECT_DIR$/css.txt" />
         <option value="$PROJECT_DIR$/Addprofile.rb" />
+        <option value="$PROJECT_DIR$/css.txt" />
+        <option value="$PROJECT_DIR$/musthave.rb" />
+        <option value="$PROJECT_DIR$/testSuite.rb" />
+        <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
       </list>
     </option>
   </component>
@@ -757,42 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/musthave.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.037037" vertical-offset="3239" max-vertical-offset="5040">
-          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-          <folding>
-            <element signature="e#881#1339#0" expanded="false" />
-            <element signature="e#1368#1950#0" expanded="false" />
-            <element signature="e#1981#2172#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testSuite.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1188">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1872">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addFranchToPiletskiy.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1224">
@@ -803,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forMcOtziviShop.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20864068" vertical-offset="0" max-vertical-offset="2142">
+        <state vertical-scroll-proportion="2.6666667" vertical-offset="270" max-vertical-offset="2142">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="12" selection-end-column="20" />
           <folding />
         </state>
@@ -811,8 +779,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Addprofile.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77627116" vertical-offset="807" max-vertical-offset="2880">
+        <state vertical-scroll-proportion="-14.617022" vertical-offset="807" max-vertical-offset="2880">
           <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/musthave.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.037037" vertical-offset="2834" max-vertical-offset="5148">
+          <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
+          <folding>
+            <element signature="e#881#1339#0" expanded="false" />
+            <element signature="e#1368#1950#0" expanded="false" />
+            <element signature="e#1981#2172#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addPriceToDistr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.960827" vertical-offset="701" max-vertical-offset="1890">
+          <caret line="88" column="59" selection-start-line="88" selection-start-column="59" selection-end-line="88" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testSuite.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7602459" vertical-offset="32" max-vertical-offset="1224">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding />
         </state>
       </provider>
