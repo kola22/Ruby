@@ -246,19 +246,12 @@ def addReportToPage
     element = @driver.find_element(:id,'infoBlockText')
    ## element.clear
 
+    file = File.open('css.txt', "rb:UTF-8")
+    @contents = file.read
+    file.close
     ## Такой вот забавный жИкверь, помогает выделить в уже существующем тексте необходимые строки и значения
-    element.send_keys "<script type=\"text/javascript\">
-        $(function(){
-            $('span:contains(\"Отчет\")').css('border', '1px solid red' );
-            $('span:contains(\"Отчет\")').css('font-size', '32px' );
-            $('span:contains(\"Время прохождения:\")').css('font-weight','bold' );
-            $('span:contains(\"Не прошло тестов:\")').css('color','red' );
-            $('span:contains(\"Тестовый набор не прошел:\")').css('color','red' );
-            $('span:contains(\"ERR\")').css('color','red' );
-            $('span:contains(\"ERR\")').css('font-size', '32px' );
-        });
-    </script>
-"
+    element.send_keys @contents
+
     @driver.find_element(:name,'saveInfoBlock').click
 asleep
     @driver.quit

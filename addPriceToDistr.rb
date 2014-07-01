@@ -12,15 +12,15 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
     begin
         allstep = 5
         step=0
-
-        puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору #{@conslwhite}"
-        @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору")
-
-            @x=1
+        if toFranch ==1
+            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА#{@conslwhite}"
+            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору У ФРАНЧА")
+        else
+            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору #{@conslwhite}"
+            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору")
+        end
             choiceBrws 1
-
             authPUservice autharr[0], autharr[1], autharr[2], 1
-
             if toFranch ==1
                 @driver.find_element(:link_text, "Клиенты").click
                 @driver.find_element(:link_text, "Франчайзи").click

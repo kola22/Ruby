@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 noRun = 0
-@x=1
+
 require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 require '/opt/projects/autotest/Ruby/addOrder'

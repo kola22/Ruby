@@ -54,6 +54,7 @@ def forMcOtziviShop autharr
                 puts 'Подтверждён успешно'
                 @out_file.puts("Шаг #{step+=1} из #{allstep} Подтверждение успешно")
             end
+
             @driver.get 'http://root.abcp.ru/?page=messages_monitor'
             @driver.find_element(:id, 'dateRange').clear
             @driver.find_element(:id, 'dateRange').send_keys "#{Time.now.day}.#{Time.now.month}.#{Time.now.year} - #{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
