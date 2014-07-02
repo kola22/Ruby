@@ -26,18 +26,17 @@ while Time.now.year < 2015
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         addPriceToDistr autArr
         startTestaddFranch autArr
-        addPriceToDistr autArr,@nameCity
+
+
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
-
-
-        waitUntilLoadPrice autArr,@nameCity
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         waitUntilLoadPrice autArr
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+        addPriceToDistr autArr,@nameCity
         startTest_addOrder
-
+##waitUntilLoadPrice autArr,@nameCity
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
         @out_file.puts("Время прохождения: #{sum} минут")
