@@ -12,14 +12,12 @@ require '/opt/projects/autotest/Ruby/addPriceToDistr'
 require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 
-
 while Time.now.year < 2015
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-
     @err = 0
     @namefile = "out_#{a}.txt"
     @out_file = File.new(@namefile, 'w')
-    @out_file.puts("Отчет прохождения теста\n ")
+    ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
@@ -28,12 +26,15 @@ while Time.now.year < 2015
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
+        addPriceToDistr autArr
+        waitUntilLoadPrice autArr
         startTestaddFranch autArr
+
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         startTest_addOrder
         addPriceToDistr autArr,1,@nameCity
-        addPriceToDistr autArr
-        waitUntilLoadPrice autArr
+
+       ## waitUntilLoadPrice autArr
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
 
