@@ -21,20 +21,24 @@ while Time.now.year < 2015
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
+
         addPriceToDistr autArr
-        waitUntilLoadPrice autArr
+
         startTestaddFranch autArr
-
+        waitUntilLoadPrice autArr
+        
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-        startTest_addOrder
-        addPriceToDistr autArr,1,@nameCity
 
-       ## waitUntilLoadPrice autArr
+
+        startTest_addOrder
+
+        addPriceToDistr autArr,1,@nameCity
+        waitUntilLoadPrice autArr,@nameCity
+
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
 
