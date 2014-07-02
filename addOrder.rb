@@ -125,12 +125,15 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         isElementPresent?(:xpath, "//a[contains(text(),'#{pbrand}')]/parent::*/following-sibling::*/*[contains(text(),'Цены и аналоги')]")
         @driver.find_element(:xpath, "//div[@class='buyButton']/button").click
         findTextInPage ["Товар добавлен в корзину"],0
+
+
         @out_file.puts("Шаг #{step+=1} из #{allstep} Добавляем товар в корзину")
 
-        asleep 2
+        asleep
         @driver.find_element(:link_text, "Корзина").click
         isElementPresent?(:xpath, "//img[@title='Удалить позицию из корзины']", "clickAlert")
         @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем товар из корзины")
+        ## шаг 5
         ##@driver.find_element(:xpath, "//img[@title='Удалить позицию из корзины']").click
         ##@driver.switch_to.alert.accept
 

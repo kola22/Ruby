@@ -232,6 +232,7 @@ def addReportToPage
 
 ' + @contents
     end
+    @driver.manage.timeouts.implicit_wait = 100
     textArea.send_keys @contents
 
     @driver.switch_to.default_content
