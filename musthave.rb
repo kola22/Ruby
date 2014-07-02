@@ -227,6 +227,7 @@ def addReportToPage
     textArea.clear
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
+    file.close
     if @err == 0
         @contents = '|||| все тесты пройдены успешно
 
@@ -241,7 +242,7 @@ def addReportToPage
     @driver.find_element(:xpath,"//*[*='Размер']").click
     @driver.find_element(:xpath,"//*[*='14pt']").click
     @driver.find_element(:name,'saveInfoBlock').click
-    file.close
+
 
     @driver.get 'http://cp.abcp.ru/?page=content&pages'
     @driver.find_element(:name,'pageName').send_keys 'report'
@@ -293,7 +294,6 @@ sendmail =@driver.find_element(:xpath,"//*[contains(text(),'no-reply')]").text
 @driver.find_element(:xpath,"//*[@src='http://admin.abcp.ru/common.images/filter.png']").click
 findTextInPage ["Заказ номер #{numOrder}","Ваш заказ номер #{numOrder}"],1
 end
-
 ######################### Alien
 def show_wait_spinner(fpsx=10)
     chars = %w[| / - \\]
@@ -316,7 +316,6 @@ def asleep x=3, des=false
     if des
         puts des
     end
-
     show_wait_spinner {
         sleep x
     }

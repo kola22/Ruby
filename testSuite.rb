@@ -16,19 +16,20 @@ while Time.now.year < 2015
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     @err = 0
     @namefile = "out_#{a}.txt"
+
     @out_file = File.new(@namefile, 'w')
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
-
+   ## @namefile = 'out_13:56_2_July.txt'
     begin
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
-
+        forMcOtzivi autArr4mc
         addPriceToDistr autArr
         startTestaddFranch autArr
-        waitUntilLoadPrice autArr
+       ## waitUntilLoadPrice autArr
 
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
 
@@ -36,7 +37,7 @@ while Time.now.year < 2015
         startTest_addOrder
 
         addPriceToDistr autArr,@nameCity
-        waitUntilLoadPrice autArr,@nameCity
+     ##   waitUntilLoadPrice autArr,@nameCity
 
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
@@ -58,9 +59,7 @@ while Time.now.year < 2015
     @out_file.puts("#{temp}\n ")
     @out_file.puts("Время окончания теста: #{Time.now}\n ")
     @out_file.close
-
     addReportToPage
-
     asleep 3600*2
 
 

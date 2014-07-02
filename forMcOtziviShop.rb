@@ -89,7 +89,7 @@ def forMcOtziviShop autharr
             @driver.find_element(:name,'commentTextarea').send_keys respons
             @driver.find_element(:name,'sendAnswerComment').click
             asleep
-            visibleElement?('Ответить',0)
+           ## visibleElement?('Ответить',0)
             asleep
             @driver.get 'http://root.abcp.ru/?page=reviews_approval'
             asleep
