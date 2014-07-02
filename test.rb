@@ -4,11 +4,11 @@
 
 ## puts "Rubydev".reverse.tap{ |o| puts "reversed: #{o}" }.upcase
 
-def method
-    10 / 0
-
-rescue
-    puts 'Fuck! Divider is zero!'
+def newF nameFra=false
+    if nameFra
+        puts 'true'
+    end
 end
 
-method
+newF 'super'
+

@@ -264,12 +264,12 @@ asleep
     @driver.quit
 end
 
-def waitUntilLoadPrice autharr,nameFra='2'
+def waitUntilLoadPrice autharr,nameFra=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
 
-if nameFra.length > 3
+if nameFra
     @driver.find_element(:link_text, "Клиенты").click
     @driver.find_element(:link_text, "Франчайзи").click
     hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
@@ -312,8 +312,8 @@ def show_wait_spinner(fpsx=10)
     } # Use the block's return value as the method's
 end
 
-def asleep x=3, des=''
-    if des.size > 1
+def asleep x=3, des=false
+    if des
         puts des
     end
 

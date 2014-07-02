@@ -7,12 +7,12 @@ require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
 
-def addPriceToDistr autharr,toFranch=0,nameFra=''
+def addPriceToDistr autharr,nameFra=false
 
     begin
         allstep = 5
         step=0
-        if toFranch ==1
+        if nameFra
             puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА#{@conslwhite}"
             @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору У ФРАНЧА")
         else
@@ -21,7 +21,7 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
         end
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
-            if toFranch ==1
+            if nameFra
                 @driver.find_element(:link_text, "Клиенты").click
                 @driver.find_element(:link_text, "Франчайзи").click
              ##   puts nameFra
@@ -88,7 +88,7 @@ def addPriceToDistr autharr,toFranch=0,nameFra=''
         @err+=1
         ###a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
-        if toFranch ==1
+        if nameFra
             puts "#{@conslred}Тест Добавления прайска к поставщику на ФРАНЧЕ не пройден, всё плохо #{@conslwhite}"
         else
             puts "#{@conslred}Тест Добавления прайска к поставщику на ГК не пройден, всё плохо #{@conslwhite}"

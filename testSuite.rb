@@ -35,7 +35,7 @@ while Time.now.year < 2015
 
         startTest_addOrder
 
-        addPriceToDistr autArr,1,@nameCity
+        addPriceToDistr autArr,@nameCity
         waitUntilLoadPrice autArr,@nameCity
 
         forMcOtzivi autArr4mc
@@ -61,7 +61,7 @@ while Time.now.year < 2015
 
     addReportToPage
 
-    asleep 3600*6
+    asleep 3600*2
 
 
 end
