@@ -214,6 +214,15 @@ def addReportToPage
     autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
+
+    file = File.open(@namefile, "rb:UTF-8")
+    @contents = file.read
+    file.close
+    if @err == 0
+        @contents = '|||| все тесты пройдены успешно
+
+' + @contents
+    end
     @driver.find_element(:link_text,'Внешний вид и контент').click
     @driver.find_element(:link_text,'Страницы').click
     @driver.find_element(:name,'pageName').send_keys 'report'
@@ -225,15 +234,7 @@ def addReportToPage
     @driver.switch_to.frame element
     textArea = @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('infoBlockText').fire('load');\"]")
     textArea.clear
-    file = File.open(@namefile, "rb:UTF-8")
-    @contents = file.read
-    file.close
-    if @err == 0
-        @contents = '|||| все тесты пройдены успешно
-
-' + @contents
-    end
-    @driver.manage.timeouts.implicit_wait = 100
+    ##@driver.manage.timeouts.implicit_wait = 100
     textArea.send_keys @contents
 
     @driver.switch_to.default_content
