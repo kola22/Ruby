@@ -27,10 +27,9 @@ while Time.now.year < 2015
 
 
         addPriceToDistr autArr
-
         startTestaddFranch autArr
         waitUntilLoadPrice autArr
-        
+
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
 
 

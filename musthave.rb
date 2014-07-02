@@ -264,12 +264,12 @@ asleep
     @driver.quit
 end
 
-def waitUntilLoadPrice autharr,nameFra=null
+def waitUntilLoadPrice autharr,nameFra='2'
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
 
-if nameFra
+if nameFra.length > 3
     @driver.find_element(:link_text, "Клиенты").click
     @driver.find_element(:link_text, "Франчайзи").click
     hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
