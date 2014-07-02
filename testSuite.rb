@@ -20,30 +20,23 @@ while Time.now.year < 2015
     @out_file = File.new(@namefile, 'w')
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
-   ## @namefile = 'out_13:56_2_July.txt'
     begin
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
-
-        forMcOtzivi autArr4mc
         addPriceToDistr autArr
         startTestaddFranch autArr
-       ## waitUntilLoadPrice autArr
-
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-
-
-        startTest_addOrder
-
         addPriceToDistr autArr,@nameCity
-     ##   waitUntilLoadPrice autArr,@nameCity
-
+        startTest_addprofile
+        startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
 
-        startTest_addprofile
-        startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
+
+        waitUntilLoadPrice autArr,@nameCity
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+        waitUntilLoadPrice autArr
+        startTest_addOrder
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
