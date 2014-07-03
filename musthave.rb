@@ -215,7 +215,8 @@ def addReportToPage
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
 
-    file = File.open(@namefile, "rb:UTF-8")
+    ##file = File.open(@namefile, "rb:UTF-8")
+    file = File.open('out_0:3_3_July.txt', "rb:UTF-8")
     @contents = file.read
     file.close
     if @err == 0
@@ -236,14 +237,13 @@ def addReportToPage
     textArea.clear
     ##@driver.manage.timeouts.implicit_wait = 100
     textArea.send_keys @contents
-    asleep 25
+   ## asleep 25
     @driver.switch_to.default_content
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
     @driver.find_element(:xpath,"//*[*='14pt']").click
     @driver.find_element(:name,'saveInfoBlock').click
-
 
     @driver.get 'http://cp.abcp.ru/?page=content&pages'
     @driver.find_element(:name,'pageName').send_keys 'report'

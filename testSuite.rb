@@ -21,6 +21,9 @@ while Time.now.year < 2015
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
     begin
+        ###
+        zxczxczxc
+
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
