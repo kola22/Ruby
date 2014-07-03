@@ -236,7 +236,7 @@ def addReportToPage
     textArea.clear
     ##@driver.manage.timeouts.implicit_wait = 100
     textArea.send_keys @contents
-
+    asleep 25
     @driver.switch_to.default_content
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
