@@ -1,6 +1,7 @@
 #!/bin/env ruby
 # encoding: utf-8
 
+
 noRun = 0
 
 require 'selenium-webdriver'
@@ -22,14 +23,14 @@ while Time.now.year < 2015
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
     begin
         ###
-        zxczxczxc
+
 
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+
         addPriceToDistr autArr
         startTestaddFranch autArr
-
 
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
@@ -39,6 +40,7 @@ while Time.now.year < 2015
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         addPriceToDistr autArr,@nameCity
         startTest_addOrder
+
 ##waitUntilLoadPrice autArr,@nameCity
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"

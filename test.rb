@@ -4,11 +4,13 @@
 
 ## puts "Rubydev".reverse.tap{ |o| puts "reversed: #{o}" }.upcase
 
-def newF nameFra=false
-    if nameFra
-        puts 'true'
-    end
-end
+require 'clipboard'
 
-newF 'super'
+
+file = File.open('out_15:26_3_July.txt', "rb:UTF-8")
+@contents = file.read
+
+    Clipboard.copy(@contents)
+a = Clipboard.paste
+puts a
 

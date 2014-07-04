@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 require 'selenium-webdriver'
+require 'clipboard'
 
 @conslgreen = "\x1b[1;32m "
 @conslwhite = "\x1b[0m"
@@ -211,12 +212,12 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
 end
 
 def addReportToPage
+
     autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
 
-    ##file = File.open(@namefile, "rb:UTF-8")
-    file = File.open('out_0:3_3_July.txt', "rb:UTF-8")
+    file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
     file.close
     if @err == 0
@@ -224,6 +225,8 @@ def addReportToPage
 
 ' + @contents
     end
+    Clipboard.copy @contents
+
     @driver.find_element(:link_text,'Внешний вид и контент').click
     @driver.find_element(:link_text,'Страницы').click
     @driver.find_element(:name,'pageName').send_keys 'report'
@@ -235,15 +238,14 @@ def addReportToPage
     @driver.switch_to.frame element
     textArea = @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('infoBlockText').fire('load');\"]")
     textArea.clear
-    ##@driver.manage.timeouts.implicit_wait = 100
-    textArea.send_keys @contents
-   ## asleep 25
+    textArea.send_keys [:control, 'v']
     @driver.switch_to.default_content
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
     @driver.find_element(:xpath,"//*[*='14pt']").click
-    @driver.find_element(:name,'saveInfoBlock').click
+    ##@driver.find_element(:name,'saveInfoBlock').click
+    @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
 
     @driver.get 'http://cp.abcp.ru/?page=content&pages'
     @driver.find_element(:name,'pageName').send_keys 'report'
@@ -260,8 +262,8 @@ def addReportToPage
     file.close
     ## Такой вот забавный жИкверь, помогает выделить в уже существующем тексте необходимые строки и значения
     element.send_keys @contents
-
-    @driver.find_element(:name,'saveInfoBlock').click
+    @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
+    ##@driver.find_element(:name,'saveInfoBlock').click
 asleep
     @driver.quit
 end
