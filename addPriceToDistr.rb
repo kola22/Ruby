@@ -13,20 +13,18 @@ def addPriceToDistr autharr,fileName,nameFra=false
         allstep = 5
         step=0
         if nameFra
-            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА#{@conslwhite}"
-            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору У ФРАНЧА")
+            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА.    file upload: #{fileName} #{@conslwhite}"
+            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору У ФРАНЧА file upload: #{fileName}")
         else
-            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору #{@conslwhite}"
-            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору")
+            puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору file upload: #{fileName}#{@conslwhite}"
+            @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору file upload: #{fileName}")
         end
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
             if nameFra
                 @driver.find_element(:link_text, "Клиенты").click
                 @driver.find_element(:link_text, "Франчайзи").click
-             ##   puts nameFra
                 hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-               ## puts nameFra
                 @driver.get hrefPUfranch
             end
 
@@ -89,9 +87,9 @@ def addPriceToDistr autharr,fileName,nameFra=false
         ###a = Time.now.hour.to_s + ':' + Time.now.min.to_s
         ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
         if nameFra
-            puts "#{@conslred}Тест Добавления прайска к поставщику на ФРАНЧЕ не пройден, всё плохо #{@conslwhite}"
+            puts "#{@conslred}Тест Добавления прайска к поставщику на ФРАНЧЕ не пройден, всё плохо file upload: #{fileName}#{@conslwhite}"
         else
-            puts "#{@conslred}Тест Добавления прайска к поставщику на ГК не пройден, всё плохо #{@conslwhite}"
+            puts "#{@conslred}Тест Добавления прайска к поставщику на ГК не пройден, всё плохо file upload: #{fileName} #{@conslwhite}"
         end
         @out_file.puts('ERR: тест прерван')
     end
