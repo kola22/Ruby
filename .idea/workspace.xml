@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:26_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:30_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:33_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:39_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:10_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:12_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:14_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:4_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:7_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:8_3_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:10_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:1_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:29_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:39_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:3_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:43_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:50_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:5_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:6_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:7_4_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:9_4_July.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.rb" afterPath="$PROJECT_DIR$/test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +58,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="testSuite.rb" pinned="false" current="true" current-in-tab="true">
+            <file leaf-file-name="testSuite.rb" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/testSuite.rb">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.55737704" vertical-offset="176" max-vertical-offset="1224">
@@ -94,26 +112,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="out_15:30_3_July.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out_15:30_3_July.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out_15:26_3_July.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out_15:26_3_July.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2794" max-vertical-offset="6804">
-              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="addFranchToPiletskiy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addFranchToPiletskiy.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.rb" pinned="false" current="false" current-in-tab="true">
+      <file leaf-file-name="test.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46753246" vertical-offset="0" max-vertical-offset="616">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.17381974" vertical-offset="0" max-vertical-offset="932">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,9 +183,9 @@
         <option value="$PROJECT_DIR$/out_13:56_2_July.txt" />
         <option value="$PROJECT_DIR$/forMcOtziviShop.rb" />
         <option value="$PROJECT_DIR$/out_15:26_3_July.txt" />
-        <option value="$PROJECT_DIR$/test.rb" />
         <option value="$PROJECT_DIR$/musthave.rb" />
         <option value="$PROJECT_DIR$/testSuite.rb" />
+        <option value="$PROJECT_DIR$/test.rb" />
       </list>
     </option>
   </component>
@@ -419,12 +417,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33785194" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -432,7 +430,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18423855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18423855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -827,30 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out_15:30_3_July.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="932">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out_15:26_3_July.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2794" max-vertical-offset="6804">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46753246" vertical-offset="0" max-vertical-offset="616">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3776" max-vertical-offset="5616">
@@ -866,6 +840,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55737704" vertical-offset="176" max-vertical-offset="1224">
           <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17381974" vertical-offset="0" max-vertical-offset="932">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
