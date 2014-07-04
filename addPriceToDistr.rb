@@ -7,7 +7,7 @@ require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
 
-def addPriceToDistr autharr,nameFra=false
+def addPriceToDistr autharr,fileName,nameFra=false
 
     begin
         allstep = 5
@@ -56,7 +56,7 @@ def addPriceToDistr autharr,nameFra=false
             @driver.find_element(:class, 'ui-button-text').click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили поставщика")
             @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
-            @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
+            @driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             asleep
             findTextInPage ['Файл поставлен в очередь на обработку'],0
@@ -71,7 +71,7 @@ def addPriceToDistr autharr,nameFra=false
             @out_file.puts("Шаг #{step+=1} из #{allstep} Создали конфигурацию для загрузки прайса поставщика")
             asleep 5
             @driver.find_element(:link_text, 'Загрузка файла').click
-            @driver.find_element(:name, 'uploadFile').send_keys '/opt/projects/autotest/Ruby/priceautotes.xls'
+            @driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
             @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             findTextInPage ['Файл поставлен в очередь на обработку'],0
             @out_file.puts("Шаг #{step+=1} из #{allstep} Загружаем файл прайса")

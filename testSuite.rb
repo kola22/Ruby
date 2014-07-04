@@ -28,8 +28,9 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+        addPriceToDistr autArr,'priceautotes.xls'
+        addPriceToDistr autArr,'русский.xls'
 
-        addPriceToDistr autArr
         startTestaddFranch autArr
 
         startTest_addprofile
@@ -38,7 +39,7 @@ while Time.now.year < 2015
         forMcOtziviShop autArr4mc
         waitUntilLoadPrice autArr
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-        addPriceToDistr autArr,@nameCity
+        addPriceToDistr autArr,'русский.xls',@nameCity
         startTest_addOrder
 
 ##waitUntilLoadPrice autArr,@nameCity
