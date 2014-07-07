@@ -10,7 +10,7 @@ require '/opt/projects/autotest/Ruby/musthave'
 def addPriceToDistr autharr,fileName,nameFra=false
 
     begin
-        allstep = 5
+        allstep = 6
         step=0
         if nameFra
             puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА.    file upload: #{fileName} #{@conslwhite}"
@@ -79,9 +79,17 @@ def addPriceToDistr autharr,fileName,nameFra=false
             ##       asleep 15 , "Ещё не загрузился файл"
             ##   end
             asleep
+
+
         @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
+
+
+
             @out_file.puts("Шаг #{step+=1} из #{allstep} Включаем добавленного поставщика")
-            @nameDistr = nameDistr
+
+
+
+            @nameDistr << nameDistr
     rescue
         @err+=1
         ###a = Time.now.hour.to_s + ':' + Time.now.min.to_s

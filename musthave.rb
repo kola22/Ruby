@@ -182,15 +182,18 @@ end
 
 def visibleElement? text,neesSee=1
     a = @driver.find_element(:xpath, "//*[contains(text(),'#{text}')]").displayed?
+
     if a && neesSee==1
         puts "#{@conslgreen} Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
     elsif a==false && neesSee==0
         puts "#{@conslgreen} Всё Норм! НЕ видно этого элемента: #{text} #{@conslwhite}"
     else
         puts "#{@conslred} Видимость элемента не соответствует условию #{text} #{@conslwhite}"
+        return false
     end
     rescue
         puts "#{@conslred}Вообще ошибка при попытке поиска отображения элемента/текста #{@conslwhite}"
+        return false
 
 end
 
@@ -268,23 +271,42 @@ asleep
     @driver.quit
 end
 
-def waitUntilLoadPrice autharr,nameFra=false
+def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
 
-if nameFra
-    @driver.find_element(:link_text, "Клиенты").click
-    @driver.find_element(:link_text, "Франчайзи").click
-    hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-    @driver.get hrefPUfranch
-end
 
+    if nameFra
+        @driver.find_element(:link_text, "Клиенты").click
+        @driver.find_element(:link_text, "Франчайзи").click
+        hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+        @driver.get hrefPUfranch
+    end
 @driver.find_element(:link_text, 'Поставщики').click
-while isElementPresentlite(:xpath, "//*[contains(text(),'Идёт обновление прайс-листа...')]")
-    @driver.find_element(:link_text, 'Поставщики').click
-    asleep 10, 'Ещё не загрузился файл'
-end
+
+    while isElementPresentlite(:xpath, "//*[contains(text(),'Идёт обновление прайс-листа...')]")
+        @driver.find_element(:link_text, 'Поставщики').click
+        asleep 10, 'Ещё не загрузился файл'
+    end
+
+    if nameDistr.size > 0
+        nameDistr.each do |i|
+        puts i
+        asleep
+        @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/span[contains(text(),'результаты')]").click
+        @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/*/a[contains(text(),'Успешно')]").click
+
+            if isElementPresentlite(:xpath, "//*[contains(text(),'Номер, описание ошибки:')]")
+                @out_file.puts("\b DISTR:#{i} ERR: в тексте загрузки прайса есть ОШИБКА")
+            else
+                @out_file.puts("\b DISTR:#{i} Проверяем успешную загрузку файла. В Успешном результате нет текста с ошибкой")
+            end
+            @driver.find_element(:xpath,"//a[@title='Close']").click
+
+        end
+   end
+
 @driver.quit
 end
 
@@ -297,6 +319,9 @@ sendmail =@driver.find_element(:xpath,"//*[contains(text(),'no-reply')]").text
 @driver.find_element(:xpath,"//*[@src='http://admin.abcp.ru/common.images/filter.png']").click
 findTextInPage ["Заказ номер #{numOrder}","Ваш заказ номер #{numOrder}"],1
 end
+
+
+
 ######################### Alien
 def show_wait_spinner(fpsx=10)
     chars = %w[| / - \\]

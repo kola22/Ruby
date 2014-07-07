@@ -3,7 +3,7 @@
 
 
 noRun = 0
-
+@nameDistr = []
 require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 require '/opt/projects/autotest/Ruby/addOrder'
@@ -28,18 +28,27 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+
         addPriceToDistr autArr,'priceautotes.xls'
         addPriceToDistr autArr,'русский.xls'
-
         startTestaddFranch autArr
-
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+        waitUntilLoadPrice autArr,false,@nameDistr
+        @nameDistr = []
+        addPriceToDistr autArr,'priceautotes.xls',@nameCity
+        addPriceToDistr autArr,'русский.xls',@nameCity
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
-        waitUntilLoadPrice autArr
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-        addPriceToDistr autArr,'русский.xls',@nameCity
+        waitUntilLoadPrice autArr,@nameCity,@nameDistr
+
+        asleep 44444
+
+
+
+
+
         startTest_addOrder
 
 ##waitUntilLoadPrice autArr,@nameCity

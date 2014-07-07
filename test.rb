@@ -3,13 +3,12 @@
 
 
 ## puts "Rubydev".reverse.tap{ |o| puts "reversed: #{o}" }.upcase
+a = []
 
-require 'clipboard'
+if a.size > 0
 
-
-@contents = file.read
-
-    Clipboard.copy(@contents)
-a = Clipboard.paste
-puts a
-
+puts 'x'
+a.each do |i|
+    puts 'll'
+end
+end
