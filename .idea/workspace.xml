@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:22_4_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:27_4_July.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addPriceToDistr.rb" afterPath="$PROJECT_DIR$/addPriceToDistr.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.rb" afterPath="$PROJECT_DIR$/test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:32_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:35_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:39_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:11_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:19_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:20_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:21_7_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_16:4_7_July.txt" afterPath="" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -363,7 +364,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -371,7 +372,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.185836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.185836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33785194" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -797,14 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1224">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out_16:4_7_July.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38626608" vertical-offset="0" max-vertical-offset="932">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
