@@ -42,13 +42,6 @@ while Time.now.year < 2015
         forMcOtzivi autArr4mc
         forMcOtziviShop autArr4mc
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
-
-        asleep 44444
-
-
-
-
-
         startTest_addOrder
 
 ##waitUntilLoadPrice autArr,@nameCity
