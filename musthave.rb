@@ -276,14 +276,14 @@ def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
 
-
     if nameFra
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Франчайзи").click
         hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
         @driver.get hrefPUfranch
     end
-@driver.find_element(:link_text, 'Поставщики').click
+
+    @driver.find_element(:link_text, 'Поставщики').click
 
     while isElementPresentlite(:xpath, "//*[contains(text(),'Идёт обновление прайс-листа...')]")
         @driver.find_element(:link_text, 'Поставщики').click
@@ -292,19 +292,33 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
     if nameDistr.size > 0
         nameDistr.each do |i|
+        ii=i.match(/([A-z]{1,})/)
         puts i
+        puts ii
         asleep
         @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/span[contains(text(),'результаты')]").click
-        @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/*/a[contains(text(),'Успешно')]").click
+        ddd = @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/div/a").text
 
+        puts '1'
+        if  ddd == 'Успешно'
+            @out_file.puts("\b DISTR:#{ii} + в загрузке")
+            puts '2'
+        else
+            puts '3'
+            @err+=1
+            @out_file.puts("ERR: При проверке загрузки дистрибьютора #{ii} есть ошибка!")
+            @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{ii}')]/../following-sibling::td[9]/*/*/div/a").click
             if isElementPresentlite(:xpath, "//*[contains(text(),'Номер, описание ошибки:')]")
-                @out_file.puts("\b DISTR:#{i} ERR: в тексте загрузки прайса есть ОШИБКА")
+                @out_file.puts("\b DISTR:#{ii} ERR: в тексте загрузки прайса есть ОШИБКА")
             else
-                @out_file.puts("\b DISTR:#{i} Проверяем успешную загрузку файла. В Успешном результате нет текста с ошибкой")
+                @out_file.puts("\b DISTR:#{ii} Проверяем успешную загрузку файла. В Успешном результате нет текста с ошибкой")
             end
             @driver.find_element(:xpath,"//a[@title='Close']").click
 
         end
+
+        end
+        puts '4'
    end
 
 @driver.quit

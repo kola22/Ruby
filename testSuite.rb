@@ -29,6 +29,10 @@ while Time.now.year < 2015
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
 
+       ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
+       ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
+
+
         addPriceToDistr autArr,'priceautotes.xls'
         addPriceToDistr autArr,'русский.xls'
         startTestaddFranch autArr
