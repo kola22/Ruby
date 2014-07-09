@@ -24,7 +24,7 @@ def startTestaddFranch autharr
         @driver.find_element(:id, 'clientAliveSearch').send_keys('254') # такая вот заглушка, чтобы появился список с клиентами
         asleep
         @driver.find_element(:class, 'aliveSearchRow').click
-        @driver.find_element(:name, 'email').send_keys("#{@nameCity}@ru.noda")
+        @driver.find_element(:name, 'email').send_keys("#{@nameCity}nodatest@nodasoft.com")
         @driver.find_element(:name, 'city').send_keys("#{@nameCity}")
         @driver.find_element(:class, 'btn').click
         findTextInPage ['Добрый день.']
@@ -50,7 +50,7 @@ def startTestaddFranch autharr
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
 
              asleep 3
-        @driver.quit
+
 
     puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
     rescue
@@ -58,5 +58,5 @@ def startTestaddFranch autharr
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')
     end
-
+    @driver.quit
 end

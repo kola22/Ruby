@@ -40,7 +40,9 @@ while Time.now.year < 2015
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         waitUntilLoadPrice autArr,false,@nameDistr
+
         @nameDistr = []
+
         addPriceToDistr autArr,'priceautotes.xls',@nameCity
         addPriceToDistr autArr,'русский.xls',@nameCity
         forMcOtzivi autArr4mc

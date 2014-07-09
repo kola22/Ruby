@@ -298,13 +298,9 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         asleep
         @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/span[contains(text(),'результаты')]").click
         ddd = @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/div/a").text
-
-        puts '1'
         if  ddd == 'Успешно'
             @out_file.puts("\b DISTR:#{ii} + в загрузке")
-            puts '2'
         else
-            puts '3'
             @err+=1
             @out_file.puts("ERR: При проверке загрузки дистрибьютора #{ii} есть ошибка!")
             @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{ii}')]/../following-sibling::td[9]/*/*/div/a").click
@@ -318,10 +314,9 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         end
 
         end
-        puts '4'
    end
-
 @driver.quit
+
 end
 
 def verifSendEmailOrder numOrder

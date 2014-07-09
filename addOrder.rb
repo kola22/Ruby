@@ -107,13 +107,13 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         @driver.find_element(:link_text, "Добавить клиента").click
         clientName = randomTxt(5)
         @driver.find_element(:id, "newCustomerName").send_keys "#{clientName}"
-        @driver.find_element(:id, "newCustomerEmail").send_keys "#{clientName}@nodatest.ru"
+        @driver.find_element(:id, "newCustomerEmail").send_keys "#{clientName}nodatest@nodasoft.com"
 
         @driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click
         isElementPresent?(:xpath, "//span[contains(text(),'Создать')]")
         @out_file.puts("Шаг #{step+=1} из #{allstep} Создаем нового клиента")
         @driver.get @driver.find_element(:link_text, "Вход на сайт от имени клиента: \"#{clientName}\"").attribute("href")
-        asleep 3
+        asleep
         @out_file.puts("Шаг #{step+=1} из #{allstep} Входим новым клиентом на сайт")
         @driver.find_element(:link_text, "Корзина").click
         asleep 2
