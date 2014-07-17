@@ -34,22 +34,24 @@ while Time.now.year < 2015
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
 
-        addPriceToDistr autArr,'priceautotes.xls'
         addPriceToDistr autArr,'русский.xls'
+        addPriceToDistr autArr,'priceautotes.xls'
+
         startTestaddFranch autArr
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         waitUntilLoadPrice autArr,false,@nameDistr
+        startTest_addOrder
 
         @nameDistr = []
-
-        addPriceToDistr autArr,'priceautotes.xls',@nameCity
         addPriceToDistr autArr,'русский.xls',@nameCity
+        addPriceToDistr autArr,'priceautotes.xls',@nameCity
+
 
 
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
-        startTest_addOrder
+
 
 ##waitUntilLoadPrice autArr,@nameCity
         sum = ((Time.now - a)/60).round 2
