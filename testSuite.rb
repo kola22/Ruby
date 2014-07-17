@@ -31,6 +31,10 @@ while Time.now.year < 2015
 
        ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
        ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
+
+        aXTEST
+
+
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
 

@@ -234,7 +234,7 @@ def addReportToPage
     @driver.find_element(:link_text,'Страницы').click
     @driver.find_element(:name,'pageName').send_keys 'report'
     @driver.find_element(:xpath,"//*[@value='Найти']").click
-    @driver.find_element(:xpath,"//*[contains(text(),'report')]/following-sibling::td[2]/a/img").click
+    @driver.find_element(:xpath,"//*[contains(text(),'report')]/../following-sibling::td[2]/a/img").click
     @driver.find_element(:link_text,'Редактировать содержимое страницы.').click
     @driver.find_element(:xpath,"//img[@src='http://admin.abcp.ru/common.images/cp.icon/text-edit.png']").click
     element = @driver.find_element(:id,'infoBlockText_ifr')
