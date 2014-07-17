@@ -10,7 +10,7 @@ require '/opt/projects/autotest/Ruby/musthave'
 def addPriceToDistr autharr,fileName,nameFra=false
 
     begin
-        allstep = 6
+        allstep = 5
         step=0
         if nameFra
             puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору У ФРАНЧА.    file upload: #{fileName} #{@conslwhite}"

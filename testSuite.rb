@@ -40,20 +40,14 @@ while Time.now.year < 2015
         startTestaddFranch autArr
         startTest_addprofile
         startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         waitUntilLoadPrice autArr,false,@nameDistr
-        startTest_addOrder
-
         @nameDistr = []
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         addPriceToDistr autArr,'русский.xls',@nameCity
         addPriceToDistr autArr,'priceautotes.xls',@nameCity
-
-
-
+        startTest_addOrder
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
 
-
-##waitUntilLoadPrice autArr,@nameCity
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
         @out_file.puts("Время прохождения: #{sum} минут")
