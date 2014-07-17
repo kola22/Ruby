@@ -72,10 +72,14 @@ def forMcOtziviShop autharr
             asleep
 
         ##############33
-        asleep
+        ##asleep
+        ##isElementPresent?(:class, 'clientNameWrapper')
+        @driver.find_element(:class, 'clientName').click
+
         isElementPresent?(:class, 'clientNameWrapper')
-        asleep
-        @driver.find_element(:xpath, "//*[contains(text(),'Выход')]").click
+        @driver.find_element(:xpath,"//*[contains(text(),'Выход')]").click
+        @driver.get 'http://4mycar.ru/'
+        @driver.find_element(:id, 'logout').click
         ## until 4mc error
         ##
             login4mc '+79091234567','398624'    ### autotest@nodapro.tm

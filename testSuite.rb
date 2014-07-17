@@ -31,7 +31,8 @@ while Time.now.year < 2015
 
        ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
        ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
-
+        forMcOtziviShop autArr4mc
+        forMcOtzivi autArr4mc
 
         addPriceToDistr autArr,'priceautotes.xls'
         addPriceToDistr autArr,'русский.xls'
@@ -45,8 +46,8 @@ while Time.now.year < 2015
 
         addPriceToDistr autArr,'priceautotes.xls',@nameCity
         addPriceToDistr autArr,'русский.xls',@nameCity
-        forMcOtzivi autArr4mc
-        forMcOtziviShop autArr4mc
+
+
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
         startTest_addOrder
 
