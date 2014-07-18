@@ -38,7 +38,6 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
-        startTest_addprofile
        ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
        ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
 

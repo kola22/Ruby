@@ -28,7 +28,7 @@ def startTest_addprofile
                ##@driver.find_element(:id,'popup_msg_ok').click
                ##break if i == 3
                ##end
-                
+
             # проверяем наличие поставщика, которому будем выставлять наценки
             brandForPriceUp = ['BMW', 'Mahle', 'Knecht']
             distrForPriceUp = 'abcp.ru [online]'
