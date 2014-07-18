@@ -112,6 +112,7 @@ def addProf (codeprof, ifdoch)
 
     @driver.find_element(:link_text, 'Клиенты').click
     @driver.find_element(:link_text, 'Профили').click
+
     @driver.find_element(:link_text, 'Добавить профиль').click
     if ifdoch == 1
         asleep 2

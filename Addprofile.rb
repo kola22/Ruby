@@ -16,6 +16,19 @@ def startTest_addprofile
 
             choiceBrws 1
             authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
+
+               ########## Удаление лишних профилей ##########
+               ## i =1
+               ##@driver.get 'http://cp.abcp.ru/?page=customers&profiles'
+               ##loop do
+               ##while  isElementPresentlite(:xpath, "//img[@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
+               ##isElementPresent?(:xpath, "//img[@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
+               ##end
+               ##@driver.find_element(:xpath, "//*[contains(text(),'Test')]/../*/a/img[@alt='Удалить профиль']").click
+               ##@driver.find_element(:id,'popup_msg_ok').click
+               ##break if i == 3
+               ##end
+                
             # проверяем наличие поставщика, которому будем выставлять наценки
             brandForPriceUp = ['BMW', 'Mahle', 'Knecht']
             distrForPriceUp = 'abcp.ru [online]'
@@ -25,6 +38,8 @@ def startTest_addprofile
             addProf @nameProfile, 0
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавляем профиль")
             i=1 # цикл для проверки повторного добавления , но пока он не работает из-за пункта 2 задачи 46423
+
+
             loop do
                 i=i+1
                 addProf @nameProfile, 1 # добавление дочернего профиля
