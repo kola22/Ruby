@@ -48,11 +48,9 @@ def startTestaddFranch autharr
         fraEdit=@wait.until { @driver.find_element(:xpath, "//*[contains(text(),'#{@nameCity}')]/preceding-sibling::*/a[*]") }
         fraEdit.click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
-
              asleep
+        puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
 
-
-    puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
     rescue
         @err+=1
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"

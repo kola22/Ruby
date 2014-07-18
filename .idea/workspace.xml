@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addFranchToPiletskiy.rb" afterPath="$PROJECT_DIR$/addFranchToPiletskiy.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
