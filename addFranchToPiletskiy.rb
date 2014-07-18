@@ -49,7 +49,7 @@ def startTestaddFranch autharr
         fraEdit.click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
 
-             asleep 3
+             asleep
 
 
     puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"

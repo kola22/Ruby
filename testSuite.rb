@@ -60,20 +60,22 @@ while Time.now.year < 2015
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-        @out_file.puts("Время прохождения: #{sum} минут")
-        @out_file.puts("Не прошло тестов: #{@err}")
-
     rescue
+        errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
-        puts 'Весь набор не пройдён'
+        puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
         noRun+=1
+        temp = 'Тестовый набор не прошел: ' + noRun.to_s + 'раз'
+        @out_file.puts("#{temp}\n ")
     end
-    temp = 'Тестовый набор не прошел: ' + noRun.to_s + 'раз'
-    @out_file.puts("#{temp}\n ")
+    if errrun
+        else
+            @out_file.puts("Время прохождения: #{sum} минут")
+            @out_file.puts("Не прошло тестов: #{@err}")
+    end
+
     @out_file.puts("Время окончания теста: #{Time.now}\n ")
     @out_file.close
     addReportToPage
     asleep 3600*2
-
-
 end
