@@ -3,13 +3,10 @@
 
 #--
 ## цели на добавления тестов:
-## 1 недавно была задача по приоритетам на текстовых сообщениях ГК и франча
+## DONE:                      1 недавно была задача по приоритетам на текстовых сообщениях ГК и франча
 ## 2 задача у команды САши на тестирование онлайн поставщиков
-## 3 ТЕК док всё же надо как-то проверять
-## 4 может быть винкью
-##
-##
-##
+## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
+## 4 может быть винкью . наверно попозже
 ##
 
 noRun = 0
@@ -24,18 +21,15 @@ require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 
-while Time.now.year < 2015
+while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     @err = 0
     @namefile = "out_#{a}.txt"
-
     @out_file = File.new(@namefile, 'w')
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
     begin
         ###
-
-
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
@@ -43,13 +37,11 @@ while Time.now.year < 2015
        ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
        ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
 
-
-    ##    forMcOtziviShop autArr4mc
-     ##   forMcOtzivi autArr4mc
+        forMcOtziviShop autArr4mc
+        forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'
         addPriceToDistr autArr,'priceautotes.xls'
         localText autArrAutotest,'Гуково'
-
 
         startTestaddFranch autArr
         startTest_addprofile
@@ -64,7 +56,7 @@ while Time.now.year < 2015
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-   ## rescue
+    rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"

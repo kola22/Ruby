@@ -67,17 +67,15 @@ def forMcOtziviShop autharr
                 @out_file.puts("Шаг #{step+=1} из #{allstep} ERR: В руте нет информации о письме про отзыв")
             end
 
-            @driver.get 'http://4mycar.ru/shop/43170'
-            @out_file.puts("Шаг #{step+=1} из #{allstep} Возвращаемся в карточку магазина на 4мс")
-            asleep
+    ##        @driver.get 'http://4mycar.ru/shop/43170'
+      ##      @out_file.puts("Шаг #{step+=1} из #{allstep} Возвращаемся в карточку магазина на 4мс")
 
-        ##############33
-        ##asleep
-        ##isElementPresent?(:class, 'clientNameWrapper')
-        @driver.find_element(:class, 'clientName').click
+##        @driver.find_element(:class, 'clientName').click
 
-        isElementPresent?(:class, 'clientNameWrapper')
-        @driver.find_element(:xpath,"//*[contains(text(),'Выход')]").click
+  ##      isElementPresent?(:class, 'clientNameWrapper')
+        ##@driver.find_element(:xpath,"//*[contains(text(),'Выход')]").click
+        @driver.get 'http://accounts.4mycar.ru/'
+        @driver.find_element(:class, 'logout').click
         @driver.get 'http://4mycar.ru/'
         @driver.find_element(:id, 'logout').click
         ## until 4mc error
