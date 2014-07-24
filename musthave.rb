@@ -71,11 +71,7 @@ def isElementPresentlite(type, selector)
     ##begin
         @driver.find_element(type, selector)
         sleep 0.1
-
     rescue
-        ##puts "нет такого элемента #{selector}"
-
-    ##end
 end
 
 def isElementPresent?(type, selector, whatNeedToDo="Ничего не делаем")

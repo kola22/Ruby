@@ -22,6 +22,7 @@ require '/opt/projects/autotest/Ruby/Addprofile'
 require '/opt/projects/autotest/Ruby/addPriceToDistr'
 require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
+require '/opt/projects/autotest/Ruby/localText'
 
 while Time.now.year < 2015
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
@@ -38,14 +39,17 @@ while Time.now.year < 2015
         a = Time.now
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+        autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
        ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
        ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
 
-        forMcOtziviShop autArr4mc
-        forMcOtzivi autArr4mc
 
+    ##    forMcOtziviShop autArr4mc
+     ##   forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'
         addPriceToDistr autArr,'priceautotes.xls'
+        localText autArrAutotest,'Гуково'
+
 
         startTestaddFranch autArr
         startTest_addprofile
@@ -60,7 +64,7 @@ while Time.now.year < 2015
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-    rescue
+   ## rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
