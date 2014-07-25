@@ -190,6 +190,5 @@ def localText autharr,nameFra
         ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")
         puts "#{@conslred}Тест по проверке локализаций ГК<>Франч _____________не пройден, всё плохо #{@conslwhite}"
     end
-    puts step
     @driver.quit
 end
