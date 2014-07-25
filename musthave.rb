@@ -39,7 +39,7 @@ def choiceBrws (max=1)
         brws = "мозиле"
         @driver = Selenium::WebDriver.for :ff
     end
-    puts "#{@conslgreen} работает#{@consfiolet} в #{@conslred}#{brws} #{@conslwhite}"
+    puts "#{@conslgreen} работает в #{brws} #{@conslwhite}"
     @driver.manage.timeouts.implicit_wait = 10 # seconds
     if max == 1
         @driver.manage.window.maximize
@@ -229,7 +229,7 @@ def addReportToPage
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
-    @driver.find_element(:xpath,"//*[*='8pt']").click
+    @driver.find_element(:xpath,"//*[*='10pt']").click
     ##@driver.find_element(:name,'saveInfoBlock').click
     @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
 
