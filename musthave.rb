@@ -94,12 +94,16 @@ end
 
 # поиск поставщика
 def findDistr (nameDistr)
+    begin
     @driver.find_element(:link_text, 'Поставщики').click
-    findTextInPage [nameDistr]
     if  @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[4]").text=="Нет (вкл)"
-        puts "#{@conslred}этот поставщик выключен!!!#{@conslwhite}"
+        puts "этот поставщик выключен"
     else
         puts "Этот поставщик подключен. Всё #{@conslgreen}норм,#{@conslwhite} расслабся"
+    end
+    rescue
+        puts "#{@conslred} При поиске поставщика возникли оишбки!!!#{@conslwhite}"
+        @err+=1
     end
 end
 
@@ -140,41 +144,21 @@ def AddPriceUpBrand (arrBrand, nameProfile, findD)
     x3=0
     @driver.find_element(:link_text, 'Клиенты').click
     @driver.find_element(:link_text, 'Профили').click
-
 # раскрываем весь список профилей! нажимаем на плюсик
 
     isElementPresent?(:xpath, "//img[@class='toggleChildProfiles'][@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
-
     @driver.find_element(:xpath, "//*[contains(text(),'#{nameProfile}')]/following-sibling::*/*/img[@title='Указать наценки по поставщикам']").click
     @driver.find_element(:xpath, "//*[contains(text(),'#{findD}')]/following-sibling::*/*/img[@alt='Редактировать']").click
 
-
     while x3<i
-        ## puts arrBrand[x3]
         x3=x3+1
-
         @driver.find_element(:link_text, 'Добавить наценку на бренд').click
-
         @driver.find_element(:xpath, "//td[@class='talignCenter brandName']/input[@brandname=-'#{x3}']").send_keys "#{arrBrand[x3-1]}"
         @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").clear
         @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").send_keys rand(-100..100).to_s
-
-
     end
     @driver.find_element(:name, 'savePriceUpOnBrands').click
     @driver.find_element(:id, 'popup_msg_ok').click
-
-end
-
-def poniatno(name="Понятно")
-
-    btnHelp = @driver.find_element
-    if  btnHelp.text == name or btnHelp.text == 'Ok'
-        btnHelp.click
-        ##   puts btnHelp.text
-    else
-        puts "Непонятно"
-    end
 end
 
 def visibleElement? text,neesSee=1
@@ -220,7 +204,7 @@ def addReportToPage
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
     file.close
-    x2x2 = @err.to_s 
+    x2x2 = @err.to_s
     puts "#{x2x2} -- Это кол-во ошибок, если оно не равно нулю, то не отображается сообщение |||| все тесты пройдены успешно"
     if @err == 0
         @contents = '|||| все тесты пройдены успешно
@@ -245,7 +229,7 @@ def addReportToPage
     @driver.find_element(:xpath,"//*[*='Изменить']").click
     @driver.find_element(:xpath,"//*[*='Выделить все']").click
     @driver.find_element(:xpath,"//*[*='Размер']").click
-    @driver.find_element(:xpath,"//*[*='14pt']").click
+    @driver.find_element(:xpath,"//*[*='8pt']").click
     ##@driver.find_element(:name,'saveInfoBlock').click
     @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
 
