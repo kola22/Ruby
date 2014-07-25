@@ -220,6 +220,7 @@ def addReportToPage
     file = File.open(@namefile, "rb:UTF-8")
     @contents = file.read
     file.close
+    puts @err + ' -- Это кол-во ошибок, если оно не равно нулю, то не отображается сообщение |||| все тесты пройдены успешно'
     if @err == 0
         @contents = '|||| все тесты пройдены успешно
 
@@ -269,6 +270,7 @@ asleep
 end
 
 def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
+    begin
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
@@ -312,8 +314,11 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
         end
     end
-@driver.quit
 
+    rescue
+        @err+=1
+    end
+    @driver.quit
 end
 
 def verifSendEmailOrder numOrder
