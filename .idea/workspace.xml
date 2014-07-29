@@ -3,20 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:13_24_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:15_24_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_15:18_24_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:5_25_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:6_25_July.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out_17:9_25_July.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addPriceToDistr.rb" afterPath="$PROJECT_DIR$/addPriceToDistr.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css.txt" afterPath="$PROJECT_DIR$/css.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forMcOtzivi.rb" afterPath="$PROJECT_DIR$/forMcOtzivi.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forMcOtziviShop.rb" afterPath="$PROJECT_DIR$/forMcOtziviShop.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/localText.rb" afterPath="$PROJECT_DIR$/localText.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testSuite.rb" afterPath="$PROJECT_DIR$/testSuite.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:45_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:47_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:49_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:56_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:58_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_10:59_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:26_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:27_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:31_29_July.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:33_29_July.txt" afterPath="" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -387,14 +383,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19914803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19914803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33785194" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
