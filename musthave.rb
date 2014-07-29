@@ -103,7 +103,6 @@ def findDistr (nameDistr)
     end
     rescue
         puts "#{@conslred} При поиске поставщика возникли оишбки!!!#{@conslwhite}"
-        @err+=1
     end
 end
 
@@ -283,6 +282,8 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         ddd = @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/div/a").text
         if  ddd == 'Успешно'
             @out_file.puts("\b DISTR:#{ii} + в загрузке")
+
+
         else
             @err+=1
             @out_file.puts("ERR: При проверке загрузки дистрибьютора #{ii} есть ошибка!")
@@ -297,23 +298,26 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         end
 
         end
+        @driver.get 'http://root.abcp.ru/?page=messages_monitor'
         nameDistr.each do |i|
-            ############
-            @driver.get 'http://root.abcp.ru/?page=messages_monitor'
+            puts i
             @driver.find_element(:name,'text').send_keys i
             @driver.find_element(:id,'mysubmit').click
             @driver.find_element(:link_text,'Отправлено').click
             @driver.switch_to.window @driver.window_handles.last
-            @driver.find_element(:xpath, "//*[contains(text(),'Результат обновления поставщика Система')]")
-            @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com ')]")
-            @driver.close
-            @out_file.puts("\b В руте проверено письмо о обновление дистрибьюторов, которое отослано сотруднику")
-            #############
+            @driver.find_element(:xpath, "//*[contains(text(),'Обработан')]")
+            @driver.find_element(:xpath, "//*[contains(text(),'Результат обновления поставщика')]")
+            @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]")
+            @driver.switch_to.window @driver.window_handles.first
+            @driver.find_element(:name,'text').clear
+            @out_file.puts("\b В руте проверено письмо о обновление дистрибьютора #{i} , которое отослано сотруднику")
         end
     end
 
     rescue
         @err+=1
+        @out_file.puts("\b ERR Проверка поставщиков провалилась")
+
     end
     @driver.quit
 end

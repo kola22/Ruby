@@ -10,7 +10,7 @@ def forMcOtziviShop autharr
 
     begin
         step = 0
-        allstep = 13
+        allstep = 12
         puts "#{@conslgreen} Начинаем автотест по добавлению и проверки отзыва к магазину на 4мс #{@conslwhite}"
         @out_file.puts("\n Отчет прохождения теста по добавлению и проверки отзыва к магазину на 4мс")
         i = [1]
@@ -20,8 +20,6 @@ def forMcOtziviShop autharr
             authPUservice autharr[0], autharr[1], autharr[2], 1
             randomComment = (randomTxt 90) + (randomTxt 90)
             @driver.get 'http://4mycar.ru/shop/43170'
-
-
 
             isElementPresent?(:class, 'tooltipBtn')
             @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить отзыв незарегистрированным пользователем")
