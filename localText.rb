@@ -188,7 +188,7 @@ def localText autharr,nameFra
         @err+=1
         @out_file.puts('ERR: Тест прерван')
         ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")
-        puts "#{@conslred}Тест по проверке локализаций ГК<>Франч _____________не пройден, всё плохо #{@conslwhite}"
+        puts "#{@conslred}Тест по проверке локализаций ГК<>Франч не пройден#{@conslwhite}"
     end
     @driver.quit
 end

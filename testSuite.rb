@@ -34,8 +34,6 @@ while Time.now.year < 2018
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-       ## @nameDistr <<'Gys_PleaseDelMeBro_2014-07-08 10:09:55'
-       ## @nameDistr <<'nSr_PleaseDelMeBro_2014-07-08 10:10:55'
 
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc

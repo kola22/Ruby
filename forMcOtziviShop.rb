@@ -61,7 +61,7 @@ def forMcOtziviShop autharr
             @driver.find_element(:name, 'recipient').send_keys 'kola22@mail.ru'
             @driver.find_element(:id, 'mysubmit').click
             if @driver.find_element(:xpath, '//tbody/tr[4]/td[8]').text == 'Ваш отзыв подтвержден модератором на сайте 4mycar.ru'
-                puts 'Всё отлично!'
+                puts 'Ваш отзыв подтвержден модератором на сайте 4mycar.ru'
                 @out_file.puts("Шаг #{step+=1} из #{allstep} В руте есть информация о письме про отзыв")
             else
                 @out_file.puts("Шаг #{step+=1} из #{allstep} ERR: В руте нет информации о письме про отзыв")

@@ -9,6 +9,7 @@ require '/opt/projects/autotest/Ruby/musthave'
 
 def addPriceToDistr autharr,fileName,nameFra=false
 
+
     begin
         allstep = 5
         step=0
@@ -21,11 +22,33 @@ def addPriceToDistr autharr,fileName,nameFra=false
         end
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
+
             if nameFra
-                @driver.find_element(:link_text, "Клиенты").click
-                @driver.find_element(:link_text, "Франчайзи").click
+                @driver.find_element(:link_text, 'Клиенты').click
+                @driver.find_element(:link_text, 'Франчайзи').click
                 hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
                 @driver.get hrefPUfranch
+            end
+
+            @driver.find_element(:link_text, 'Настройка').click
+            @driver.find_element(:link_text, 'Управление почтой').click
+
+            if isElementPresentlite(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[6]/img")
+                puts 'Настройки правильные у сотрудника'
+            else
+                if isElementPresentlite(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]")
+                    @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[9]/a").click
+                    @driver.find_element(:name, "distributorUpdate").click
+                    @driver.find_element(:xpath, "//*[@*='Сохранить']").click
+                else
+                @driver.find_element(:link_text, 'Добавить email').click
+                @driver.find_element(:name, 'email').send_keys 'EmailEmploynodatest@nodasoft.com'
+                @driver.find_element(:name, "distributorUpdate").click
+                @driver.find_element(:xpath, "//*[@*='Сохранить']").click
+                end
+                @driver.find_element(:link_text, 'Настройка').click
+                @driver.find_element(:link_text, 'Управление почтой').click
+                @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[6]/img")
             end
 
             @driver.find_element(:link_text, 'Поставщики').click
@@ -37,6 +60,12 @@ def addPriceToDistr autharr,fileName,nameFra=false
                         asleep
                 end
             end
+
+
+
+            ## создаем тестового сотрудника, которому будут отсыласть письма о обновлении прайс листа
+
+
             delAlldistr('PleaseDelMeBro')
             ##выключаем всех остальных поставщиков !!
             @out_file.puts("Шаг #{step+=1} из #{allstep} выключаем остальных поставщиков")

@@ -12,7 +12,7 @@
             $('span:contains(\"ERR\")').css('font-size', '32px' );
             $('span:contains(\"Время запуска теста:\")').css('font-weight','bold' );
             $('span:contains(\"||||\")').css('font-weight','bold' );
-            $('span:contains(\"||||\")').css('font-size', '72px' );
+            $('span:contains(\"||||\")').css('font-size', '52px' );
             $('span:contains(\"||||\")').css('color', 'green' );
 
         });

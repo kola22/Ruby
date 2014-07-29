@@ -259,7 +259,7 @@ def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
-
+@out_file.puts("\b Проверям результат загрузки дисктибьюторов")
     if nameFra
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Франчайзи").click
@@ -277,7 +277,6 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
     if nameDistr.size > 0
         nameDistr.each do |i|
         ii=i.match(/([A-z]{1,})/)
-        puts i
         puts ii
         asleep
         @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/span[contains(text(),'результаты')]").click
@@ -297,6 +296,19 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
         end
 
+        end
+        nameDistr.each do |i|
+            ############
+            @driver.get 'http://root.abcp.ru/?page=messages_monitor'
+            @driver.find_element(:name,'text').send_keys i
+            @driver.find_element(:id,'mysubmit').click
+            @driver.find_element(:link_text,'Отправлено').click
+            @driver.switch_to.window @driver.window_handles.last
+            @driver.find_element(:xpath, "//*[contains(text(),'Результат обновления поставщика Система')]")
+            @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com ')]")
+            @driver.close
+            @out_file.puts("\b В руте проверено письмо о обновление дистрибьюторов, которое отослано сотруднику")
+            #############
         end
     end
 
