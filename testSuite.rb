@@ -36,6 +36,7 @@ while Time.now.year < 2018
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
 
+
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'

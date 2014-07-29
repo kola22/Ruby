@@ -258,7 +258,7 @@ def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
-@out_file.puts("\b Проверям результат загрузки дисктибьюторов")
+@out_file.puts("\b \b Отчет . Проверям результат загрузки дисктибьюторов")
     if nameFra
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Франчайзи").click
@@ -316,7 +316,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
     rescue
         @err+=1
-        @out_file.puts("\b ERR Проверка поставщиков провалилась")
+        @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась")
 
     end
     @driver.quit
