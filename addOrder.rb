@@ -161,6 +161,9 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         numOrder =(@driver.find_element(:xpath, "//table[@class='echo_message']").text).match(/([0-9]{1,})/)
         @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно оформляем заказ. Запоминаем его номер и данные о позиции")
 
+
+
+
         @driver.get hrefPUfranch
         @driver.find_element(:link_text, "Заказы").click
         @driver.find_element(:link_text, numOrder[0]).click
@@ -177,22 +180,31 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         asleep
         findTextInPage ["Получен"], 0
         @driver.find_element(:xpath, "//span[contains(text(),'Закрыть')]").click
+        textStatusGk = @driver.find_element(:xpath,"//*[contains(text(),'#{comment}')]/preceding-sibling::td[1]").text
+        textStatusGk = textStatusGk.match(/([0-9]{1,})/)
 
         verifSendEmailOrder numOrder[0]
+
 
         @driver.get @hrefPU
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ ГК")
         @driver.find_element(:link_text, 'Заказы').click
-        @driver.find_element(:link_text, 'Поиск в заказах').click
-        @driver.find_element(:name, 'searchcode').send_keys ("#{pnum}")
-        @driver.find_element(:name, 'filterDateRange').click
-        asleep
-        @driver.find_element(:xpath, "//a[contains(text(),'Сегодня')]").click
-        asleep
+        @driver.find_element(:link_text, 'Все заказы').click
+        ##@driver.find_element(:name, 'searchcode').send_keys ("#{pnum}")
+        ##@driver.find_element(:name, 'filterDateRange').click
+        ##asleep
+        ##@driver.find_element(:xpath, "//a[contains(text(),'Сегодня')]").click
+        ##asleep
+        textStatusGk = textStatusGk.to_s
+        @driver.find_element(:name,'filter_order').send_keys textStatusGk
         @out_file.puts("Шаг #{step+=1} из #{allstep} Выставляем фильтр по поиску заказов на ГК. Дата -- Сегодня, Код детали -- #{pnum}")
 
-        @driver.find_element(:xpath, "//input[@value='Найти']").click
-        @driver.get @driver.find_element(:xpath, "//*[contains(text(),'#{comment}')]/preceding-sibling::td[19]/a").attribute("href")
+        @driver.find_element(:xpath, "//input[@value='Применить фильтры']").click
+        @driver.find_element(:link_text,textStatusGk).click
+
+
+        ############ не работает теперь коммент
+        ##@driver.get @driver.find_element(:xpath, "//*[contains(text(),'#{comment}')]/preceding-sibling::td[19]/a").attribute("href")
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в найденный заказ")
         findTextInPage ["Получен", "Статус"], 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем некоторые данные из заказа")

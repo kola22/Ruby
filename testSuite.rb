@@ -34,7 +34,8 @@ while Time.now.year < 2018
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-
+        @nameCity='qYNKqeTestDel_29_7_2014'
+        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
 
 
         forMcOtziviShop autArr4mc
