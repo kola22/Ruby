@@ -130,7 +130,7 @@ def addProf (codeprof, ifdoch)
     @driver.find_element(:name, 'comment').send_keys 'comment+'+codeprof+ddd
 
     @driver.find_element(:xpath, "//table[@id='editProfileTbl']/tbody/tr[*]/th[contains(text(),'%')]/following-sibling::td[*]/input").send_keys rand(-900..900).to_s
-    @driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@class="saveEditedProfile btn"]').click
+    @driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
     @wait.until { @driver.find_element(:id, 'popup_msg_ok') }.click
 
     puts "Добавили профиль с кодом #{codeprof}"+ddd
