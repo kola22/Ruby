@@ -332,7 +332,15 @@ sendmail =@driver.find_element(:xpath,"//*[contains(text(),'no-reply')]").text
 findTextInPage ["Заказ номер #{numOrder}","Ваш заказ номер #{numOrder}"],1
 end
 
+def checkedPriceIn nameChecked
 
+    @driver.find_element(:link_text,'Настройка').click
+    @driver.find_element(:link_text,'Настройка столбцов в результатах поиска').click
+    if isElementPresentlite(:xpath,"//*[@name='#{nameChecked}'][@checked='checked']")
+    else
+        @driver.find_element(:xpath,"//*[@name='#{nameChecked}']").click
+    end
+end
 
 ######################### Alien
 def show_wait_spinner(fpsx=10)

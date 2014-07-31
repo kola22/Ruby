@@ -211,6 +211,9 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
 
         puts "#{@conslgreen}Тест по добавлению перезаказа успешно пройден#{@conslwhite}"
+
+
+
     rescue
         @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s

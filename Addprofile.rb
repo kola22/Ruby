@@ -6,16 +6,6 @@
 
 require '/opt/projects/autotest/Ruby/musthave'
 
-def checkedPriceIn
-@driver.find_element(:link_text,'Настройка').click
-@driver.find_element(:link_text,'Настройка столбцов в результатах поиска').click
-if isElementPresentlite(:xpath,"//*[@name='priceBuyEnable'][@checked='checked']")
-else
-    @driver.find_element(:xpath,"//*[@name='priceBuyEnable']").click
-end
-end
-
-
 
 def startTest_addprofile autharr
     begin

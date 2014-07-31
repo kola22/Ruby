@@ -11,7 +11,6 @@ def startTestaddFranch autharr
     begin
         step = 0
         allstep = 5
-    @x = 1
         @nameCity = randomTxt(6) + "TestDel" + "_#{Time.now.day}_#{Time.now.month}_#{Time.now.year}"
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2], 1

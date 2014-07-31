@@ -7,17 +7,13 @@ require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
 def forMcOtzivi autharr
+    step =0
+    allstep=8
 
+    puts "#{@conslgreen} Начинаем автотест по добавлению и проверки отзыва на 4мс #{@conslwhite}"
+    @out_file.puts("\n Отчет прохождения теста по добавлению и проверки отзыва на 4мс")
     begin
-        step =0
-        allstep=8
 
-        puts "#{@conslgreen} Начинаем автотест по добавлению и проверки отзыва на 4мс #{@conslwhite}"
-        @out_file.puts("\n Отчет прохождения теста по добавлению и проверки отзыва на 4мс")
-        i = [1]
-
-        i.each do |q|
-            @x=q
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
             randomComment = (randomTxt 90) + (randomTxt 90)
@@ -96,13 +92,12 @@ def forMcOtzivi autharr
             @driver.find_element(:id, 'mysubmit').click
             if @driver.find_element(:xpath, '//tbody/tr[4]/td[8]').text == 'Ваш отзыв отклонен модератором на сайте 4mycar.ru'
                 @out_file.puts('Шаг 8 из 8 Успешно послано письмо о отклонении модератором отзыва')
-             ##   puts 'Всё отлично!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
             end
-        end
+
     rescue
         @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s
-        @driver.save_screenshot("screen/#{a}_ошибка_в_ОТЗЫВЕ_4мс.png")
+        ##@driver.save_screenshot("screen/#{a}_ошибка_в_ОТЗЫВЕ_4мс.png")
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')
     end

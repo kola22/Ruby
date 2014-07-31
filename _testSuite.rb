@@ -20,6 +20,7 @@ require '/opt/projects/autotest/Ruby/addPriceToDistr'
 require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
+require '/opt/projects/autotest/Ruby/verifPriceUp'
 
 while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
@@ -34,6 +35,10 @@ while Time.now.year < 2018
         autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
+
+
+
+     ##   verifPriceUp autArr
 
 
         forMcOtziviShop autArr4mc
@@ -55,7 +60,7 @@ while Time.now.year < 2018
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-    rescue
+ ################   rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
