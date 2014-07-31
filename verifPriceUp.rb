@@ -46,8 +46,8 @@ def verifPriceUp autharr
         brand = @driver.find_element(:class,'brandInfoLink').text
         puts brand
         priceIn = @driver.find_element(:class,'resultPurchasesPrice').text ## тут мы получаем запись вида : 33,00 руб , надо бы перевести
-        puts priceIn
-
+        priceIn = priceIn.match(/([0-9]{1,})/)
+        puts priceIn.match(/([0-9]{1,})/)
         dist = @driver.find_element(:class,'resultSupplier  ').text
         puts dist
 

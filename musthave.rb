@@ -116,7 +116,7 @@ def addProf (codeprof, ifdoch)
     if ifdoch == 1
         asleep 2
         @driver.find_element(:name, 'baseProfileId').click
-        asleep 5
+        asleep 1
         @driver.find_elements(:tag_name => 'option').find do |option|
             option.text == codeprof.to_s
         end.click
@@ -124,7 +124,7 @@ def addProf (codeprof, ifdoch)
     else
         ddd = ''
     end
-
+    asleep 1
     @driver.find_element(:name, 'code').send_keys ddd+codeprof+ddd
     @driver.find_element(:name, 'name').send_keys ddd+codeprof+ddd
     @driver.find_element(:name, 'comment').send_keys 'comment+'+codeprof+ddd

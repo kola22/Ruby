@@ -93,7 +93,7 @@ def startTest_addprofile autharr
 
 end
 
-def startTest_addprofile_toFranch (autharr, cityFr)
+def startTest_addprofile_toFranch autharr, cityFr
     begin
         step = 0
         allstep = 7
@@ -111,13 +111,13 @@ def startTest_addprofile_toFranch (autharr, cityFr)
             @driver.get hrefPUfranch
             # проверяем наличие поставщика, которому будем выставлять наценки
             brandForPriceUp = ['BMW', 'Mahle', 'Knecht']
-            distrForPriceUp = "#{sitesGk}"+' [online]'
+            distrForPriceUp = "#{autharr[2]}"+' [online]'
             findDistr distrForPriceUp
             @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем включенность дистрибьютора ГК у франча")
             @nameProfile = randomTxt(2) + 'Test' + "_#{Time.now.day}_#{Time.now.month}_#{Time.now.year}"
             addProf @nameProfile, 0
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавляем профиль")
-            i=1 # цикл для проверки повторного добавления , но пока он не работает из-за пункта 2 задачи 46423
+            i=0 # цикл для проверки повторного добавления , но пока он не работает из-за пункта 2 задачи 46423
             loop do
                 i=i+1
                 addProf @nameProfile, 1 # добавление дочернего профиля
