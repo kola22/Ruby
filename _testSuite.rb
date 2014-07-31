@@ -35,6 +35,7 @@ while Time.now.year < 2018
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
+
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'
@@ -42,8 +43,8 @@ while Time.now.year < 2018
         localText autArrAutotest,'Гуково'
 
         startTestaddFranch autArr
-        startTest_addprofile
-        startTest_addprofile_toFranch 'piletskiy.abcp.ru', @nameCity
+        startTest_addprofile autArr
+        startTest_addprofile_toFranch autArr, @nameCity
         waitUntilLoadPrice autArr,false,@nameDistr
         @nameDistr = []
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr

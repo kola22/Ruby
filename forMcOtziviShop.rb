@@ -104,7 +104,7 @@ def forMcOtziviShop autharr
 
     rescue
         @err+=1
-        a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+      ##  a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
       ##  @driver.save_screenshot("screen/#{a}_ошибка_в_ОТЗЫВЕ_4мс.png")
         puts "#{@conslred}Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')

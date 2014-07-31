@@ -6,8 +6,18 @@
 
 require '/opt/projects/autotest/Ruby/musthave'
 
+def checkedPriceIn
+@driver.find_element(:link_text,'Настройка').click
+@driver.find_element(:link_text,'Настройка столбцов в результатах поиска').click
+if isElementPresentlite(:xpath,"//*[@name='priceBuyEnable'][@checked='checked']")
+else
+    @driver.find_element(:xpath,"//*[@name='priceBuyEnable']").click
+end
+end
 
-def startTest_addprofile
+
+
+def startTest_addprofile autharr
     begin
         step = 0
         allstep = 6
@@ -15,7 +25,7 @@ def startTest_addprofile
         puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление профиля#{@conslwhite}"
 
             choiceBrws 1
-            authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
+            authPUservice autharr[0], autharr[1], autharr[2], 1
 
                ########## Удаление лишних профилей ##########
                ## i =1
@@ -93,7 +103,7 @@ def startTest_addprofile
 
 end
 
-def startTest_addprofile_toFranch (sitesGk, cityFr)
+def startTest_addprofile_toFranch (autharr, cityFr)
     begin
         step = 0
         allstep = 7
@@ -102,7 +112,7 @@ def startTest_addprofile_toFranch (sitesGk, cityFr)
         puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление профиля в ПУ франча#{@conslwhite}"
         @out_file.puts("\n Отчет прохождения теста по добавлению профиля в ПУ франча")
             choiceBrws 1
-            authPUservice 'piletskiy', 'nodakola22', "#{sitesGk}", 1
+            authPUservice autharr[0], autharr[1], autharr[2], 1
             @driver.find_element(:link_text, "Клиенты").click
             @driver.find_element(:link_text, "Франчайзи").click
             hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{cityFr}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
