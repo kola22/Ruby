@@ -14,6 +14,11 @@
             $('span:contains(\"||||\")').css('font-weight','bold' );
             $('span:contains(\"||||\")').css('font-size', '52px' );
             $('span:contains(\"||||\")').css('color', 'green' );
+            $('span:contains(\"Покупка\")').css('font-weight','bold' );
+            $('span:contains(\"Продажа\")').css('font-weight','bold' );
+            $('span:contains(\"Покупка\")').css('font-size', '26px' );
+            $('span:contains(\"Продажа\")').css('font-size', '26px' );
+
 
         });
 </script>

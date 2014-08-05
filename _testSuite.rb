@@ -27,6 +27,7 @@ while Time.now.year < 2018
     @err = 0
     @namefile = "out_#{a}.txt"
     @out_file = File.new(@namefile, 'w')
+    parserCurrency
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
     begin
@@ -37,7 +38,7 @@ while Time.now.year < 2018
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
 ##        verifPriceUp autArr,'bHvwEaTestDel_31_7_2014'
-
+        xxxx12312312312
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'
@@ -57,7 +58,7 @@ while Time.now.year < 2018
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-  ##  rescue
+    rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
@@ -71,8 +72,13 @@ while Time.now.year < 2018
             @out_file.puts("Не прошло тестов: #{@err}")
     end
 
-    @out_file.puts("Время окончания теста: #{Time.now}\n ")
+
+
+    @out_file.puts("\n Время окончания теста: #{Time.now}\n ")
+
+
     @out_file.close
+
     addReportToPage
     asleep 3600*2
 end

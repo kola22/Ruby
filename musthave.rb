@@ -3,6 +3,13 @@
 
 require 'selenium-webdriver'
 require 'clipboard'
+require 'nokogiri'
+require 'open-uri'
+
+
+
+
+
 
 @conslgreen = "\x1b[1;32m "
 @conslwhite = "\x1b[0m"
@@ -200,8 +207,8 @@ def addReportToPage
     choiceBrws
     authPUservice autArr[0], autArr[1], autArr[2], 1
 
-    file = File.open(@namefile, "rb:UTF-8")
-    @contents = file.read
+    file = File.open(@namefile,"rb:UTF-8")
+       @contents = file.read
     file.close
     x2x2 = @err.to_s
     puts "#{x2x2} -- Это кол-во ошибок, если оно не равно нулю, то не отображается сообщение |||| все тесты пройдены успешно"
@@ -340,6 +347,22 @@ def checkedPriceIn nameChecked
     else
         @driver.find_element(:xpath,"//*[@name='#{nameChecked}']").click
     end
+end
+
+
+def parserCurrency
+    printing_page = Nokogiri::HTML(open("http://kovalut.ru/index.php?kod=6121"))
+    best_price = printing_page.css('.wi')[0] # This is a overly simple finder. Nokogiri can do xpath searches too.
+    best_price=best_price.text
+    arrCURS = best_price.scan(/(\d{1,4}.\d{1,4})/)
+    puts arrCURS[0]
+    arrNAME = ['Покупка доллара:','Продажа доллара:','Покупка евро:','Продажа евро:']
+    x=0
+    arrCURS.each do |e|
+        @out_file.puts("\n #{arrNAME[x]} #{e} \n")
+        x=x+1
+    end
+
 end
 
 ######################### Alien
