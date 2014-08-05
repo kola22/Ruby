@@ -36,7 +36,7 @@ while Time.now.year < 2018
         autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
-     ##   verifPriceUp autArr
+##        verifPriceUp autArr,'bHvwEaTestDel_31_7_2014'
 
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
@@ -52,12 +52,12 @@ while Time.now.year < 2018
         startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
         addPriceToDistr autArr,'русский.xls',@nameCity
         addPriceToDistr autArr,'priceautotes.xls',@nameCity
-        startTest_addOrder
+        startTest_addOrder autArr
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
 
         sum = ((Time.now - a)/60).round 2
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-    rescue
+  ##  rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"

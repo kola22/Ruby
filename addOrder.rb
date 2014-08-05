@@ -4,7 +4,7 @@
 #Добавление профиля
 require '/opt/projects/autotest/Ruby/musthave'
 
-def startTest_addOrder
+def startTest_addOrder autharr
     #   require '/opt/projects/autotest/Ruby/musthave'
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление заказа#{@conslwhite}"
     @out_file.puts("\n Отчет прохождения теста по добавлению заказа")
@@ -13,7 +13,7 @@ def startTest_addOrder
 
     begin
         choiceBrws 1
-        authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
+        authPUservice autharr[0], autharr[1], autharr[2], 1
 
         pnum = "OC90"
         pbrand = "Knecht"
@@ -85,7 +85,6 @@ end
 
 def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
-    #   require '/opt/projects/autotest/Ruby/musthave'
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление заказа на сайте Франчайзи и отправка в ГК#{@conslwhite}"
     @out_file.puts("\n Отчет прохождения теста по добавлению заказа на сайте Франчайзи и отправке в ГК")
     allstep = 14
@@ -94,13 +93,10 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
     begin
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2], 1
-        ### authPUservice 'piletskiy', 'nodakola22', 'piletskiy.abcp.ru', 1
 
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Франчайзи").click
-        ##puts nameFra
         hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-        ##puts nameFra
         @driver.get hrefPUfranch
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ франча")
         @driver.find_element(:link_text, "Клиенты").click
