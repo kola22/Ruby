@@ -1,6 +1,5 @@
 #!/bin/env ruby
 # encoding: utf-8
-
 #--
 ## цели на добавления тестов:
 ## DONE:                      1 недавно была задача по приоритетам на текстовых сообщениях ГК и франча
@@ -8,6 +7,7 @@
 ## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
 ## 4 может быть винкью . наверно попозже
 ## 5 недавняя задача, проверка письма о ошибке генерации прайса 4мс
+## DONE: парсер нокогири : курсы валют (done), актуальную погоду, срочно с Авито-Таганрог,
 
 noRun = 0
 @nameDistr = []
@@ -38,7 +38,6 @@ while Time.now.year < 2018
         autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
 ##        verifPriceUp autArr,'bHvwEaTestDel_31_7_2014'
-        xxxx12312312312
         forMcOtziviShop autArr4mc
         forMcOtzivi autArr4mc
         addPriceToDistr autArr,'русский.xls'
@@ -71,14 +70,8 @@ while Time.now.year < 2018
             @out_file.puts("Время прохождения: #{sum} минут")
             @out_file.puts("Не прошло тестов: #{@err}")
     end
-
-
-
     @out_file.puts("\n Время окончания теста: #{Time.now}\n ")
-
-
     @out_file.close
-
     addReportToPage
     asleep 3600*2
 end

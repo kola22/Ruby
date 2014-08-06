@@ -351,6 +351,7 @@ end
 
 
 def parserCurrency
+    begin
     printing_page = Nokogiri::HTML(open("http://kovalut.ru/index.php?kod=6121"))
     best_price = printing_page.css('.wi')[0] # This is a overly simple finder. Nokogiri can do xpath searches too.
     best_price=best_price.text
@@ -359,10 +360,11 @@ def parserCurrency
     arrNAME = ['Покупка доллара:','Продажа доллара:','Покупка евро:','Продажа евро:']
     x=0
     arrCURS.each do |e|
-        @out_file.puts("\n #{arrNAME[x]} #{e} \n")
+        @out_file.puts(" \b #{arrNAME[x]} #{e} \b \b \b \b ")
         x=x+1
     end
-
+    rescue
+    end
 end
 
 ######################### Alien
