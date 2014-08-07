@@ -28,8 +28,10 @@ while Time.now.year < 2018
     @namefile = "out_#{a}.txt"
     @out_file = File.new(@namefile, 'w')
     parserCurrency
+    parserPogodaTGKMSK
     ##@out_file.puts("Отчет прохождения теста\n ")
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
+
     begin
         ###
         a = Time.now

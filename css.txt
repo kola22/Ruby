@@ -8,8 +8,8 @@
             $('span:contains(\"Время прохождения:\")').css('font-weight','bold' );
             $('span:contains(\"Не прошло тестов:\")').css('color','red' );
             $('span:contains(\"Тестовый набор не прошел:\")').css('color','red' );
-            $('span:contains(\"ERR\")').css('color','red' );
-            $('span:contains(\"ERR\")').css('font-size', '32px' );
+            $('span:contains(\"ERR\")').css('color','red');
+            $('span:contains(\"ERR\")').css('font-size','32px');
             $('span:contains(\"Время запуска теста:\")').css('font-weight','bold' );
             $('span:contains(\"||||\")').css('font-weight','bold' );
             $('span:contains(\"||||\")').css('font-size', '52px' );
@@ -18,7 +18,9 @@
             $('span:contains(\"Продажа\")').css('font-weight','bold' );
             $('span:contains(\"Покупка\")').css('font-size', '26px' );
             $('span:contains(\"Продажа\")').css('font-size', '26px' );
-
-
+            $('span:contains(\"завтра\")').css('color','green');
+            $('span:contains(\"завтра\")').css('font-size','20px' );
+            $('span:contains(\"Завтра\")').css('color','green');
+            $('span:contains(\"Завтра\")').css('font-size','20px' );
         });
 </script>

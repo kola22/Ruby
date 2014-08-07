@@ -356,13 +356,35 @@ def parserCurrency
     best_price = printing_page.css('.wi')[0] # This is a overly simple finder. Nokogiri can do xpath searches too.
     best_price=best_price.text
     arrCURS = best_price.scan(/(\d{1,4}.\d{1,4})/)
-    puts arrCURS[0]
     arrNAME = ['Покупка доллара:','Продажа доллара:','Покупка евро:','Продажа евро:']
     x=0
     arrCURS.each do |e|
         @out_file.puts(" \b #{arrNAME[x]} #{e} \b \b \b \b ")
         x=x+1
     end
+    rescue
+    end
+end
+
+def parserPogodaTGKMSK
+    begin
+        x=0
+        arrWords = []
+        printing_page = Nokogiri::HTML(open("http://rp5.ru/%D0%9F%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0_%D0%B2_%D0%A2%D0%B0%D0%B3%D0%B0%D0%BD%D1%80%D0%BE%D0%B3%D0%B5"))
+        best_price = printing_page.css('span b')[0]  # This is a overly simple finder. Nokogiri can do xpath searches too.
+        best_price = best_price.text
+        find_words=best_price.scan(/[0-9a-zа-я]{5,66}/i)
+        best_price=best_price.match(/Завтра\s*плюс\s*.{6}/)
+        @out_file.puts(" \b #{best_price}  \b \b \b \b ")
+        find_words.each do |e|
+            if x == 1
+                @x2 = e + ' ' + @x2.to_s
+            end
+            if e == 'Завтра'
+                x=1
+            end
+        end
+        @out_file.puts(" \b Теги погоды на завтра в Таганроге: #{@x2} \b \b \b \b ")
     rescue
     end
 end
