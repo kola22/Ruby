@@ -44,6 +44,8 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
+            startTestaddFranch autArr
+            startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             localText autArrAutotest,'Гуково'
 ##        verifPriceUp autArr,'bHvwEaTestDel_31_7_2014'
             if @lan == false

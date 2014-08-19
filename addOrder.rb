@@ -61,7 +61,7 @@ def startTest_addOrder autharr
         arrPartOrderinfo = [codePart, descPart, delTimePatr, pricePatr]
         @driver.find_element(:name, "order_go").click
         @driver.find_element(:class, "orderGo").click
-        numOrder =(@driver.find_element(:xpath, "//table[@class='echo_message']").text).match(/([0-9]{1,})/)
+        numOrder =@driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/b/a").text ##).match(/([0-9]{1,})/)
         @out_file.puts("Шаг #{step+=1} из #{allstep} Получаем номер заказа. --> #{numOrder}")
 
         @driver.get @hrefPU
@@ -154,7 +154,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
         @driver.find_element(:name, "order_go").click
         @driver.find_element(:class, "orderGo").click
-        numOrder =(@driver.find_element(:xpath, "//table[@class='echo_message']").text).match(/([0-9]{1,})/)
+        numOrder =@driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/b/a").text ##).match(/([0-9]{1,})/)
         @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно оформляем заказ. Запоминаем его номер и данные о позиции")
 
 
