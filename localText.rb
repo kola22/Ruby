@@ -22,17 +22,20 @@ def localText autharr,nameFra
 
         @driver.find_element(:link_text,'Персонал').click
         hrefPUGK = @driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[11]/a").attribute("href")
+        hrefPUGK = lanUrl hrefPUGK
         hrefSiteGK = @driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[12]/a").attribute("href")
+        hrefSiteGK = lanUrl hrefSiteGK
 
         ##@driver.get hrefPUGK
         @driver.find_element(:link_text,'Клиенты').click
         @driver.find_element(:link_text,'Франчайзи').click
 
         hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+        hrefPUfranch = lanUrl hrefPUfranch
         hrefSiteFranch = @driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход на сайт: ']/parent::a").attribute("href")
+        hrefSiteFranch = lanUrl hrefSiteFranch
 
-
-        ##@driver.get hrefPUfranch
+        ##@driver.get hrefPUfranch``
         @out_file.puts("Шаг #{step+=1} из #{allstep} Набираем ссылки для входа в ПУ и на сайт ГК / франча")
         varToText = randomTxt(10)
 
@@ -78,6 +81,8 @@ def localText autharr,nameFra
 
 
         def verifLocalInPUfranch franchHref,blokToChange,naborToChange,whatVerif,local
+            puts 'TEST TEST TEST'
+            asleep
             @driver.get franchHref
             @driver.find_element(:link_text,'Внешний вид и контент').click
             @driver.find_element(:link_text,'Текстовые сообщения').click
@@ -145,12 +150,16 @@ def localText autharr,nameFra
         end
 
         @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем все выставленные значения локализации на франче и на ГК")
+        puts '1'
+        puts hrefPUfranch
         delLocalText hrefPUfranch,'Блок управления сортировкой'
         delLocalText hrefPUGK,'Блок управления сортировкой'
 
         @out_file.puts("Шаг #{step+=1} из #{allstep} Выставляем значение #{varToText} в Русскую локаль на ГК")
         changelocaltext 'Блок управления сортировкой','by_availability',varToText,false,'Русский Россия'
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем выставленное значение в ПУ франча. В столбце ПОУМОЛЧАНИЮ отображается только что внесенное значение с ГК")
+        puts '2'
+        puts hrefPUfranch
         verifLocalInPUfranch hrefPUfranch,'Блок управления сортировкой','by_availability',varToText,'Русский Россия'
 
         @out_file.puts("Шаг #{step+=1} из #{allstep} Запускаем проверки на сайте как под ГК , так и под франчевым клиентом")

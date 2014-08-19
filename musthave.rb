@@ -7,10 +7,6 @@ require 'nokogiri'
 require 'open-uri'
 
 
-
-
-
-
 @conslgreen = "\x1b[1;32m "
 @conslwhite = "\x1b[0m"
 @conslred = "\x1b[1;31m"
@@ -18,21 +14,35 @@ require 'open-uri'
 
 @wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
 # авторизация
+
+def lanUrl urlTolan
+
+    if @lan and !urlTolan.match(/.lan\W{2}/)
+        firspart = urlTolan.match(/.*(?=.\?tlogin.*)/)
+        secondpart = urlTolan.match(/.\?tlogin.*/)
+        lanUrl= firspart.to_s + '.lan' + secondpart.to_s
+    else
+        lanUrl = urlTolan
+    end
+    puts lanUrl
+    return lanUrl
+end
+
 def authPUservice (login, password, sitesttogo, goservice=1)
 
-    @driver.get "http://root.abcp.ru"
+    @driver.get "http://root.abcp.ru#{@lan}"
     golog = @driver.find_element(:class => 'inp')
     golog.send_keys (login)
     pass = @driver.find_element(:name => 'pass')
     pass.send_keys (password)
     @driver.find_element(:name => 'go').click
     if goservice == 1
-        @driver.get "http://root.abcp.ru/?page=customers&letter=service"
+        @driver.get "http://root.abcp.ru#{@lan}/?page=customers&letter=service"
     else
-        @driver.get "http://root.abcp.ru/?page=customers&letter=all"
+        @driver.get "http://root.abcp.ru#{@lan}/?page=customers&letter=all"
     end
     @hrefPU=@driver.find_element(:link_text, (sitesttogo)).attribute("href")
-    @driver.get @hrefPU
+    @driver.get lanUrl @hrefPU
     @sitesName = sitesttogo
 end
 

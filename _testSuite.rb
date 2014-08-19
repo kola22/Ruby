@@ -7,7 +7,7 @@
 ## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
 ## 4 может быть винкью . наверно попозже
 ## 5 недавняя задача, проверка письма о ошибке генерации прайса 4мс
-## DONE: парсер нокогири : курсы валют (done), актуальную погоду, срочно с Авито-Таганрог,
+## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог,
 
 noRun = 0
 @nameDistr = []
@@ -22,6 +22,11 @@ require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
 
+ARGV.each do|a|
+    @lan=a
+end
+
+
 while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     @err = 0
@@ -33,31 +38,35 @@ while Time.now.year < 2018
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-        ###
-        a = Time.now
-        autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
-        autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
-        autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
+        ###lhmGERTestDel_18_8_2014
 
+            a = Time.now
+            autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
+            autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
+            autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
+            localText autArrAutotest,'Гуково'
 ##        verifPriceUp autArr,'bHvwEaTestDel_31_7_2014'
-        forMcOtziviShop autArr4mc
-        forMcOtzivi autArr4mc
-        addPriceToDistr autArr,'русский.xls'
-        addPriceToDistr autArr,'priceautotes.xls'
-        localText autArrAutotest,'Гуково'
+            if @lan == false
+                forMcOtziviShop autArr4mc
+                forMcOtzivi autArr4mc
+            end
+            addPriceToDistr autArr,'русский.xls'
+            addPriceToDistr autArr,'priceautotes.xls'
+            localText autArrAutotest,'Гуково'
 
-        startTestaddFranch autArr
-        startTest_addprofile autArr
-        startTest_addprofile_toFranch autArr, @nameCity
-        waitUntilLoadPrice autArr,false,@nameDistr
-        @nameDistr = []
-        startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
-        addPriceToDistr autArr,'русский.xls',@nameCity
-        addPriceToDistr autArr,'priceautotes.xls',@nameCity
-        startTest_addOrder autArr
-        waitUntilLoadPrice autArr,@nameCity,@nameDistr
+            startTestaddFranch autArr
+            startTest_addprofile autArr
+            startTest_addprofile_toFranch autArr, @nameCity
+            waitUntilLoadPrice autArr,false,@nameDistr
+            @nameDistr = []
+            startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
+            addPriceToDistr autArr,'русский.xls',@nameCity
+            addPriceToDistr autArr,'priceautotes.xls',@nameCity
+            startTest_addOrder autArr
+            waitUntilLoadPrice autArr,@nameCity,@nameDistr
 
-        sum = ((Time.now - a)/60).round 2
+            sum = ((Time.now - a)/60).round 2
+
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
     rescue
         errrun = true
