@@ -66,7 +66,7 @@ def startTest_addOrder autharr
 
         @driver.get @hrefPU
         @driver.find_element(:link_text, "Заказы").click
-        @driver.find_element(:link_text, numOrder[0]).click
+        @driver.find_element(:link_text, numOrder).click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ в заказ")
         findTextInPage arrPartOrderinfo, 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем, что данные в ПУ соответствуют данным при заказе с сайта")
@@ -162,7 +162,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
         @driver.get hrefPUfranch
         @driver.find_element(:link_text, "Заказы").click
-        @driver.find_element(:link_text, numOrder[0]).click
+        @driver.find_element(:link_text, numOrder).click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в наш заказ")
         findTextInPage arrPartOrderinfo, 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем данные в заказе")
