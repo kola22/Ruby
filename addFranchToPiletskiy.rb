@@ -44,7 +44,7 @@ def startTestaddFranch autharr
         @driver.find_element(:link_text, 'Клиенты').click
         @driver.find_element(:link_text, 'Франчайзи').click
 
-        fraEdit=@wait.until { @driver.find_element(:xpath, "//*[contains(text(),'#{@nameCity}')]/preceding-sibling::*/a[*]") }
+        fraEdit=@wait.until { @driver.find_element(:xpath, "//*[contains(text(),'#{@nameCity}')]/preceding-sibling::td[@class='talignCenter']/a") }
         fraEdit.click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
              asleep

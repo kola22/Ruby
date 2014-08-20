@@ -50,14 +50,19 @@ end
 def choiceBrws (max=1)
     @x =1 ## пока только хром, мозила не интересна
     if @x== 1
-        brws = "хроме"
+ ##       brws = "хроме"
         @driver = Selenium::WebDriver.for :chrome
     else
-        brws = "мозиле"
+ ##       brws = "мозиле"
         @driver = Selenium::WebDriver.for :ff
     end
-    puts "#{@conslgreen} работает в #{brws} #{@conslwhite}"
-    @driver.manage.timeouts.implicit_wait = 10 # seconds
+ ##   puts "#{@conslgreen} работает в #{brws} #{@conslwhite}"
+    if !@lan
+        @driver.manage.timeouts.implicit_wait = 10 # seconds
+    else
+        @driver.manage.timeouts.implicit_wait = 60 # seconds
+    end
+
     if max == 1
         @driver.manage.window.maximize
     end
@@ -238,7 +243,7 @@ def addReportToPage
     @driver.find_element(:xpath,"//img[@src='http://admin.abcp.ru/common.images/cp.icon/text-edit.png']").click
     element = @driver.find_element(:id,'infoBlockText_ifr')
     @driver.switch_to.frame element
-    textArea = @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('infoBlockText').fire('load');\"]")
+                textArea = @driver.find_element(:xpath,"//body[@id='tinymce'][@onload=\"window.parent.tinymce.get('infoBlockText').fire('load');\"]")
     textArea.clear
     textArea.send_keys [:control, 'v']
     @driver.switch_to.default_content
