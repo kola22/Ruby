@@ -22,10 +22,7 @@ require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
 
-ARGV.each do|a|
-    @lan=a
-end
-
+@lan=ARGV[0]
 
 while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
@@ -44,7 +41,6 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-            startTestaddFranch autArr
 
             if !@lan
                 forMcOtziviShop autArr4mc

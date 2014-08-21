@@ -1,12 +1,41 @@
 #!/bin/env ruby
 # encoding: utf-8
 
-require 'selenium-webdriver'
-require 'nokogiri'
-require 'open-uri'
-require 'clipboard'
 
-x = 'http://piletskiy.abcp.ru.lan/?tlogin=2222@222.ruw&authCode=4b0845a6cb5a2209cd57adb10b07e7ed'
-if x.match(/.landdddd\W{2}/) == false
-    puts '3333'
+# Class names must be capitalized.  Technically, it's a constant.
+
+class Coffe
+    def make_coffee
+         puts 'Do it'
+    end
 end
+
+class Capuchino < Coffe
+    def createMilk x
+        prepare x
+        pusht
+    end
+
+    private
+    def prepare x333
+        puts 'Делаем молочише'
+        puts x333
+    end
+    def pusht
+        puts 'PUSH'
+    end
+end
+
+
+saeco = Capuchino.new
+saeco.make_coffee
+saeco.createMilk 5456
+
+
+
+
+
+
+
+
+

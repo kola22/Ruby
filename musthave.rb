@@ -232,6 +232,7 @@ def addReportToPage
 
 ' + @contents
     end
+
     Clipboard.copy @contents
 
     @driver.find_element(:link_text,'Внешний вид и контент').click
@@ -343,6 +344,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
     end
     @driver.quit
 end
+
 
 def verifSendEmailOrder numOrder
 @driver.find_element(:link_text,'Настройка').click
