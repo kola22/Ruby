@@ -71,7 +71,7 @@ while Time.now.year < 2018
             sum = ((Time.now - a)/60).round 2
 
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-    rescue
+  ## test lan  rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
