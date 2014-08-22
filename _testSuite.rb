@@ -41,18 +41,25 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-
+            ## test lan
+            localText autArrAutotest,'Гуково'
+            ## test lan
+            addPriceToDistr autArr,'русский.xls'
+            addPriceToDistr autArr,'priceautotes.xls'
             if !@lan
                 forMcOtziviShop autArr4mc
                 forMcOtzivi autArr4mc
+                startTest_addprofile autArr                     ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
+                startTest_addprofile_toFranch autArr, @nameCity ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
             end
-            addPriceToDistr autArr,'русский.xls'
-            addPriceToDistr autArr,'priceautotes.xls'
-            localText autArrAutotest,'Гуково'
 
+
+            localText autArrAutotest,'Гуково'
+            ## test lan
+            gets
+            ## test lan
             startTestaddFranch autArr
-            startTest_addprofile autArr
-            startTest_addprofile_toFranch autArr, @nameCity
+
             waitUntilLoadPrice autArr,false,@nameDistr
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
