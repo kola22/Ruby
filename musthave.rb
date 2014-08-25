@@ -224,6 +224,7 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     @driver.find_element(:class,'logout').click
     @driver.find_element(:id,'inputPhone1').click
     @driver.find_element(:id,'inputPhone1').send_keys phone
+        asleep
     @driver.find_element(:id,'inputPassword').click
     @driver.find_element(:id,'inputPassword').send_keys pass
     asleep
