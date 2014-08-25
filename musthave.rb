@@ -226,18 +226,6 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
     @driver.get 'http://4mycar.ru/'
     isElementPresent?(:id,'loginEnter')
-
-    while    isElementPresentlite(:id,'loginEnter')
-        @driver.find_element(:id,'loginEnter').click
-        isElementPresent?(:class,'glyphicon glyphicon-log-out')
-
-        asleep
-        @driver.get 'http://4mycar.ru/'
-    end
-
-    gets
-    puts '3'
-    @driver.get 'http://4mycar.ru/'
 end
 
 def addReportToPage
