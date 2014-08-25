@@ -193,7 +193,8 @@ def localText autharr,nameFra
         proverkaLocatText hrefSiteFranch,@defVarLocal,'ru'
         proverkaLocatText hrefSiteFranch,@defVarLocal,'te'
 
-        ## test lan rescue
+        ## test lan
+        rescue
         @err+=1
         @out_file.puts('ERR: Тест прерван')
         ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")

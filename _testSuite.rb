@@ -42,7 +42,7 @@ while Time.now.year < 2018
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
             ## test lan
-            localText autArrAutotest,'Гуково'
+            ##localText autArrAutotest,'Гуково'
             ## test lan
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
@@ -56,7 +56,7 @@ while Time.now.year < 2018
 
             localText autArrAutotest,'Гуково'
             ## test lan
-            gets
+            ##gets
             ## test lan
             startTestaddFranch autArr
 
@@ -71,7 +71,8 @@ while Time.now.year < 2018
             sum = ((Time.now - a)/60).round 2
 
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
-  ## test lan  rescue
+  ## test lan
+   rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
