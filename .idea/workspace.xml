@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_15:56_25_August.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_15:58_25_August.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_16:0_25_August.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_16:1_25_August.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_16:3_25_August.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out_16:4_25_August.txt" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_testSuite.rb" afterPath="$PROJECT_DIR$/_testSuite.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +42,8 @@
       <file leaf-file-name="musthave.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/musthave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3632287" vertical-offset="3780" max-vertical-offset="8244">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.76681614" vertical-offset="3348" max-vertical-offset="8262">
+              <caret line="224" column="10" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -812,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3632287" vertical-offset="3780" max-vertical-offset="8244">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.76681614" vertical-offset="3348" max-vertical-offset="8262">
+          <caret line="224" column="10" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
           <folding />
         </state>
       </provider>

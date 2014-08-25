@@ -222,6 +222,7 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     @driver.find_element(:id,'inputPhone1').click
     @driver.find_element(:id,'inputPhone1').send_keys phone
     @driver.find_element(:id,'inputPassword').send_keys pass
+    asleep
     @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
     @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
     @driver.get 'http://4mycar.ru/'
