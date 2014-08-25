@@ -51,7 +51,8 @@ def choiceBrws (max=1)
     @x =1 ## пока только хром, мозила не интересна
     if @x== 1
  ##       brws = "хроме"
-        @driver = Selenium::WebDriver.for :chrome
+        caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {"args" => ["test-type" ]})
+        @driver = Selenium::WebDriver.for :chrome,desired_capabilities:caps
     else
  ##       brws = "мозиле"
         @driver = Selenium::WebDriver.for :ff
@@ -186,9 +187,9 @@ def visibleElement? text,neesSee=1
     a = @driver.find_element(:xpath, "//*[contains(text(),'#{text}')]").displayed?
 
     if a && neesSee==1
-        puts "#{@conslgreen} Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
+        puts " Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
     elsif a==false && neesSee==0
-        puts "#{@conslgreen} Всё Норм! НЕ видно этого элемента: #{text} #{@conslwhite}"
+        puts " Всё Норм! НЕ видно этого элемента: #{text} #{@conslwhite}"
     else
         puts "#{@conslred} Видимость элемента не соответствует условию #{text} #{@conslwhite}"
         return false
@@ -207,12 +208,35 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
         @driver.get 'http://4mycar.ru/'
         @driver.find_element(:id,'loginEnter').click
     end
-
     @driver.find_element(:id,'inputPhone1').click
     @driver.find_element(:id,'inputPhone1').send_keys phone
     @driver.find_element(:id,'inputPassword').send_keys pass
     @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
     isElementPresent?(:xpath,"//*[@value='Подтвердить']")
+    ##asleep
+    ##@driver.get 'http://4mycar.ru/'
+    isElementPresent?(:id,'loginEnter')
+    @driver.find_element(:xpath,"//button[@type='submit']").click
+    isElementPresent?(:id,'loginEnter')
+    @driver.find_element(:class,'logout').click
+    @driver.find_element(:id,'inputPhone1').click
+    @driver.find_element(:id,'inputPhone1').send_keys phone
+    @driver.find_element(:id,'inputPassword').send_keys pass
+    @driver.find_element(:xpath,"//*[contains(text(),'Далее')]").click
+    @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
+    @driver.get 'http://4mycar.ru/'
+    isElementPresent?(:id,'loginEnter')
+
+    while    isElementPresentlite(:id,'loginEnter')
+        @driver.find_element(:id,'loginEnter').click
+        isElementPresent?(:class,'glyphicon glyphicon-log-out')
+
+        asleep
+        @driver.get 'http://4mycar.ru/'
+    end
+
+    gets
+    puts '3'
     @driver.get 'http://4mycar.ru/'
 end
 

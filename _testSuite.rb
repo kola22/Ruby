@@ -41,6 +41,8 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
+            forMcOtziviShop autArr4mc
+            forMcOtzivi autArr4mc
             ## test lan
             ##localText autArrAutotest,'Гуково'
             ## test lan
