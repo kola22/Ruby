@@ -42,8 +42,8 @@
       <file leaf-file-name="musthave.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/musthave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76681614" vertical-offset="3348" max-vertical-offset="8262">
-              <caret line="224" column="10" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.5358744" vertical-offset="3338" max-vertical-offset="8334">
+              <caret line="212" column="60" selection-start-line="212" selection-start-column="60" selection-end-line="212" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -804,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76681614" vertical-offset="3348" max-vertical-offset="8262">
-          <caret line="224" column="10" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5358744" vertical-offset="3338" max-vertical-offset="8334">
+          <caret line="212" column="60" selection-start-line="212" selection-start-column="60" selection-end-line="212" selection-end-column="60" />
           <folding />
         </state>
       </provider>

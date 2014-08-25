@@ -215,6 +215,9 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     isElementPresent?(:xpath,"//*[@value='Подтвердить']")
     ##asleep
     ##@driver.get 'http://4mycar.ru/'
+
+    if isElementPresentlite(:id,'loginEnter')
+        puts 'if'
     isElementPresent?(:id,'loginEnter')
     @driver.find_element(:xpath,"//button[@type='submit']").click
     isElementPresent?(:id,'loginEnter')
@@ -227,6 +230,7 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     @driver.find_element(:xpath,"//*[contains(text(),'Сохранить')]").click
     @driver.get 'http://4mycar.ru/'
     isElementPresent?(:id,'loginEnter')
+    end
 end
 
 def addReportToPage
