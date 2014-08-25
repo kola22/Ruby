@@ -201,6 +201,8 @@ def visibleElement? text,neesSee=1
 end
 
 def login4mc phone,pass ## куча костылей из-за кривой и непонятной регистрации на 4мс
+    ### бляяяя , это уже не куча костылей , а просто трешь какой-то и всё из-за того, что при запуске автотестов с 25.08.2014 перестало логиниться по нормальному.
+    ## буду надеяться, что в будущем станет более логичная авторизация, или хотя бы её просто изменять и автотесты опять заработают
     @driver.find_element(:id,'loginEnter').click
     if isElementPresentlite(:class,'clientNameWrapper')
         isElementPresent?(:class,'clientNameWrapper')
