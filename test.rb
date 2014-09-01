@@ -30,9 +30,13 @@ end
 saeco = Capuchino.new
 saeco.make_coffee
 saeco.createMilk 5456
+###
 
+S  = 6.11
+t = 39.32
+speed = S/t * 60
 
-
+puts speed
 
 
 

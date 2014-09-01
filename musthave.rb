@@ -6,7 +6,6 @@ require 'clipboard'
 require 'nokogiri'
 require 'open-uri'
 
-
 @conslgreen = "\x1b[1;32m "
 @conslwhite = "\x1b[0m"
 @conslred = "\x1b[1;31m"

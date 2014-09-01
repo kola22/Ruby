@@ -56,7 +56,6 @@ while Time.now.year < 2018
 
             localText autArrAutotest,'Гуково'
 
-
             waitUntilLoadPrice autArr,false,@nameDistr
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
