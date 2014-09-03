@@ -16,11 +16,20 @@ def startTestaddFranch autharr
         authPUservice autharr[0], autharr[1], autharr[2], 1
         sleep 0.5
         @driver.find_element(:link_text, 'Клиенты').click
+
+
+        @driver.find_element(:link_text,'Добавить клиента').click
+        clientName = randomTxt(5)
+        @driver.find_element(:id, 'newCustomerName').send_keys "#{clientName}"
+        @driver.find_element(:id, 'newCustomerEmail').send_keys "#{clientName}nodatest@nodasoft.com"
+        @driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click
+
+        @driver.find_element(:link_text, 'Клиенты').click
         @driver.find_element(:link_text, 'Франчайзи').click
         @driver.find_element(:link_text, 'Добавить франчайзи').click
         @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить франча")
         @driver.find_element(:name, 'agreeWithCreation').click
-        @driver.find_element(:id, 'clientAliveSearch').send_keys('254') # такая вот заглушка, чтобы появился список с клиентами
+        @driver.find_element(:id, 'clientAliveSearch').send_keys clientName
         asleep
         @driver.find_element(:class, 'aliveSearchRow').click
         @driver.find_element(:name, 'email').send_keys("#{@nameCity}nodatest@nodasoft.com")
