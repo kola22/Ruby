@@ -26,20 +26,27 @@ class Capuchino < Coffe
     end
 end
 
-
-saeco = Capuchino.new
-saeco.make_coffee
-saeco.createMilk 5456
-###
-
-S  = 6.11
-t = 39.32
-speed = S/t * 60
-
-puts speed
+st = 'Проверка пройдена. Цена у клиента без наценки равна цене закупки'
+puts st.match(/(?<=\W)\s.*/)
 
 
+def welcome
+    def to
+        "RailsClub"
+    end
+end
 
+require 'benchmark/ips'
 
+Benchmark.ips do |r|
+    r.report("mass") do
+        a, b, c, d = 1, 2, 3, 4
+    end
 
-
+    r.report("step by step") do
+        a = 1
+        b = 2
+        c = 3
+        d = 4
+    end
+end

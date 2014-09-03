@@ -23,7 +23,6 @@ def lanUrl urlTolan
     else
         lanUrl = urlTolan
     end
-    puts lanUrl
     return lanUrl
 end
 
@@ -129,7 +128,7 @@ def findDistr (nameDistr)
 end
 
 #добавление профиля
-def addProf (codeprof, ifdoch)
+def addProf (codeprof, ifdoch,notRand=false)
 
     @driver.find_element(:link_text, 'Клиенты').click
     @driver.find_element(:link_text, 'Профили').click
@@ -150,8 +149,12 @@ def addProf (codeprof, ifdoch)
     @driver.find_element(:name, 'code').send_keys ddd+codeprof+ddd
     @driver.find_element(:name, 'name').send_keys ddd+codeprof+ddd
     @driver.find_element(:name, 'comment').send_keys 'comment+'+codeprof+ddd
-
+    if !notRand
     @driver.find_element(:xpath, "//table[@id='editProfileTbl']/tbody/tr[*]/th[contains(text(),'%')]/following-sibling::td[*]/input").send_keys rand(-900..900).to_s
+    else
+        @driver.find_element(:xpath, "//table[@id='editProfileTbl']/tbody/tr[*]/th[contains(text(),'%')]/following-sibling::td[*]/input").send_keys notRand
+    end
+
     @driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
     @wait.until { @driver.find_element(:id, 'popup_msg_ok') }.click
 

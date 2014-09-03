@@ -12,13 +12,54 @@ def verifPriceUp autharr,nameFra=false
     allstep = 11
     pnum = 'OC90'
     begin
-
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2], 1
 
     @out_file.puts("Шаг #{step+=1} из #{allstep} Выставляем отображение цены закупки для менеджеров")
         checkedPriceIn 'priceBuyEnable'
         checkedPriceIn 'distributorEnable'
+
+
+
+
+
+=begin
+        ####3
+
+        namepppp = randomTxt(7)
+        addProf namepppp,0,0
+        @driver.find_element(:link_text, "Клиенты").click
+        @driver.find_element(:name,'filterCustomersBySearchString').send_keys 'HsDQINSyAONHesy'
+        @driver.find_element(:xpath, "//*[@value='Найти']").click
+        asleep
+        @driver.find_element(:xpath, "//*[@title='Редактировать информацию о клиенте']").click
+        @driver.find_element(:class, 'jq-selectbox__select-text').click
+        @driver.find_element(:xpath, "//*[contains(text(),'#{namepppp}')]").click
+        asleep
+        @driver.find_element(:xpath, "//*[@value='Сохранить изменения']").click
+        isElementPresent?(:id,'popup_msg_ok')
+        ####4
+        gets
+
+=end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     if nameFra
         @driver.find_element(:link_text, 'Клиенты').click
@@ -30,8 +71,7 @@ def verifPriceUp autharr,nameFra=false
     @out_file.puts("Шаг #{step+=1} из #{allstep} Получаем сслыку для входа на сайт менеджером (администратором)")
         @driver.find_element(:link_text,'Персонал').click
         hrefSiteAdmin = @driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[12]/a").attribute("href")
-        puts hrefSiteAdmin
-=begin
+
     @out_file.puts("Шаг #{step+=1} из #{allstep} Создаем нового клиента. Получаем ссылку для входа на сайт. Новый клиент должен создавать по дефолту без профиля")
         @driver.find_element(:link_text, "Клиенты").click
         @driver.find_element(:link_text, "Добавить клиента").click
@@ -41,8 +81,6 @@ def verifPriceUp autharr,nameFra=false
         @driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click
         isElementPresent?(:xpath, "//span[contains(text(),'Создать')]")
         hrefSiteClient = @driver.find_element(:link_text, "Вход на сайт от имени клиента: \"#{clientName}\"").attribute("href")
-=end
-        hrefSiteClient = 'http://piletskiy.abcp.ru/?tlogin=NzCiVXnofVwJMAMnodatest@nodasoft.com&authCode=0fe910fe41bd4386e9d0d89b77fce6e7'
 
     @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим на сайт менеджером, ищем деталь #{pnum} и получаем её закупочную цену,бренд и постащика")
         @driver.get hrefSiteAdmin
@@ -53,10 +91,44 @@ def verifPriceUp autharr,nameFra=false
         priceIn = @driver.find_element(:class,'resultPurchasesPrice').text ## тут мы получаем запись вида : 33,00 руб , надо бы перевести
         priceInFloat = priceIn.match(/(\d*,\d{2})/).to_s.sub!(',','.').to_f.round(2)
         description = @driver.find_element(:class,'resultDescription  ').text
+        description = description.match(/(?<=\W)\s.*/)
+        puts description
         dist = @driver.find_element(:class,'resultSupplier  ').text
         puts dist,priceInFloat,brand,description
 
     @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим на сайт клиентом и видим цену продажи детали OC90 равную закупке, так как не выставлен профиль")
+        @driver.get hrefSiteClient
+        asleep
+        @driver.find_element(:id, "pcode").send_keys "#{pnum}"
+        @driver.find_element(:id, "pcode").submit
+        isElementPresent?(:xpath, "//*[contains(text(),'Цены и аналоги')]")
+        temp = @driver.find_element(:xpath,"//*[@class='resultDescription  '][contains(text(),'#{description}')]/following-sibling::*[@class='resultPrice ']").text
+        puts temp
+        temp = temp.match(/(\d*,\d{2})/).to_s.sub!(',','.').to_f.round(2)
+        puts temp
+                if temp == priceInFloat
+            puts 'Проверка пройдена. Цена у клиента без наценки равна цене закупки'
+        else
+            puts 'ERR: цена у клиента без наценки не совпадает с ценой закупки!'
+        end
+
+    @out_file.puts("Шаг #{step+=1} из #{allstep} В ПУ создаем профиль без наценки, устанавливаем клиенту")
+
+        @driver.get @hrefPU
+        nameProfile = randomTxt(7)
+        addProf nameProfile,0,0
+        @driver.find_element(:link_text, "Клиенты").click
+        @driver.find_element(:name,'filterCustomersBySearchString').send_keys clientName
+        @driver.find_element(:xpath, "//*[@value='Найти']").click
+        asleep
+        @driver.find_element(:xpath, "//*[@title='Редактировать информацию о клиенте']").click
+        @driver.find_element(:class, 'jq-selectbox__select-text').click
+        @driver.find_element(:xpath, "//*[contains(text(),'#{nameProfile}')]").click
+        asleep
+        @driver.find_element(:xpath, "//*[@value='Сохранить изменения']").click
+        isElementPresent?(:id,'popup_msg_ok')
+
+    @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена не поменялась")
         @driver.get hrefSiteClient
         asleep
         @driver.find_element(:id, "pcode").send_keys "#{pnum}"
@@ -71,14 +143,7 @@ def verifPriceUp autharr,nameFra=false
         else
             puts 'ERR: цена у клиента без наценки не совпадает с ценой закупки!'
         end
-
-        gets
-
-
-    @out_file.puts("Шаг #{step+=1} из #{allstep} В ПУ создаем профиль без наценки, устанавливаем клиенту")
-
-    @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена не поменялась")
-
+    asleep 333333
     @out_file.puts("Шаг #{step+=1} из #{allstep} Меняем для профиля наценку , ставим 100")
 
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена выросла в два раза")
