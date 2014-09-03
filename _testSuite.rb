@@ -43,10 +43,10 @@ while Time.now.year < 2018
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
          ##   verifPriceUp autArr
-
+            startTestaddFranch autArr
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
-            startTestaddFranch autArr
+
             if !@lan
                 forMcOtziviShop autArr4mc
                 forMcOtzivi autArr4mc
