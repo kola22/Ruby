@@ -42,10 +42,13 @@ while Time.now.year < 2018
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
-         ##   verifPriceUp autArr
-            startTestaddFranch autArr
+
+
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
+
+
+            startTestaddFranch autArr
 
             if !@lan
                 forMcOtziviShop autArr4mc
@@ -64,7 +67,7 @@ while Time.now.year < 2018
             addPriceToDistr autArr,'priceautotes.xls',@nameCity
             startTest_addOrder autArr
             waitUntilLoadPrice autArr,@nameCity,@nameDistr
-
+            verifPriceUp autArr
             sum = ((Time.now - a)/60).round 2
 
   ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"

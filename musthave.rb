@@ -163,7 +163,7 @@ def addProf (codeprof, ifdoch,notRand=false)
 end
 
 #добавление наценки на бренда в профиле
-def AddPriceUpBrand (arrBrand, nameProfile, findD)
+def AddPriceUpBrand (arrBrand, nameProfile, findD, priceUp=false)
     i=(arrBrand.count)
     x3=0
     @driver.find_element(:link_text, 'Клиенты').click
@@ -179,7 +179,12 @@ def AddPriceUpBrand (arrBrand, nameProfile, findD)
         @driver.find_element(:link_text, 'Добавить наценку на бренд').click
         @driver.find_element(:xpath, "//td[@class='talignCenter brandName']/input[@brandname=-'#{x3}']").send_keys "#{arrBrand[x3-1]}"
         @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").clear
-        @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").send_keys rand(-100..100).to_s
+        if priceUp
+            @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").send_keys priceUp
+        else
+            @driver.find_element(:xpath, "//input[@class='priceUp'][@brandname=-'#{x3}']").send_keys rand(-100..100).to_s
+        end
+
     end
     @driver.find_element(:name, 'savePriceUpOnBrands').click
     @driver.find_element(:id, 'popup_msg_ok').click

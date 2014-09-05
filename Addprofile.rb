@@ -16,19 +16,19 @@ def startTest_addprofile autharr
 
             choiceBrws 1
             authPUservice autharr[0], autharr[1], autharr[2], 1
-
+=begin
                ########## Удаление лишних профилей ##########
-               ## i =1
-               ##@driver.get 'http://cp.abcp.ru/?page=customers&profiles'
-               ##loop do
-               ##while  isElementPresentlite(:xpath, "//img[@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
-               ##isElementPresent?(:xpath, "//img[@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
-               ##end
-               ##@driver.find_element(:xpath, "//*[contains(text(),'Test')]/../*/a/img[@alt='Удалить профиль']").click
-               ##@driver.find_element(:id,'popup_msg_ok').click
-               ##break if i == 3
-               ##end
-
+               i =1
+               @driver.get 'http://cp.abcp.ru/?page=customers&profiles'
+               loop do
+               isElementPresent?(:xpath, "//img[@src='http://admin.abcp.ru/common.images/dtree/nolines_plus.gif']")
+          ##     @driver.find_element(:xpath, "//*[contains(text(),'doch')]/../*/a/img[@alt='Удалить профиль']").click
+          ##     @driver.find_element(:id,'popup_msg_ok').click
+               @driver.find_element(:xpath, "//*[contains(text(),'Test')]/../*/a/img[@alt='Удалить профиль']").click
+               @driver.find_element(:id,'popup_msg_ok').click
+               break if i == 3
+               end
+=end
             # проверяем наличие поставщика, которому будем выставлять наценки
             brandForPriceUp = ['BMW', 'Mahle', 'Knecht']
             distrForPriceUp = 'abcp.ru [online]'
