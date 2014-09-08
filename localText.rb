@@ -20,58 +20,58 @@ def localText autharr,nameFra
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2], 1
 
-        @driver.find_element(:link_text,'Персонал').click
-        hrefPUGK = @driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[11]/a").attribute("href")
+        $driver.find_element(:link_text,'Персонал').click
+        hrefPUGK = $driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[11]/a").attribute("href")
         hrefPUGK = lanUrl hrefPUGK
-        hrefSiteGK = @driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[12]/a").attribute("href")
+        hrefSiteGK = $driver.find_element(:xpath, "//*[contains(text(),'admin')]/following-sibling::td[12]/a").attribute("href")
         hrefSiteGK = lanUrl hrefSiteGK
 
-        ##@driver.get hrefPUGK
-        @driver.find_element(:link_text,'Клиенты').click
-        @driver.find_element(:link_text,'Франчайзи').click
+        ##$driver.get hrefPUGK
+        $driver.find_element(:link_text,'Клиенты').click
+        $driver.find_element(:link_text,'Франчайзи').click
 
-        hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+        hrefPUfranch =$driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
         hrefPUfranch = lanUrl hrefPUfranch
-        hrefSiteFranch = @driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход на сайт: ']/parent::a").attribute("href")
+        hrefSiteFranch = $driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход на сайт: ']/parent::a").attribute("href")
         hrefSiteFranch = lanUrl hrefSiteFranch
 
-        ##@driver.get hrefPUfranch``
+        ##$driver.get hrefPUfranch``
         @out_file.puts("Шаг #{step+=1} из #{allstep} Набираем ссылки для входа в ПУ и на сайт ГК / франча")
         varToText = randomTxt(10)
 
 
         def delLocalText urlPU,blokToChange,local=false
-            @driver.get urlPU
-            @driver.find_element(:link_text,'Внешний вид и контент').click
-            @driver.find_element(:link_text,'Текстовые сообщения').click
-            @driver.find_element(:name, 'selectedCategory').click
+            $driver.get urlPU
+            $driver.find_element(:link_text,'Внешний вид и контент').click
+            $driver.find_element(:link_text,'Текстовые сообщения').click
+            $driver.find_element(:name, 'selectedCategory').click
             asleep
-            @driver.find_elements(:tag_name => 'option').find do |option|
+            $driver.find_elements(:tag_name => 'option').find do |option|
                 option.text == blokToChange
             end.click
-            @driver.find_element(:xpath, "//*[@value='Найти']").click
+            $driver.find_element(:xpath, "//*[@value='Найти']").click
 
             if local
-                @driver.find_element(:name, 'selectedLocale').click
-                @driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{local}')]").click
+                $driver.find_element(:name, 'selectedLocale').click
+                $driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{local}')]").click
                 puts local
-               ## @driver.find_element(:name, 'selectedLocale').click
-               ## @driver.find_elements(:tag_name => 'option').find do |option|
+               ## $driver.find_element(:name, 'selectedLocale').click
+               ## $driver.find_elements(:tag_name => 'option').find do |option|
                ##     option.text == local
                ## end.click
             end
-            @driver.find_element(:xpath, "//*[@value='Найти']").click
+            $driver.find_element(:xpath, "//*[@value='Найти']").click
 
             while   isElementPresentlite(:xpath,"//*[@title='Удалить собственное значение']")
-                @driver.find_element(:xpath,"//*[@title='Удалить собственное значение']").click
-                @driver.find_element(:id, 'popup_msg_ok').click
+                $driver.find_element(:xpath,"//*[@title='Удалить собственное значение']").click
+                $driver.find_element(:id, 'popup_msg_ok').click
                 asleep 2
             end
             while isElementPresentlite(:class,'nextPage')
-                @driver.find_element(:class,'nextPage').click
+                $driver.find_element(:class,'nextPage').click
                 while   isElementPresentlite(:xpath,"//*[@title='Удалить собственное значение']")
-                    @driver.find_element(:xpath,"//*[@title='Удалить собственное значение']").click
-                    @driver.find_element(:id, 'popup_msg_ok').click
+                    $driver.find_element(:xpath,"//*[@title='Удалить собственное значение']").click
+                    $driver.find_element(:id, 'popup_msg_ok').click
                     asleep 2
                 end
             end
@@ -83,19 +83,19 @@ def localText autharr,nameFra
         def verifLocalInPUfranch franchHref,blokToChange,naborToChange,whatVerif,local
             puts 'TEST TEST TEST'
             asleep
-            @driver.get franchHref
-            @driver.find_element(:link_text,'Внешний вид и контент').click
-            @driver.find_element(:link_text,'Текстовые сообщения').click
-            @driver.find_element(:name, 'selectedCategory').click
+            $driver.get franchHref
+            $driver.find_element(:link_text,'Внешний вид и контент').click
+            $driver.find_element(:link_text,'Текстовые сообщения').click
+            $driver.find_element(:name, 'selectedCategory').click
             asleep
-            @driver.find_elements(:tag_name => 'option').find do |option|
+            $driver.find_elements(:tag_name => 'option').find do |option|
                 option.text == blokToChange
             end.click
-            @driver.find_element(:name, 'selectedLocale').click
-            @driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{local}')]").click
+            $driver.find_element(:name, 'selectedLocale').click
+            $driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{local}')]").click
 
-            @driver.find_element(:xpath, "//*[@value='Найти']").click
-            if whatVerif == @driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[1]").text
+            $driver.find_element(:xpath, "//*[@value='Найти']").click
+            if whatVerif == $driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[1]").text
                 puts 'Good'
             else
                 puts 'err'
@@ -108,45 +108,45 @@ def localText autharr,nameFra
         def changelocaltext blokToChange,naborToChange,varToText,needGoFrach=false,localToChange=false
 
             if needGoFrach
-                @driver.get needGoFrach
+                $driver.get needGoFrach
             end
-            @driver.find_element(:link_text,'Внешний вид и контент').click
-            @driver.find_element(:link_text,'Текстовые сообщения').click
-            @driver.find_element(:name, 'selectedCategory').click
+            $driver.find_element(:link_text,'Внешний вид и контент').click
+            $driver.find_element(:link_text,'Текстовые сообщения').click
+            $driver.find_element(:name, 'selectedCategory').click
             asleep
-            @driver.find_elements(:tag_name => 'option').find do |option|
+            $driver.find_elements(:tag_name => 'option').find do |option|
                 option.text == blokToChange
             end.click
-            @driver.find_element(:xpath, "//*[@value='Найти']").click
+            $driver.find_element(:xpath, "//*[@value='Найти']").click
 
             if localToChange
-                @driver.find_element(:name, 'selectedLocale').click
-                @driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{localToChange}')]").click
+                $driver.find_element(:name, 'selectedLocale').click
+                $driver.find_element(:xpath, "//select[@name='selectedLocale']/option[contains(text(),'#{localToChange}')]").click
             end
-            @driver.find_element(:xpath, "//*[@value='Найти']").click
+            $driver.find_element(:xpath, "//*[@value='Найти']").click
         if needGoFrach
         else
-            @defVarLocal=@driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[1]").text
+            @defVarLocal=$driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[1]").text
         end
 
-        @driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[4]/img").click
+        $driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[4]/img").click
 
-        @driver.find_element(:name, 'useDefault').click
-        @driver.find_element(:id,'mceEditor').clear
-        @driver.find_element(:id,'mceEditor').send_key varToText
+        $driver.find_element(:name, 'useDefault').click
+        $driver.find_element(:id,'mceEditor').clear
+        $driver.find_element(:id,'mceEditor').send_key varToText
         asleep
-        @driver.find_element(:xpath, "//span[contains(text(),'Сохранить')]").click
+        $driver.find_element(:xpath, "//span[contains(text(),'Сохранить')]").click
         asleep
         end
 
         def proverkaLocatText siteUrl,verifText,changeLocal
-                @driver.get siteUrl
-                @driver.find_element(:xpath, "//ul[@class='languagesList']/li/a[contains(text(),'#{changeLocal}')]").click
-                @driver.find_element(:id, "pcode").send_keys "oc90"
-                @driver.find_element(:xpath, "//*[@value='Найти']").click
-                @driver.find_element(:xpath, "//*[contains(text(),'#{verifText}')]").click
+                $driver.get siteUrl
+                $driver.find_element(:xpath, "//ul[@class='languagesList']/li/a[contains(text(),'#{changeLocal}')]").click
+                $driver.find_element(:id, "pcode").send_keys "oc90"
+                $driver.find_element(:xpath, "//*[@value='Найти']").click
+                $driver.find_element(:xpath, "//*[contains(text(),'#{verifText}')]").click
                 asleep
-                @driver.find_element(:xpath, "//*[contains(text(),'#{verifText}')]").click
+                $driver.find_element(:xpath, "//*[contains(text(),'#{verifText}')]").click
         end
 
         @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем все выставленные значения локализации на франче и на ГК")
@@ -197,8 +197,8 @@ def localText autharr,nameFra
         rescue
         @err+=1
         @out_file.puts('ERR: Тест прерван')
-        ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")
+        ### $driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_профиля к франчу.png")
         puts "#{@conslred}Тест по проверке локализаций ГК<>Франч не пройден#{@conslwhite}"
     end
-    @driver.quit
+    $driver.quit
 end

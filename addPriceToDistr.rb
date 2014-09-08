@@ -24,39 +24,39 @@ def addPriceToDistr autharr,fileName,nameFra=false
             authPUservice autharr[0], autharr[1], autharr[2], 1
 
             if nameFra
-                @driver.find_element(:link_text, 'Клиенты').click
-                @driver.find_element(:link_text, 'Франчайзи').click
-                hrefPUfranch =@driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
-                @driver.get hrefPUfranch
+                $driver.find_element(:link_text, 'Клиенты').click
+                $driver.find_element(:link_text, 'Франчайзи').click
+                hrefPUfranch =$driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+                $driver.get hrefPUfranch
             end
 
-            @driver.find_element(:link_text, 'Настройка').click
-            @driver.find_element(:link_text, 'Управление почтой').click
+            $driver.find_element(:link_text, 'Настройка').click
+            $driver.find_element(:link_text, 'Управление почтой').click
 
             if isElementPresentlite(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[6]/img")
                 puts 'Настройки правильные у сотрудника'
             else
                 if isElementPresentlite(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]")
-                    @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[9]/a").click
-                    @driver.find_element(:name, "distributorUpdate").click
-                    @driver.find_element(:xpath, "//*[@*='Сохранить']").click
+                    $driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[9]/a").click
+                    $driver.find_element(:name, "distributorUpdate").click
+                    $driver.find_element(:xpath, "//*[@*='Сохранить']").click
                 else
-                @driver.find_element(:link_text, 'Добавить email').click
-                @driver.find_element(:name, 'email').send_keys 'EmailEmploynodatest@nodasoft.com'
-                @driver.find_element(:name, "distributorUpdate").click
-                @driver.find_element(:xpath, "//*[@*='Сохранить']").click
+                $driver.find_element(:link_text, 'Добавить email').click
+                $driver.find_element(:name, 'email').send_keys 'EmailEmploynodatest@nodasoft.com'
+                $driver.find_element(:name, "distributorUpdate").click
+                $driver.find_element(:xpath, "//*[@*='Сохранить']").click
                 end
-                @driver.find_element(:link_text, 'Настройка').click
-                @driver.find_element(:link_text, 'Управление почтой').click
-                @driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[6]/img")
+                $driver.find_element(:link_text, 'Настройка').click
+                $driver.find_element(:link_text, 'Управление почтой').click
+                $driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]/following-sibling::td[6]/img")
             end
 
-            @driver.find_element(:link_text, 'Поставщики').click
+            $driver.find_element(:link_text, 'Поставщики').click
             def delAlldistr(descDist)
                 while isElementPresentlite(:xpath,"//span[contains(text(),'#{descDist}')]/../following-sibling::td[5]/a/img")
                     @out_file.puts("Шаг 0.1 из 5 если были выключенные тестовые поставщкии с имененм вида #{descDist}, то мы их удалили")
-                        @driver.find_element(:xpath,"//span[contains(text(),'#{descDist}')]/../following-sibling::td[5]/a/img").click
-                        @driver.find_element(:id,'popup_msg_ok').click
+                        $driver.find_element(:xpath,"//span[contains(text(),'#{descDist}')]/../following-sibling::td[5]/a/img").click
+                        $driver.find_element(:id,'popup_msg_ok').click
                         asleep
                 end
             end
@@ -75,42 +75,42 @@ def addPriceToDistr autharr,fileName,nameFra=false
             end
             ##
 
-            @driver.find_element(:link_text, 'Добавить поставщика с ручным обновлением').click
+            $driver.find_element(:link_text, 'Добавить поставщика с ручным обновлением').click
             nameDistr = randomTxt(3)+"_PleaseDelMeBro_#{Time.new.strftime('%Y-%m-%d %H:%M:%S')}"
         ##    puts "Имя поставщика #{nameDistr}"
-            @driver.find_element(:id, 'addDistributorName').send_keys nameDistr
-            @driver.find_element(:id, 'addDistributorDeadline').send_keys '5'
-            @driver.find_element(:class, 'ui-button-text').click
+            $driver.find_element(:id, 'addDistributorName').send_keys nameDistr
+            $driver.find_element(:id, 'addDistributorDeadline').send_keys '5'
+            $driver.find_element(:class, 'ui-button-text').click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили поставщика")
-            @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
-            @driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
-            @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
+            $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
+            $driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
+            $driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             asleep
             findTextInPage ['Файл поставлен в очередь на обработку'],0
-            @driver.find_element(:link_text, 'Конфигурация прайс-листа').click
+            $driver.find_element(:link_text, 'Конфигурация прайс-листа').click
             arrDistConf = ['Бренд', 'Каталожный номер', 'Описание', 'Наличие', 'Цена']
 
             z=0 ### это всё Зееееет
             arrDistConf.each do |q|
-                @driver.find_element(:xpath, "//*[@id='skipRowsRadio00']/parent::*/following-sibling::*[#{z+=1}]/select/option[contains(text(),'#{q}')]").click
+                $driver.find_element(:xpath, "//*[@id='skipRowsRadio00']/parent::*/following-sibling::*[#{z+=1}]/select/option[contains(text(),'#{q}')]").click
             end
-            @driver.find_element(:xpath, "//*[@*='Сохранить']").click
+            $driver.find_element(:xpath, "//*[@*='Сохранить']").click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Создали конфигурацию для загрузки прайса поставщика")
             asleep 5
-            @driver.find_element(:link_text, 'Загрузка файла').click
-            @driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
-            @driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
+            $driver.find_element(:link_text, 'Загрузка файла').click
+            $driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
+            $driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
             findTextInPage ['Файл поставлен в очередь на обработку'],0
             @out_file.puts("Шаг #{step+=1} из #{allstep} Загружаем файл прайса")
-            @driver.find_element(:link_text, 'Поставщики').click
+            $driver.find_element(:link_text, 'Поставщики').click
             ##   while isElementPresentlite(:xpath, "//*[contains(text(),'Идёт обновление прайс-листа...')]") ## == 'Идёт обновление прайс-листа...'
-            ##       @driver.find_element(:link_text, 'Поставщики').click
+            ##       $driver.find_element(:link_text, 'Поставщики').click
             ##       asleep 15 , "Ещё не загрузился файл"
             ##   end
             asleep
 
 
-        @driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
+        $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::*/a[contains(text(),'вкл')]").click
 
 
 
@@ -123,7 +123,7 @@ def addPriceToDistr autharr,fileName,nameFra=false
         @err+=1
         @out_file.puts("ERR")
         ###a = Time.now.hour.to_s + ':' + Time.now.min.to_s
-        ### @driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
+        ### $driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_прайса.png")
         if nameFra
             puts "#{@conslred}Тест Добавления прайска к поставщику на ФРАНЧЕ не пройден, всё плохо file upload: #{fileName}#{@conslwhite}"
         else
@@ -131,5 +131,5 @@ def addPriceToDistr autharr,fileName,nameFra=false
         end
         @out_file.puts('ERR: тест прерван')
     end
-    @driver.quit
+    $driver.quit
 end

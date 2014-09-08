@@ -42,12 +42,8 @@ while Time.now.year < 2018
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
-
-
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
-
-
             startTestaddFranch autArr
 
             if !@lan
@@ -57,9 +53,7 @@ while Time.now.year < 2018
                 startTest_addprofile_toFranch autArr, @nameCity ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
             end
 
-
             localText autArrAutotest,'Гуково'
-
             waitUntilLoadPrice autArr,false,@nameDistr
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr

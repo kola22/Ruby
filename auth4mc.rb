@@ -11,11 +11,11 @@ wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
 def choiceBrws
 
     if @x== 0
-        @driver = Selenium::WebDriver.for :chrome
+        $driver = Selenium::WebDriver.for :chrome
         puts "работает в хроме"
     else
         puts "работаем в мозиле"
-        @driver = Selenium::WebDriver.for :ff
+        $driver = Selenium::WebDriver.for :ff
 
 
     end
@@ -26,46 +26,46 @@ end
 @x=0
 while @x<2
     choiceBrws
-    @driver.manage.window.maximize
-    #@driver.manage.timeouts.implicit_wait = 10 # seconds
+    $driver.manage.window.maximize
+    #$driver.manage.timeouts.implicit_wait = 10 # seconds
 
     i=0
     while i < 2
-        @driver.get "http://4mycar.ru"
+        $driver.get "http://4mycar.ru"
         sleep 3
-        @driver.save_screenshot("/screen/#{@x}#{i}.png")
+        $driver.save_screenshot("/screen/#{@x}#{i}.png")
         puts "0"
         sleep 3
         poniatno
         sleep 3
-        element = @driver.find_element :id => 'loginEnter'
+        element = $driver.find_element :id => 'loginEnter'
         element.click
 
-        login = wait.until { @driver.find_element :id => 'login' }
+        login = wait.until { $driver.find_element :id => 'login' }
         login.send_keys arrlog[i]
-        pass = wait.until { @driver.find_element :id => 'pass' }
+        pass = wait.until { $driver.find_element :id => 'pass' }
         pass.send_keys arrpass[i]
 
-        element = @driver.find_element :class => 'authBottom'
+        element = $driver.find_element :class => 'authBottom'
         element.submit
 
         puts "1"
 
-        element = @driver.find_element :name => "pcode"
+        element = $driver.find_element :name => "pcode"
         element.send_keys "oc90"
         element.submit
 
         puts "2"
 
-        profile = wait.until { @driver.find_element :class => 'clientNameWrapper' }
+        profile = wait.until { $driver.find_element :class => 'clientNameWrapper' }
         profile.click
 
         puts "2.1"
         sleep 3
 
-        logout = wait.until { @driver.find_element :id => 'logout' }
+        logout = wait.until { $driver.find_element :id => 'logout' }
         logout.click
-        element = wait.until { @driver.find_element :id => 'loginEnter' }
+        element = wait.until { $driver.find_element :id => 'loginEnter' }
 
         sleep 3
 
@@ -77,7 +77,7 @@ while @x<2
 
     end
 
-    @driver.quit
+    $driver.quit
     @x=@x+1
 
 end
