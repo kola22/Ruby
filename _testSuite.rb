@@ -44,19 +44,14 @@ while Time.now.year < 2018
 
 
 
-            @nameCity = 'FKjuudTestDel_12_9_2014'
            # addPriceToDistr autArr,'priceautotes.xls',@nameCity
            # waitUntilLoadPrice autArr,@nameCity,@nameDistr
-            verifPriceUp autArr,@nameCity,'OC90'
-
-
            # addPriceToDistr autArr,'priceautotes.xls'
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
 
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
-
             startTestaddFranch autArr
 
             if !@lan
