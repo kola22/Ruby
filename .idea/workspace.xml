@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_testSuite.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_testSuite.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_testSuite.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1692">
-              <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.40128756" vertical-offset="490" max-vertical-offset="1854">
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -60,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verifPriceUp.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="verifPriceUp.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5358744" vertical-offset="6398" max-vertical-offset="7290">
-              <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+            <state vertical-scroll-proportion="-55.333332" vertical-offset="0" max-vertical-offset="7128">
+              <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="out_16:25_12_September.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out_16:25_12_September.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,8 +96,8 @@
       <file leaf-file-name="musthave.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/musthave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7578" max-vertical-offset="8928">
-              <caret line="440" column="20" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="8928">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -138,8 +148,8 @@
         <option value="$PROJECT_DIR$/Addprofile.rb" />
         <option value="$PROJECT_DIR$/musthave.rb" />
         <option value="$PROJECT_DIR$/test.rb" />
-        <option value="$PROJECT_DIR$/_testSuite.rb" />
         <option value="$PROJECT_DIR$/verifPriceUp.rb" />
+        <option value="$PROJECT_DIR$/_testSuite.rb" />
       </list>
     </option>
   </component>
@@ -413,7 +423,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/verifPriceUp.rb</url>
-          <line>382</line>
+          <line>373</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
@@ -754,10 +764,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out_13:14_12_September.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="24.0" vertical-offset="624" max-vertical-offset="1530">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7578" max-vertical-offset="8928">
-          <caret line="440" column="20" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="8928">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_16:25_12_September.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -770,29 +799,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out_13:14_12_September.txt">
+    <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="24.0" vertical-offset="624" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-55.333332" vertical-offset="0" max-vertical-offset="7128">
+          <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_testSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1692">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5358744" vertical-offset="6398" max-vertical-offset="7290">
-          <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.40128756" vertical-offset="490" max-vertical-offset="1854">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding />
         </state>
       </provider>

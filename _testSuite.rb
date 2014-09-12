@@ -41,6 +41,15 @@ while Time.now.year < 2018
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
 
+
+
+
+            @nameCity = 'FKjuudTestDel_12_9_2014'
+           # addPriceToDistr autArr,'priceautotes.xls',@nameCity
+           # waitUntilLoadPrice autArr,@nameCity,@nameDistr
+            verifPriceUp autArr,@nameCity,'OC90'
+
+
            # addPriceToDistr autArr,'priceautotes.xls'
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
