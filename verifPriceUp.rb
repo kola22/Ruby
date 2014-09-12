@@ -72,7 +72,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- проверка наценок в профиле клиента#{@conslwhite}"
     @out_file.puts("\n Отчет прохождения теста по проверке наценок в профиле клиента")
     step = 0
-    allstep = 25
+    allstep = 58
     @pnum = pnum
     begin
         choiceBrws 1
@@ -380,8 +380,6 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} Наценка ограничена максимальной наценкой в маршруте. Итоговая цена: #{priceInFloat*(1+150/100.0)}")
         verifPriceClient hrefSiteClient,description,priceInFloat*(1+150/100.0)
 
-
-        asleep 3333
     rescue
         @err+=1
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"

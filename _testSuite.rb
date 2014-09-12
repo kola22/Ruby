@@ -3,11 +3,12 @@
 #--
 ## цели на добавления тестов:
 ## DONE:                      1 недавно была задача по приоритетам на текстовых сообщениях ГК и франча
-## 2 задача у команды САши на тестирование онлайн поставщиков
+## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
 ## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
 ## 4 может быть винкью . наверно попозже
 ## 5 недавняя задача, проверка письма о ошибке генерации прайса 4мс
-## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог,
+## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог :p,
+## DONE: ценообразование.
 
 noRun = 0
 @nameDistr = []
@@ -35,13 +36,10 @@ while Time.now.year < 2018
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-        ###lhmGERTestDel_18_8_2014
-
             a = Time.now
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-
 
            # addPriceToDistr autArr,'priceautotes.xls'
            # waitUntilLoadPrice autArr,false,@nameDistr
@@ -60,17 +58,17 @@ while Time.now.year < 2018
             end
 
             localText autArrAutotest,'Гуково'
-            waitUntilLoadPrice autArr,false,@nameDistr
+        waitUntilLoadPrice autArr,false,@nameDistr
+            verifPriceUp autArr,false,'OC90'
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             addPriceToDistr autArr,'русский.xls',@nameCity
             addPriceToDistr autArr,'priceautotes.xls',@nameCity
             startTest_addOrder autArr
-            waitUntilLoadPrice autArr,@nameCity,@nameDistr
-
+        waitUntilLoadPrice autArr,@nameCity,@nameDistr
+            verifPriceUp autArr,@nameCity,'OC90'
             sum = ((Time.now - a)/60).round 2
 
-  ##      puts "#{@conslgreen}Все тесты успешно пройдены#{@conslwhite},время прохождения: #{sum} минут"
     rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
