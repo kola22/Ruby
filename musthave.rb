@@ -309,7 +309,7 @@ def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
-@out_file.puts("\b \b Отчет . Проверям результат загрузки дисктибьюторов")
+@out_file.puts("\b \b Отчет . Проверям результат загрузки дистрибьюторов")
     if nameFra
         $driver.find_element(:link_text, "Клиенты").click
         $driver.find_element(:link_text, "Франчайзи").click
@@ -432,6 +432,28 @@ def parserPogodaTGKMSK
         @out_file.puts(" \b Теги погоды на завтра в Таганроге: #{@x2} \b \b \b \b ")
     rescue
     end
+end
+
+
+class PageRoute
+    def goToRouteList distrName,nameRoute=false
+        $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{distrName}')]/../following-sibling::td[2]").click
+        if nameRoute
+        else
+            $driver.find_element(:xpath,"//td/a[@title='Редактировать маршрут']").click
+        end
+    end
+    def changeRoute arrToChange
+        y=0
+        x = arrToChange.size
+        while y < x
+            $driver.find_element(:name,arrToChange.keys[y]).clear
+            $driver.find_element(:name,arrToChange.keys[y]).send_keys arrToChange.values[y]
+            y+=1
+        end
+        $driver.find_element(:xpath,"//*[@value='Сохранить изменения']").click
+    end
+
 end
 
 ######################### Alien
