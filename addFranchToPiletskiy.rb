@@ -19,7 +19,7 @@ def startTestaddFranch autharr
 
 
         $driver.find_element(:link_text,'Добавить клиента').click
-        clientName = randomTxt(5)
+        clientName = randomTxt(15)+'testDel'
         $driver.find_element(:id, 'newCustomerName').send_keys "#{clientName}"
         $driver.find_element(:id, 'newCustomerEmail').send_keys "#{clientName}nodatest@nodasoft.com"
         $driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click

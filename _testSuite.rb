@@ -55,8 +55,8 @@ while Time.now.year < 2018
             startTestaddFranch autArr
 
             if !@lan
-                forMcOtziviShop autArr4mc
-                forMcOtzivi autArr4mc
+                forMcOtziviShop autArr4mc                       ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
+                forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
                 startTest_addprofile autArr                     ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
                 startTest_addprofile_toFranch autArr, @nameCity ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
             end
