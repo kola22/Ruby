@@ -22,9 +22,10 @@ require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
-
+if ARGV[0] == '.lan'
 @lan=ARGV[0]
-
+end
+@needrun = ARGV[0]
 while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     @err = 0
@@ -36,6 +37,9 @@ while Time.now.year < 2018
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
+
+
+
             a = Time.now
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
@@ -47,11 +51,25 @@ while Time.now.year < 2018
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
 
+            ## <костыль> для проверочных запусков в виртуальной машине, хотел конечно задавть имя функции в передаваемый параметр, да вот только не знаю как это реализовать
+            if @needrun == '1'
+                addPriceToDistr autArr,'русский.xls'
+            elsif @needrun == '2'
+                startTestaddFranch autArr
+            elsif @needrun == '3'
+                forMcOtzivi autArr4mc
+            elsif @needrun == '4'
+                startTest_addOrder autArr
+            elsif @needrun == '5'
+                startTest_addprofile autArr
+            end
+            ## </костыль>
+
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
             startTestaddFranch autArr
 
-            if !@lan
+            if @lan !='.lan'
                 forMcOtziviShop autArr4mc                       ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
                 forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
                 startTest_addprofile autArr                     ## нельзя локально проверить, из-за ошибки при посылке аякс запроса

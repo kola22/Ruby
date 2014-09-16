@@ -2,12 +2,22 @@
 # encoding: utf-8
 # Class names must be capitalized.  Technically, it's a constant.
 
-def function
-    "I am #{self}, of class #{self.class}"
+
+# define a user class
+class User
+    attr_accessor :name
+
+    def initialize(name)
+        @name = name.capitalize
+    end
+
 end
 
-puts function # => "I am main, of class Object"
+# create a user object
+user = User.new('Shaymol')
 
-puts Object.private_instance_methods.grep(/function/) # => [:function]
+# this is similar to user.name, and in PHP similar to call_user_func($obj, 'methodName');
+puts user.send(:name)
 
+# => Shaymol
 
