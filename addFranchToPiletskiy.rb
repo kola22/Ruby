@@ -45,7 +45,7 @@ def startTestaddFranch autharr
         @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить франча")
         $driver.find_element(:name, 'agreeWithCreation').click
         $driver.find_element(:id, 'clientAliveSearch').send_keys clientName
-        asleep
+        asleep 5
         $driver.find_element(:class, 'aliveSearchRow').click
         $driver.find_element(:name, 'email').send_keys("#{@nameCity}nodatest@nodasoft.com")
         $driver.find_element(:name, 'city').send_keys("#{@nameCity}")

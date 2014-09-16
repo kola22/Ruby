@@ -2,22 +2,12 @@
 # encoding: utf-8
 # Class names must be capitalized.  Technically, it's a constant.
 
-
-# define a user class
-class User
-    attr_accessor :name
-
-    def initialize(name)
-        @name = name.capitalize
-    end
-
+def foo
+    puts yield # выполняем блок
+    puts yield + yield # и еще, и еще выполняем
 end
-
-# create a user object
-user = User.new('Shaymol')
-
-# this is similar to user.name, and in PHP similar to call_user_func($obj, 'methodName');
-puts user.send(:name)
-
-# => Shaymol
-
+foo { 2 } # 2 4
+def bar(&block) # или, если поменьше пудры
+    puts yield block # выполняем блок
+end
+bar { 3 } # 3
