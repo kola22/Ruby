@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 #Добавление франча
-# require '/opt/projects/autotest/Ruby/musthave'
+ require '/opt/projects/autotest/Ruby/musthave'
 
 def startTestaddFranch autharr
 
@@ -13,17 +13,32 @@ def startTestaddFranch autharr
         allstep = 5
         @nameCity = randomTxt(6) + "TestDel" + "_#{Time.now.day}_#{Time.now.month}_#{Time.now.year}"
         choiceBrws 1
-        authPUservice autharr[0], autharr[1], autharr[2], 1
+
         sleep 0.5
-        $driver.find_element(:link_text, 'Клиенты').click
 
-
-        $driver.find_element(:link_text,'Добавить клиента').click
         clientName = randomTxt(15)+'testDel'
+
+        # Нужно сделать регистрацию не в ПУ, а на сайте
+            $driver.get "http://#{autharr[2]}"
+            isElementPresent?(:class,'button-close')
+            $driver.find_element(:xpath, "//*[contains(text(),'Регистрация')]").click
+            $driver.find_element(:xpath, "//input[@value='Продолжить']").click
+
+        $driver.find_element(:name,'fname').send_keys clientName
+        $driver.find_element(:id,'email').send_keys clientName+'nodatest@nodasoft.com'
+        password = randomTxt 10
+        $driver.find_element(:id,'password').send_keys password
+        $driver.find_element(:id,'password_confirm').send_keys password
+        $driver.find_element(:xpath, "//input[@value='Продолжить']").click
+        ##
+=begin
+        $driver.find_element(:link_text, 'Клиенты').click
+        $driver.find_element(:link_text,'Добавить клиента').click
         $driver.find_element(:id, 'newCustomerName').send_keys "#{clientName}"
         $driver.find_element(:id, 'newCustomerEmail').send_keys "#{clientName}nodatest@nodasoft.com"
         $driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click
-
+=end
+        authPUservice autharr[0], autharr[1], autharr[2], 1
         $driver.find_element(:link_text, 'Клиенты').click
         $driver.find_element(:link_text, 'Франчайзи').click
         $driver.find_element(:link_text, 'Добавить франчайзи').click

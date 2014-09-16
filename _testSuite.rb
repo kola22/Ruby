@@ -3,12 +3,12 @@
 #--
 ## цели на добавления тестов:
 ## DONE:                      1 недавно была задача по приоритетам на текстовых сообщениях ГК и франча
-## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
 ## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
 ## 4 может быть винкью . наверно попозже
 ## 5 недавняя задача, проверка письма о ошибке генерации прайса 4мс
 ## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог :p,
 ## DONE: ценообразование.
+## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
 
 noRun = 0
 @nameDistr = []
@@ -52,15 +52,15 @@ while Time.now.year < 2018
            # verifPriceUp autArr,false,'OC90'
 
             ## <костыль> для проверочных запусков в виртуальной машине, хотел конечно задавть имя функции в передаваемый параметр, да вот только не знаю как это реализовать
-            if @needrun == '1'
+            if @needrun == 'addPriceToDistr'
                 addPriceToDistr autArr,'русский.xls'
-            elsif @needrun == '2'
+            elsif @needrun == 'startTestaddFranch'
                 startTestaddFranch autArr
-            elsif @needrun == '3'
+            elsif @needrun == 'forMcOtzivi'
                 forMcOtzivi autArr4mc
-            elsif @needrun == '4'
+            elsif @needrun == 'startTest_addOrder'
                 startTest_addOrder autArr
-            elsif @needrun == '5'
+            elsif @needrun == 'startTest_addprofile'
                 startTest_addprofile autArr
             end
             ## </костыль>
