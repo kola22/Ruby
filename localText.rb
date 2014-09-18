@@ -81,7 +81,6 @@ def localText autharr,nameFra
 
 
         def verifLocalInPUfranch franchHref,blokToChange,naborToChange,whatVerif,local
-            puts 'TEST TEST TEST'
             asleep
             $driver.get franchHref
             $driver.find_element(:link_text,'Внешний вид и контент').click
@@ -96,7 +95,6 @@ def localText autharr,nameFra
 
             $driver.find_element(:xpath, "//*[@value='Найти']").click
             if whatVerif == $driver.find_element(:xpath, "//*[contains(text(),'#{naborToChange}')]/following-sibling::td[1]").text
-                puts 'Good'
             else
                 puts 'err'
                 @err+=1
@@ -150,7 +148,6 @@ def localText autharr,nameFra
         end
 
         @out_file.puts("Шаг #{step+=1} из #{allstep} Удаляем все выставленные значения локализации на франче и на ГК")
-        puts '1'
         puts hrefPUfranch
         delLocalText hrefPUfranch,'Блок управления сортировкой'
         delLocalText hrefPUGK,'Блок управления сортировкой'
@@ -158,7 +155,6 @@ def localText autharr,nameFra
         @out_file.puts("Шаг #{step+=1} из #{allstep} Выставляем значение #{varToText} в Русскую локаль на ГК")
         changelocaltext 'Блок управления сортировкой','by_availability',varToText,false,'Русский Россия'
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем выставленное значение в ПУ франча. В столбце ПОУМОЛЧАНИЮ отображается только что внесенное значение с ГК")
-        puts '2'
         puts hrefPUfranch
         verifLocalInPUfranch hrefPUfranch,'Блок управления сортировкой','by_availability',varToText,'Русский Россия'
 
