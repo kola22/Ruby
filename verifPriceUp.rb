@@ -181,7 +181,8 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр P2, устанавливаем 100")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23', 'p2_new' => '100','description_new'=>'ZZZZ3'}
+        description_new = randomTxt 40
+        arrRoute = {'deadline_new' => '23', 'p2_new' => '100','description_new'=>description_new}
         route = PageRoute.new
         route.goToRouteList distrName
         route.changeRoute arrRoute
@@ -192,7 +193,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр P2, устанавливаем -54")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23', 'p2_new' => '-54','description_new'=>'ZZZZ3'}
+        arrRoute = {'deadline_new' => '23', 'p2_new' => '-54'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена уменьшилась на 54 процента от цены проверки из шага #{fix_step}")
@@ -201,7 +202,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр P1 устанавливаем 333, параметр Р2 обнуляем")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23', 'p2_new' => '0','description_new'=>'ZZZZ3','p1_new'=>'333'}
+        arrRoute = {'deadline_new' => '23', 'p2_new' => '0','p1_new'=>'333'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена увеличилась на 333% относительно цены в шаге #{fix_step}")
@@ -210,7 +211,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр P1 устанавливаем -55")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'-55'}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'-55'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена уменьшилась на 55% относительно цены в шаге #{fix_step}")
@@ -219,7 +220,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр P1 устанавливаем -55")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'-55'}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'-55'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена уменьшилась на 55% относительно цены в шаге #{fix_step}")
@@ -237,7 +238,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр C1 устанавливаем 100, остальные параметры обнуляем")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'0','c1_new'=>'100'}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'0','c1_new'=>'100'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте выводится цена с наценкой на бренд (-22 процента) умноженной на 2")
@@ -247,7 +248,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
     @out_file.puts("Шаг #{step+=1} из #{allstep} в маршруте меняем параметр C1 устанавливаем 100, остальные параметры обнуляем")
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'0','c1_new'=>'-100'}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'0','c1_new'=>'-100'}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте выводится цена как бы без наценки, из-за того что -100 в формуле прайсАут умножает прайсАП на ноль")
@@ -258,7 +259,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
         c1=-155
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'0','c1_new'=>c1.to_s}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'0','c1_new'=>c1.to_s}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте выводится цена рассчитанная по формуле: (Цена_закупки+(Цена_закупки*(1+(c1/100.0))*(Наценка_На_Бренд/100.0)))")
@@ -272,7 +273,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
         $driver.get @hrefPU
         $driver.find_element(:link_text,'Поставщики').click
         primary_priceup_to_contractor_new = rand(50..99)
-        arrRoute = {'deadline_new' => '23','description_new'=>'ZZZZ3','p1_new'=>'0','c1_new'=>'0','primary_priceup_to_contractor_new'=>primary_priceup_to_contractor_new.to_s}
+        arrRoute = {'deadline_new' => '23','p1_new'=>'0','c1_new'=>'0','primary_priceup_to_contractor_new'=>primary_priceup_to_contractor_new.to_s}
         route.goToRouteList distrName
         route.changeRoute arrRoute
     @out_file.puts("Шаг #{step+=1} из #{allstep} Мы видим наценку от бренда, так как она установлена и имеет более высший приоритет, чем приоритетная наценка")

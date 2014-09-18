@@ -62,6 +62,10 @@ while Time.now.year < 2018
                 startTest_addOrder autArr
             elsif @needrun == 'startTest_addprofile'
                 startTest_addprofile autArr
+            elsif @needrun == 'verifPriceUp'
+                verifPriceUp autArr,false,'OC90'
+            elsif @needrun == 'localText'
+                localText autArrAutotest,'Гуково'
             end
             ## </костыль>
 

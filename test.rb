@@ -2,12 +2,22 @@
 # encoding: utf-8
 # Class names must be capitalized.  Technically, it's a constant.
 
-def foo
-    puts yield # выполняем блок
-    puts yield + yield # и еще, и еще выполняем
+a=gets
+c=gets.chomp
+c=c.to_s
+a=a.to_f
+b=gets
+b=b.to_f
+
+def calc a,b,c=false
+    if c =='+'
+        puts a+b
+    elsif c=='*'
+        puts a*b
+    elsif c=='/'
+        puts a/b
+    end
+
 end
-foo { 2 } # 2 4
-def bar(&block) # или, если поменьше пудры
-    puts yield block # выполняем блок
-end
-bar { 3 } # 3
+
+calc a,b,c

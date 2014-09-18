@@ -18,7 +18,6 @@ def startTestaddFranch autharr
 
         clientName = randomTxt(15)+'testDel'
 
-        # Нужно сделать регистрацию не в ПУ, а на сайте
             $driver.get "http://#{autharr[2]}"
             isElementPresent?(:class,'button-close')
             $driver.find_element(:xpath, "//*[contains(text(),'Регистрация')]").click
