@@ -6,6 +6,7 @@
 ## 3 ТЕК док всё же надо как-то проверять , а зачем аа ?
 ## 4 может быть винкью . наверно попозже
 ## 5 недавняя задача, проверка письма о ошибке генерации прайса 4мс
+## 6 ВИК-запросы. Обычные. С сайта.
 ## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог :p,
 ## DONE: ценообразование.
 ## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
@@ -22,6 +23,8 @@ require '/opt/projects/autotest/Ruby/forMcOtzivi'
 require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
+require '/opt/projects/autotest/Ruby/findErrAnnScreeShot'
+
 if ARGV[0] == '.lan'
 @lan=ARGV[0]
 end
@@ -41,6 +44,7 @@ while Time.now.year < 2018
 
 
             a = Time.now
+            autArrSpecial = ['piletskiy', 'nodakola22', 'parts.portalavto.com']
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
@@ -66,6 +70,13 @@ while Time.now.year < 2018
                 verifPriceUp autArr,false,'OC90'
             elsif @needrun == 'localText'
                 localText autArrAutotest,'Гуково'
+            elsif @needrun == 'findErrAnnScreeShot'
+                while Time.now.year < 2018
+                    b = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+                    puts b
+                    findErrAnnScreeShot autArrSpecial
+                    asleep 600
+                end
             end
             ## </костыль>
 
@@ -92,7 +103,7 @@ while Time.now.year < 2018
             verifPriceUp autArr,@nameCity,'OC90'
             sum = ((Time.now - a)/60).round 2
 
-    rescue
+    ##rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"

@@ -2,22 +2,11 @@
 # encoding: utf-8
 # Class names must be capitalized.  Technically, it's a constant.
 
-a=gets
-c=gets.chomp
-c=c.to_s
-a=a.to_f
-b=gets
-b=b.to_f
+require 'rest-client'
 
-def calc a,b,c=false
-    if c =='+'
-        puts a+b
-    elsif c=='*'
-        puts a*b
-    elsif c=='/'
-        puts a/b
-    end
+server = "http://test-tecdoc.ru.public.api.abcp.ru/basket/shipmentMethods?userlogin=api@test-tecdoc.ru&userpsw=ace5aad7dfb0ff3830e398c9091149e2"
 
-end
 
-calc a,b,c
+require 'rest_client'
+
+RestClient.get server, {:params => {:id => 50, 'foo' => 'bar'}}
