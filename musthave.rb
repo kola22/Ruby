@@ -36,8 +36,11 @@ def authPUservice (login, password, sitesttogo, goservice=1)
     $driver.find_element(:name => 'go').click
     if goservice == 1
         $driver.get "http://root.abcp.ru#{@lan}/?page=customers&letter=service"
-    else
+    elsif goservice == 0
         $driver.get "http://root.abcp.ru#{@lan}/?page=customers&letter=all"
+    elsif goservice == 333
+        $driver.find_element(:id,'search').send_keys sitesttogo
+        $driver.find_element(:xpath,"//input[@value='Найти']").click
     end
     @hrefPU=$driver.find_element(:link_text, (sitesttogo)).attribute("href")
     $driver.get lanUrl @hrefPU

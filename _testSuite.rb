@@ -75,7 +75,7 @@ while Time.now.year < 2018
                     b = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
                     puts b
                     findErrAnnScreeShot autArrSpecial
-                    asleep 600
+                    asleep 300
                 end
             end
             ## </костыль>
