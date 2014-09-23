@@ -20,7 +20,10 @@ def findErrAnnScreeShot autharr
     $driver.find_element(:id, "pcode").send_keys "OC90"
     rescue
     puts 'сайт лег!'
-    $driver.save_screenshot("screen/#{a}.png")
+    $driver.save_screenshot("screen/#{autharr[2]}___#{a}.png")
+        if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
+            puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
+        end
     end
     $driver.quit
 end

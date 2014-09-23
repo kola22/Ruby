@@ -79,11 +79,11 @@ while Time.now.year < 2018
                 localText autArrAutotest,'Гуково'
             elsif @needrun == 'findErrAnnScreeShot'
                 while Time.now.year < 2018
+
                     timeNow
                     findErrAnnScreeShot autArrSpecial
                     timeNow
                     findErrAnnScreeShot autArrSpecial2
-
                 end
             end
             ## </костыль>
