@@ -28,6 +28,12 @@ require '/opt/projects/autotest/Ruby/findErrAnnScreeShot'
 if ARGV[0] == '.lan'
 @lan=ARGV[0]
 end
+
+def timeNow
+
+    aa=Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+    puts aa
+end
 @needrun = ARGV[0]
 while Time.now.year < 2018
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
@@ -45,6 +51,7 @@ while Time.now.year < 2018
 
             a = Time.now
             autArrSpecial = ['piletskiy', 'nodakola22', 'parts.portalavto.com']
+            autArrSpecial2 = ['piletskiy', 'nodakola22', 'bilstein.ru']
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
@@ -72,10 +79,11 @@ while Time.now.year < 2018
                 localText autArrAutotest,'Гуково'
             elsif @needrun == 'findErrAnnScreeShot'
                 while Time.now.year < 2018
-                    b = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-                    puts b
+                    timeNow
                     findErrAnnScreeShot autArrSpecial
-                    asleep 300
+                    timeNow
+                    findErrAnnScreeShot autArrSpecial2
+
                 end
             end
             ## </костыль>

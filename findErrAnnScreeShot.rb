@@ -17,6 +17,7 @@ def findErrAnnScreeShot autharr
     $driver.get "http://#{autharr[2]}"
     $driver.find_element(:id, "pcode").send_keys "OC90"
     $driver.find_element(:id, "pcode").submit
+    $driver.find_element(:id, "pcode").send_keys "OC90"
     rescue
     puts 'сайт лег!'
     $driver.save_screenshot("screen/#{a}.png")
