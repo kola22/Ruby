@@ -37,7 +37,8 @@ def timeNow
 end
 @needrun = ARGV[0]
 while Time.now.year < 2018
-    a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+    a = timeNow
+    ##a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     @err = 0
     @namefile = "out_#{a}.txt"
     @out_file = File.new(@namefile, 'w')
@@ -47,8 +48,6 @@ while Time.now.year < 2018
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-
-
 
             a = Time.now
             autArrSpecial = ['piletskiy', 'nodakola22', 'parts.portalavto.com']
@@ -102,14 +101,19 @@ while Time.now.year < 2018
 
             localText autArrAutotest,'Гуково'
         waitUntilLoadPrice autArr,false,@nameDistr
+            if rand(0..2) == 1
             verifPriceUp autArr,false,'OC90'
+            end
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             addPriceToDistr autArr,'русский.xls',@nameCity
             addPriceToDistr autArr,'priceautotes.xls',@nameCity
             startTest_addOrder autArr
         waitUntilLoadPrice autArr,@nameCity,@nameDistr
+
+            if rand(0..2) == 1
             verifPriceUp autArr,@nameCity,'OC90'
+            end
             sum = ((Time.now - a)/60).round 2
 
     rescue
