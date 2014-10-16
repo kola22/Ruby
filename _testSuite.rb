@@ -101,9 +101,9 @@ while Time.now.year < 2018
 
             localText autArrAutotest,'Гуково'
         waitUntilLoadPrice autArr,false,@nameDistr
-            if rand(0..2) == 1
+            # # if rand(0..2) == 1
             verifPriceUp autArr,false,'OC90'
-            end
+            # # end
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             addPriceToDistr autArr,'русский.xls',@nameCity
