@@ -4,7 +4,6 @@
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findErrAnnScreeShot.rb" afterPath="$PROJECT_DIR$/findErrAnnScreeShot.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out_.txt" afterPath="$PROJECT_DIR$/out_.txt" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="findErrAnnScreeShot.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findErrAnnScreeShot.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5746509" vertical-offset="455" max-vertical-offset="1386">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.36197636" vertical-offset="239" max-vertical-offset="1476">
+              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -823,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findErrAnnScreeShot.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5746509" vertical-offset="455" max-vertical-offset="1386">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.36197636" vertical-offset="239" max-vertical-offset="1476">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding />
         </state>
       </provider>
