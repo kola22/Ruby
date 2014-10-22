@@ -37,9 +37,9 @@ def findErrAnnScreeShot2 autharr
         number = 'http://xn--80aaeu8aipbh1c4c2a.xn--p1ai/?pbrandnumber=28619&pbrandname=Febi'
         numberD = 'Febi'
     end
+
     begin
 
-        findBrand = $driver.find_element(:xpath,"//*[contains(text(),'#{numberD}')]")
 
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2],333
@@ -50,7 +50,7 @@ def findErrAnnScreeShot2 autharr
         $driver.find_element(:xpath,"//*[contains(text(),'Ожидаемый срок')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Аналоги')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
-        findBrand
+        $driver.find_element(:xpath,"//*[contains(text(),'#{numberD}')]")
 
         $driver.get @hrefPU
         $driver.find_element(:link_text, 'Клиенты').click
@@ -65,7 +65,7 @@ def findErrAnnScreeShot2 autharr
         $driver.find_element(:xpath,"//*[contains(text(),'Ожидаемый срок')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Аналоги')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
-        findBrand
+        $driver.find_element(:xpath,"//*[contains(text(),'#{numberD}')]")
 
 
     rescue
