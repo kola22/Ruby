@@ -39,7 +39,7 @@ def findErrAnnScreeShot2 autharr
     end
     begin
 
-        findBrand = $driver.find_element(:xpath,"//*[contains(text(),#{numberD})]")
+        findBrand = $driver.find_element(:xpath,"//*[contains(text(),'#{numberD}')]")
 
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2],333
