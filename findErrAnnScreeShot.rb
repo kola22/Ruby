@@ -32,8 +32,10 @@ def findErrAnnScreeShot2 autharr
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     if Time.now.min<30
         number = 'http://xn--80aaeu8aipbh1c4c2a.xn--p1ai/?pbrandnumber=OC90&pbrandname=Knecht'
+        numberD = 'Knecht'
     else
         number = 'http://xn--80aaeu8aipbh1c4c2a.xn--p1ai/?pbrandnumber=28619&pbrandname=Febi'
+        numberD = 'Febi'
     end
     begin
         choiceBrws 1
@@ -60,7 +62,7 @@ def findErrAnnScreeShot2 autharr
         $driver.find_element(:xpath,"//*[contains(text(),'Ожидаемый срок')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Аналоги')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
-        $driver.find_element(:xpath,"//*[contains(text(),'Febi')]")
+        $driver.find_element(:xpath,"//*[contains(text(),#{numberD})]")
 
 
     rescue
