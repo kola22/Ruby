@@ -34,12 +34,30 @@ def findErrAnnScreeShot2 autharr
         choiceBrws 1
         authPUservice autharr[0], autharr[1], autharr[2],333
         $driver.get "http://#{autharr[2]}"
+        asleep
+        $driver.get "http://xn--80aaeu8aipbh1c4c2a.xn--p1ai/?pbrandnumber=28619&pbrandname=Febi"
+        asleep
+        $driver.find_element(:xpath,"//*[contains(text(),'Ожидаемый срок')]")
+        # $driver.find_element(:xpath,"//*[contains(text(),'Аналоги')]")
+        # $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
+        $driver.find_element(:xpath,"//*[contains(text(),'Febi')]")
+
+        $driver.get @hrefPU
+        $driver.find_element(:link_text, 'Клиенты').click
+        $driver.find_element(:name,'filterCustomersBySearchString').send_keys 'test'
+        $driver.find_element(:xpath,"//*[@value='Найти']").click
+        asleep
+        $driver.find_element(:xpath,"//*[@title='Редактировать информацию о клиенте']").click
+        $driver.get $driver.find_element(:class,'linkTempLogin').attribute("href")
+        asleep
         $driver.get "http://xn--80aaeu8aipbh1c4c2a.xn--p1ai/?pbrandnumber=28619&pbrandname=Febi"
         asleep 5
         $driver.find_element(:xpath,"//*[contains(text(),'Ожидаемый срок')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Аналоги')]")
         # $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
-        # $driver.find_element(:xpath,"//*[contains(text(),'Febi')]")
+        $driver.find_element(:xpath,"//*[contains(text(),'Febi')]")
+
+
     rescue
         puts 'сайт лег!'
         $driver.save_screenshot("screen/#{autharr[2]}___#{a}.png")
