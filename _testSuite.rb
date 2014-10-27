@@ -91,7 +91,7 @@ while Time.now.year < 2018
                 while Time.now.year < 2018
                     timeNow
                     findErrAnnScreeShot2 autArrSpecial_2
-                    asleep 60
+                    asleep
                 end
             end
             ## </костыль>
