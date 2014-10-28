@@ -31,9 +31,8 @@ if ARGV[0] == '.lan'
 end
 
 def timeNow
-
     aa=Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-    puts aa
+    return aa   
 end
 @needrun = ARGV[0]
 while Time.now.year < 2018
