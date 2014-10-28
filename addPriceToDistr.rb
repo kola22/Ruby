@@ -82,6 +82,7 @@ def addPriceToDistr autharr,fileName,nameFra=false
             $driver.find_element(:id, 'addDistributorDeadline').send_keys '5'
             $driver.find_element(:class, 'ui-button-text').click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили поставщика")
+            asleep
             $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click
             $driver.find_element(:name, 'uploadFile').send_keys "/opt/projects/autotest/Ruby/#{fileName}"
             $driver.find_element(:xpath, "//*[@*='saveParamsUpdate']").click
