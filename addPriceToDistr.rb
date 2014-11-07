@@ -65,7 +65,6 @@ def addPriceToDistr autharr,fileName,nameFra=false
 
             ## создаем тестового сотрудника, которому будут отсыласть письма о обновлении прайс листа
 
-
             delAlldistr('PleaseDelMeBro')
             ##выключаем всех остальных поставщиков !!
             @out_file.puts("Шаг #{step+=1} из #{allstep} выключаем остальных поставщиков")
@@ -77,10 +76,10 @@ def addPriceToDistr autharr,fileName,nameFra=false
 
             $driver.find_element(:link_text, 'Добавить поставщика с ручным обновлением').click
             nameDistr = randomTxt(3)+"_PleaseDelMeBro_#{Time.new.strftime('%Y-%m-%d %H:%M:%S')}"
-        ##    puts "Имя поставщика #{nameDistr}"
+            puts "Имя поставщика #{nameDistr}"
             $driver.find_element(:id, 'addDistributorName').send_keys nameDistr
             $driver.find_element(:id, 'addDistributorDeadline').send_keys '5'
-            $driver.find_element(:class, 'ui-button-text').click
+            $driver.find_element(:xpath, "//button/span[contains(text(),'Добавить')]").click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили поставщика")
             asleep
             $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[7]").click

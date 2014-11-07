@@ -32,7 +32,7 @@ end
 
 def timeNow
     aa=Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-    return aa   
+    return aa
 end
 @needrun = ARGV[0]
 while Time.now.year < 2018
@@ -101,7 +101,7 @@ while Time.now.year < 2018
 
             if @lan !='.lan'
                 forMcOtziviShop autArr4mc                       ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
-                forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
+               # forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
                 startTest_addprofile autArr                     ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
                 startTest_addprofile_toFranch autArr, @nameCity ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
             end
@@ -122,7 +122,7 @@ while Time.now.year < 2018
             verifPriceUp autArr,@nameCity,'OC90'
             end
             sum = ((Time.now - a)/60).round 2
-
+        ## тут должен быть delResellerFra autArr, @nameCity
     rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
