@@ -316,7 +316,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
     if nameFra
         $driver.find_element(:link_text, "Клиенты").click
         $driver.find_element(:link_text, "Франчайзи").click
-        hrefPUfranch =$driver.find_element(:xpath, "//*[contains(text(),'#{nameFra}')]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute("href")
+        hrefPUfranch =$driver.find_element(:xpath, "//*[contains(text(),#{nameFra})]/following-sibling::*/*/*[@title='Выполнить вход в панель управления: ']/parent::a").attribute('href')
         $driver.get hrefPUfranch
     end
 
@@ -368,7 +368,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         end
     end
 
-    rescue
+    ###rescue
         @err+=1
         @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась")
 

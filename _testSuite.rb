@@ -61,6 +61,10 @@ while Time.now.year < 2018
            # addPriceToDistr autArr,'priceautotes.xls'
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
+            @nameDistr = 'dsfsdfsdf'
+            @nameCity = 'IDgtglTestDel_19_11_2014'
+            waitUntilLoadPrice autArr,@nameCity,@nameDistr
+
 
             ## <костыль> для проверочных запусков в виртуальной машине, хотел конечно задавть имя функции в передаваемый параметр, да вот только не знаю как это реализовать
             if @needrun == 'addPriceToDistr'
@@ -123,7 +127,7 @@ while Time.now.year < 2018
             end
             sum = ((Time.now - a)/60).round 2
         ## тут должен быть delResellerFra autArr, @nameCity
-    rescue
+    ###rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
