@@ -3,3 +3,6 @@
 # Class names must be capitalized.  Technically, it's a constant.
 
 puts rand(0..1)
+
+
+'45:33'
