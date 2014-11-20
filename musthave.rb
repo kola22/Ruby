@@ -368,7 +368,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         end
     end
 
-    ###rescue
+    rescue
         @err+=1
         @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась")
 

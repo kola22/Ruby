@@ -127,7 +127,7 @@ while Time.now.year < 2018
             end
             sum = ((Time.now - a)/60).round 2
         ## тут должен быть delResellerFra autArr, @nameCity
-    ###rescue
+    rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
