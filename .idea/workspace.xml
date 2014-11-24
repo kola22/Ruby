@@ -4,7 +4,8 @@
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_testSuite.rb" afterPath="$PROJECT_DIR$/_testSuite.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.rb" afterPath="$PROJECT_DIR$/test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musthave.rb" afterPath="$PROJECT_DIR$/musthave.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_testSuite.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_testSuite.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_testSuite.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7882353" vertical-offset="397" max-vertical-offset="2700">
-              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1745" max-vertical-offset="2682">
+              <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -60,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="musthave.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="musthave.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/musthave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.851852" vertical-offset="6304" max-vertical-offset="8982">
-              <caret line="389" column="30" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.85165423" vertical-offset="4656" max-vertical-offset="8964">
+              <caret line="303" column="44" selection-start-line="303" selection-start-column="44" selection-end-line="303" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -105,16 +106,16 @@
         <option value="$PROJECT_DIR$/addFranchToPiletskiy.rb" />
         <option value="$PROJECT_DIR$/addPriceToDistr.rb" />
         <option value="$PROJECT_DIR$/Addprofile.rb" />
-        <option value="$PROJECT_DIR$/musthave.rb" />
         <option value="$PROJECT_DIR$/test.rb" />
+        <option value="$PROJECT_DIR$/musthave.rb" />
         <option value="$PROJECT_DIR$/_testSuite.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1058" />
+    <option name="x" value="1917" />
+    <option name="width" value="1926" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -324,7 +325,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1058" extended-state="7" />
+    <frame x="1917" y="0" width="1926" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -332,7 +333,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14802982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14962727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33785194" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -340,12 +341,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36392075" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -394,6 +395,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/musthave.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5980" max-vertical-offset="8982">
+          <caret line="383" column="46" selection-start-line="383" selection-start-column="46" selection-end-line="383" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_testSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1457" max-vertical-offset="2448">
@@ -743,6 +752,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13876653" vertical-offset="0" max-vertical-offset="908">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2896" max-vertical-offset="7146">
@@ -751,26 +767,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.rb">
+    <entry file="file://$PROJECT_DIR$/_testSuite.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13876653" vertical-offset="0" max-vertical-offset="908">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1745" max-vertical-offset="2682">
+          <caret line="141" column="13" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/musthave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.851852" vertical-offset="6304" max-vertical-offset="8982">
-          <caret line="389" column="30" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_testSuite.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7882353" vertical-offset="397" max-vertical-offset="2700">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.85165423" vertical-offset="4656" max-vertical-offset="8964">
+          <caret line="303" column="44" selection-start-line="303" selection-start-column="44" selection-end-line="303" selection-end-column="44" />
           <folding />
         </state>
       </provider>
