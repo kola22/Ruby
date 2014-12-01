@@ -136,7 +136,7 @@ def addProf (codeprof, ifdoch,notRand=false)
     $driver.find_element(:link_text, 'Клиенты').click
     $driver.find_element(:link_text, 'Профили').click
 
-    $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
+    $driver.find_element(:link_text, 'Добавить профиль').click
     if ifdoch == 1
         asleep 2
         $driver.find_element(:name, 'baseProfileId').click
@@ -158,7 +158,7 @@ def addProf (codeprof, ifdoch,notRand=false)
         $driver.find_element(:xpath, "//table[@id='editProfileTbl']/tbody/tr[*]/th[contains(text(),'%')]/following-sibling::td[*]/input").send_keys notRand
     end
 
-    $driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
+    $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
     @wait.until { $driver.find_element(:id, 'popup_msg_ok') }.click
 
     puts "Добавили профиль с кодом #{codeprof}"+ddd
