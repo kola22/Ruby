@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.priceautotes.xls#" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_11:7_24_November.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:29_2_December.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:33_2_December.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:38_2_December.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:46_2_December.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:47_2_December.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_9:48_2_December.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/verifPriceUp.rb" afterPath="$PROJECT_DIR$/verifPriceUp.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -80,47 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verifPriceUp.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="verifPriceUp.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.037037" vertical-offset="2672" max-vertical-offset="7146">
-              <caret line="165" column="68" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out_9:48_2_December.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out_9:48_2_December.txt">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31683168" vertical-offset="0" max-vertical-offset="909">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out_9:38_2_December.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out_9:38_2_December.txt">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="666">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out_9:29_2_December.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out_9:29_2_December.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6346369" vertical-offset="548" max-vertical-offset="7164">
+              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -447,7 +418,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/verifPriceUp.rb</url>
-          <line>374</line>
+          <line>375</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
@@ -821,40 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out_9:29_2_December.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="937">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out_9:38_2_December.txt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="666">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/verifPriceUp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.037037" vertical-offset="2672" max-vertical-offset="7146">
-          <caret line="165" column="68" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out_9:48_2_December.txt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31683168" vertical-offset="0" max-vertical-offset="909">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.6346369" vertical-offset="548" max-vertical-offset="7164">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
           <folding />
         </state>
       </provider>
