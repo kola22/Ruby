@@ -34,13 +34,13 @@ def editPriceUpProf nameProfile,priceUp,priceUpDistrOrBrandDistr=false,brandName
         up=$driver.find_element(:xpath,"//tr[@class='pricesUpHeader']/following-sibling::tr[@class='pricesUp']/*/input[@name='priceUp']")
         up.clear
         up.send_keys priceUp
-        $driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
+        $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
         isElementPresent?(:id, 'popup_msg_ok')
     else
         $driver.find_element(:xpath, "//*[contains(text(),'#{nameProfile}')]/following-sibling::*/*/img[@title='Редактировать']").click
         $driver.find_element(:xpath,"//input[@name='priceUp'][@maxlength='5']").clear
         $driver.find_element(:xpath,"//input[@name='priceUp'][@maxlength='5']").send_keys priceUp
-        $driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
+        $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
         isElementPresent?(:id, 'popup_msg_ok')
     end
 end
@@ -163,7 +163,7 @@ def verifPriceUp autharr,nameFra=false,pnum='OC90'
         $driver.find_element(:link_text,'Профили').click
         $driver.find_element(:xpath, "//*[contains(text(),'#{nameProfile}')]/following-sibling::*/*/img[@title='Редактировать']").click
         $driver.find_element(:xpath,"//tr[@class='pricesUpHeader']/following-sibling::tr[@class='pricesUp']/*/a[@class='deletePriceUp']").click
-        $driver.find_element(:xpath, '//td[@class="ralignRight"]/input[@value="Сохранить"]').click
+        $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
         isElementPresent?(:id, 'popup_msg_ok')
     @out_file.puts("Шаг #{step+=1} из #{allstep} На сайте цена как от наценки на бренд")
 
