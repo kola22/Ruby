@@ -28,9 +28,6 @@ def startTestaddFranch autharr
         password = randomTxt 10
         $driver.find_element(:id,'password').send_keys password
         $driver.find_element(:id,'password_confirm').send_keys password
-        if isElementPresent?(:id,'mobile')
-
-        end
         $driver.find_element(:id, 'submitRetailButton').click
         ##
 =begin

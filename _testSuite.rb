@@ -53,7 +53,7 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-            autArrSpecial_2 = ['piletskiy', 'nodakola22', 'твоязапчасть.рф']
+            autArrSpecial_2 = ['piletskiy', 'nodakola22', 'chida.ru']
 
            # addPriceToDistr autArr,'priceautotes.xls',@nameCity
            # waitUntilLoadPrice autArr,@nameCity,@nameDistr
@@ -87,10 +87,10 @@ while Time.now.year < 2018
                     findErrAnnScreeShot autArrSpecial2
                 end
 
-            elsif @needrun == 'findErrAnnScreeShot2'
+            elsif @needrun == 'findErrAnnScreeShotChida'
                 while Time.now.year < 2018
-                    timeNow
-                    findErrAnnScreeShot2 autArrSpecial_2
+                    puts timeNow
+                    findErrAnnScreeShotChida autArrSpecial_2
                     asleep
                 end
             end
