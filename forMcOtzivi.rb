@@ -22,7 +22,7 @@ def forMcOtzivi autharr
 
             isElementPresent?(:class, 'tooltipBtn')
             asleep
-            login4mc '+79043459228','kola22'
+            login4mc '+79043459228','846952'
 
             element = $driver.find_element :name => 'pcode'
             @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно авторизовались")

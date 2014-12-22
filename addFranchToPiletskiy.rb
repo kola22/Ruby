@@ -5,7 +5,6 @@
  require '/opt/projects/autotest/Ruby/musthave'
 
 def startTestaddFranch autharr
-
     puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление франча#{@conslwhite}"
     @out_file.puts("\n Отчет прохождения теста по добавление франча")
     begin
@@ -17,7 +16,11 @@ def startTestaddFranch autharr
         sleep 0.5
 
         clientName = randomTxt(15)+'testDel'
-
+        authPUservice autharr[0], autharr[1], autharr[2], 1
+        # $driver.find_element(:link_text, 'Внешний вид и контент').click
+        # $driver.find_element(:link_text, 'Формы').click
+        # $driver.find_element(:xpath, "//*[contains(text(),'Форма регистрации розница')]/following-sibling::*/*[@title='Редактировать набор элементов']").click
+        #
             $driver.get "http://#{autharr[2]}"
             isElementPresent?(:class,'button-close')
             $driver.find_element(:xpath, "//*[contains(text(),'Регистрация')]").click
@@ -37,7 +40,9 @@ def startTestaddFranch autharr
         $driver.find_element(:id, 'newCustomerEmail').send_keys "#{clientName}nodatest@nodasoft.com"
         $driver.find_element(:xpath, "//span[contains(text(),'Создать')]").click
 =end
-        authPUservice autharr[0], autharr[1], autharr[2], 1
+
+        # authPUservice autharr[0], autharr[1], autharr[2], 1
+        $driver.get @hrefPU
         $driver.find_element(:link_text, 'Клиенты').click
         $driver.find_element(:link_text, 'Франчайзи').click
         $driver.find_element(:link_text, 'Добавить франчайзи').click

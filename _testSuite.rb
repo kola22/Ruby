@@ -11,7 +11,6 @@
 ## DONE: парсер нокогири : курсы валют (done), актуальную погоду (done), срочно с Авито-Таганрог :p,
 ## DONE: ценообразование.
 ## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
-
 noRun = 0
 @nameDistr = []
 require 'selenium-webdriver'
@@ -60,7 +59,6 @@ while Time.now.year < 2018
            # addPriceToDistr autArr,'priceautotes.xls'
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
-
 
 
             ## <костыль> для проверочных запусков в виртуальной машине, хотел конечно задавть имя функции в передаваемый параметр, да вот только не знаю как это реализовать
@@ -124,7 +122,7 @@ while Time.now.year < 2018
             end
             sum = ((Time.now - a)/60).round 2
         ## тут должен быть delResellerFra autArr, @nameCity
-    rescue
+    # rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"

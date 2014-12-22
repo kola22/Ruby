@@ -28,7 +28,7 @@ def forMcOtziviShop autharr
             @out_file.puts("Шаг #{step+=1} из #{allstep} Просят залогиниться")
             asleep
 
-            login4mc '+79043459228','kola22'
+            login4mc '+79043459228','846952'
 
             @out_file.puts("Шаг #{step+=1} из #{allstep} Входим как клиент на 4мс")
             $driver.get 'http://4mycar.ru/shop/43170'
