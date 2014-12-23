@@ -369,7 +369,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
     rescue
         @err+=1
-        @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась")
+        @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась. 1. В ПУ нет успешного результата 2.В руте нет отосланного письма")
 
     end
     $driver.quit

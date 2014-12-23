@@ -61,7 +61,10 @@ def startTest_addOrder autharr
         arrPartOrderinfo = [codePart, descPart, delTimePatr, pricePatr]
         $driver.find_element(:name, "order_go").click
         $driver.find_element(:class, "orderGo").click
-        numOrder =$driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/b/a").text ##).match(/([0-9]{1,})/)
+        numOrder =$driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/strong").text
+        puts numOrder
+
+        ##).match(/([0-9]{1,})/)
         @out_file.puts("Шаг #{step+=1} из #{allstep} Получаем номер заказа. --> #{numOrder}")
 
         $driver.get @hrefPU
@@ -70,7 +73,7 @@ def startTest_addOrder autharr
         @out_file.puts("Шаг #{step+=1} из #{allstep} Переходим в ПУ в заказ")
         findTextInPage arrPartOrderinfo, 0
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем, что данные в ПУ соответствуют данным при заказе с сайта")
-        verifSendEmailOrder numOrder[0]
+        verifSendEmailOrder numOrder
         @out_file.puts("Шаг #{step+=1} из #{allstep} Проверяем отосланные письма о заказе")
         puts "#{@conslgreen}Тест по добавлению ЗАКАЗА успешно пройден#{@conslwhite}"
     rescue
@@ -154,7 +157,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
 
         $driver.find_element(:name, "order_go").click
         $driver.find_element(:class, "orderGo").click
-        numOrder =$driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/b/a").text ##).match(/([0-9]{1,})/)
+        numOrder =$driver.find_element(:xpath, "//div[@class='fr-alert fr-alert-success']/strong").text ##).match(/([0-9]{1,})/)
         @out_file.puts("Шаг #{step+=1} из #{allstep} Успешно оформляем заказ. Запоминаем его номер и данные о позиции")
 
 
@@ -179,7 +182,7 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         textStatusGk = $driver.find_element(:xpath,"//*[contains(text(),'#{comment}')]/preceding-sibling::td[1]").text
         textStatusGk = textStatusGk.match(/([0-9]{1,})/)
 
-        verifSendEmailOrder numOrder[0]
+        verifSendEmailOrder numOrder
 
 
         $driver.get @hrefPU
