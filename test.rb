@@ -2,7 +2,9 @@
 # encoding: utf-8
 # Class names must be capitalized.  Technically, it's a constant.
 
-puts rand(0..1)
+if rand(0..2) == 1
+
+end
+sum = ((Time.now - a)/60).round 2
 
 
-'45:33'

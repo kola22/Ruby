@@ -46,7 +46,7 @@ while Time.now.year < 2018
     @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
-            a = Time.now
+            starttime = Time.now
             autArrSpecial = ['piletskiy', 'nodakola22', 'parts.portalavto.com']
             autArrSpecial2 = ['piletskiy', 'nodakola22', 'bilstein.ru']
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
@@ -120,7 +120,7 @@ while Time.now.year < 2018
             if rand(0..2) == 1
             verifPriceUp autArr,@nameCity,'OC90'
             end
-            sum = ((Time.now - a)/60).round 2
+            allTime = ((Time.now - starttime)/60).round(2)
         ## тут должен быть delResellerFra autArr, @nameCity
     rescue
         errrun = true
@@ -132,7 +132,7 @@ while Time.now.year < 2018
     end
     if errrun
         else
-            @out_file.puts("Время прохождения: #{sum} минут")
+            @out_file.puts("Время прохождения: #{allTime} минут")
             @out_file.puts("Не прошло тестов: #{@err}")
     end
     @out_file.puts("\n Время окончания теста: #{Time.now}\n ")
