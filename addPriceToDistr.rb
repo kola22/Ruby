@@ -20,7 +20,8 @@ def addPriceToDistr autharr,fileName,nameFra=false
             puts "#{@conslgreen} Начинаем автотест по добавлению прайса к дистрибьютору file upload: #{fileName}#{@conslwhite}"
             @out_file.puts("\n Отчет прохождения теста по добавлению прайса к дистрибьютору file upload: #{fileName}")
         end
-            choiceBrws 1
+            y =1
+            choiceBrws y
             authPUservice autharr[0], autharr[1], autharr[2], 1
 
             if nameFra
@@ -119,6 +120,7 @@ def addPriceToDistr autharr,fileName,nameFra=false
 
 
             @nameDistr << nameDistr
+        y=y+1
         rescue
         @err+=1
         @out_file.puts("ERR")

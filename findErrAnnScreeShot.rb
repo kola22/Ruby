@@ -10,14 +10,12 @@ def findErrAnnScreeShot autharr
     begin
     choiceBrws 1
     authPUservice autharr[0], autharr[1], autharr[2],333
-    $driver.find_element(:link_text, 'Клиенты').click
-    $driver.find_element(:link_text, 'Отчеты').click
-    $driver.find_element(:link_text, 'Заказы').click
-    $driver.find_element(:link_text, 'Главная').click
-    $driver.get "http://#{autharr[2]}"
-    $driver.find_element(:id, "pcode").send_keys "OC90"
-    $driver.find_element(:id, "pcode").submit
-    $driver.find_element(:id, "pcode").send_keys "OC90"
+    x=0
+    while x<501
+        $driver.get "http://www.weloveparts.ru/?page=disks_catalog&action=search&viewMode=tile&property%5Bbrands%5D%5B%5D=REPLICA&property%5Bbrands%5D%5B%5D=Replay&property%5Bbrands%5D%5B%5D=K%26K&property%5Bbrands%5D%5B%5D=MAK&property%5Bbrands%5D%5B%5D=LegeArtis&property%5Bbrands%5D%5B%5D=NZ&property%5Bbrands%5D%5B%5D=SKAD&property%5Bbrands%5D%5B%5D=ALUTEC&property%5Bbrands%5D%5B%5D=FR+Design&property%5Bbrands%5D%5B%5D=iFree&property%5Bdisk_type%5D%5B%5D=forged&property%5Bdisk_type%5D%5B%5D=cast&property%5Bdisk_type%5D%5B%5D=stamped&property%5Bwidth%5D%5B%5D=6&property%5Bwidth%5D%5B%5D=7&property%5Bwidth%5D%5B%5D=8&property%5Bwidth%5D%5B%5D=9.5&property%5Bdiameter%5D%5B%5D=16&property%5Bpcd%5D%5B%5D=114.3&property%5Bet%5D%5Bfrom%5D=-70&property%5Bet%5D%5Bto%5D=150&property%5Bhub_diameter%5D%5Bfrom%5D=40&property%5Bhub_diameter%5D%5Bto%5D=150"
+    x=x+1
+    end
+
     rescue
     puts 'сайт лег!'
     $driver.save_screenshot("screen/#{autharr[2]}___#{a}.png")

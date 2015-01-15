@@ -161,7 +161,7 @@ def addProf (codeprof, ifdoch,notRand=false)
     $driver.find_element(:xpath, '//td/input[@value="Сохранить"]').click
     @wait.until { $driver.find_element(:id, 'popup_msg_ok') }.click
 
-    puts "Добавили профиль с кодом #{codeprof}"+ddd
+    puts "Добавили профиль с кодом: #{codeprof}"+ddd
 
 end
 
@@ -229,7 +229,6 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     ##$driver.get 'http://4mycar.ru/'
 
     if isElementPresentlite(:id,'loginEnter')
-        puts 'if'
     isElementPresent?(:id,'loginEnter')
     $driver.find_element(:xpath,"//button[@type='submit']").click
     isElementPresent?(:id,'loginEnter')
@@ -369,7 +368,7 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
 
     rescue
         @err+=1
-        @out_file.puts("\b \b \b \b \b ERR Проверка поставщиков провалилась. 1. В ПУ нет успешного результата 2.В руте нет отосланного письма")
+        @out_file.puts("\b \b \b \b \b #{@conslred}ERR Проверка поставщиков провалилась. 1. В ПУ нет успешного результата 2.В руте нет отосланного письма#{@conslwhite}")
 
     end
     $driver.quit

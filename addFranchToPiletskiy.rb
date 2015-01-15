@@ -49,11 +49,12 @@ def startTestaddFranch autharr
         @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить франча")
         $driver.find_element(:name, 'agreeWithCreation').click
         $driver.find_element(:id, 'clientAliveSearch').send_keys clientName
-        asleep 5
+       # asleep 5
         $driver.find_element(:class, 'aliveSearchRow').click
         $driver.find_element(:name, 'email').send_keys("#{@nameCity}nodatest@nodasoft.com")
-        $driver.find_element(:name, 'city').send_keys("#{@nameCity}")
-        $driver.find_element(:class, 'btn').click
+        $driver.find_element(:name, 'city').send_keys @nameCity
+        #$driver.find_element(:class, 'btn').click
+        $driver.find_element(:xpath, "//*[@value='Добавить']").click
         findTextInPage ['Добрый день.']
         @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили. Отображается стандартный текст после добавления")
         asleep 30
@@ -78,7 +79,7 @@ def startTestaddFranch autharr
              asleep
         puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
 
-    rescue
+   # rescue
         @err+=1
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')
