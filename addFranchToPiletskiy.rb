@@ -79,7 +79,7 @@ def startTestaddFranch autharr
              asleep
         puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
 
-   # rescue
+   rescue
         @err+=1
         puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: Тест прерван')
