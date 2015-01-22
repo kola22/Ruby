@@ -5,8 +5,8 @@
  require '/opt/projects/autotest/Ruby/musthave'
 
 def startTestaddFranch autharr
-    puts "#{@conslgreen}Начинаем АВТОТЕСТ -- добавление франча#{@conslwhite}"
-    @out_file.puts("\n Отчет прохождения теста по добавление франча")
+    puts "#{$conslgreen}Начинаем АВТОТЕСТ -- добавление франча#{$conslwhite}"
+    $out_file.puts("\n Отчет прохождения теста по добавление франча")
     begin
         step = 0
         allstep = 5
@@ -46,7 +46,7 @@ def startTestaddFranch autharr
         $driver.find_element(:link_text, 'Клиенты').click
         $driver.find_element(:link_text, 'Франчайзи').click
         $driver.find_element(:link_text, 'Добавить франчайзи').click
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить франча")
+        $out_file.puts("Шаг #{step+=1} из #{allstep} Пытаемся добавить франча")
         $driver.find_element(:name, 'agreeWithCreation').click
         $driver.find_element(:id, 'clientAliveSearch').send_keys clientName
        # asleep 5
@@ -56,7 +56,7 @@ def startTestaddFranch autharr
         #$driver.find_element(:class, 'btn').click
         $driver.find_element(:xpath, "//*[@value='Добавить']").click
         findTextInPage ['Добрый день.']
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Добавили. Отображается стандартный текст после добавления")
+        $out_file.puts("Шаг #{step+=1} из #{allstep} Добавили. Отображается стандартный текст после добавления")
         asleep 30
         $driver.find_element(:link_text, 'Франчайзи').click
     ##    puts "Франчайзи с таким городом добавлен :: #{@nameCity}"
@@ -66,23 +66,23 @@ def startTestaddFranch autharr
 
         #проверка поставщика в созданном франче
         $driver.get hrefPUfra
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Перешли в ПУ франча #{@nameCity}")
+        $out_file.puts("Шаг #{step+=1} из #{allstep} Перешли в ПУ франча #{@nameCity}")
         findDistr "#{@sitesName} [online]"
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Проверили существование поставщика")
+        $out_file.puts("Шаг #{step+=1} из #{allstep} Проверили существование поставщика")
         $driver.get @hrefPU
         $driver.find_element(:link_text, 'Клиенты').click
         $driver.find_element(:link_text, 'Франчайзи').click
 
         fraEdit=@wait.until { $driver.find_element(:xpath, "//*[contains(text(),'#{@nameCity}')]/preceding-sibling::td[@class='talignCenter']/a") }
         fraEdit.click
-        @out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
+        $out_file.puts("Шаг #{step+=1} из #{allstep} Открыли франча на редактирование")
              asleep
-        puts "#{@conslgreen}Тест по добавлению франча успешно пройден#{@conslwhite}"
+        puts "#{$conslgreen}Тест по добавлению франча успешно пройден#{$conslwhite}"
 
    rescue
-        @err+=1
-        puts "#{@conslred}ERR: Тест не пройден, всё плохо #{@conslwhite}"
-        @out_file.puts('ERR: Тест прерван')
+        $err+=1
+        puts "#{$conslred}ERR: Тест не пройден, всё плохо #{$conslwhite}"
+        $out_file.puts('ERR: Тест прерван')
     end
     $driver.quit
 end

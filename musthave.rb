@@ -6,9 +6,9 @@ require 'clipboard'
 require 'nokogiri'
 require 'open-uri'
 
-@conslgreen = "\x1b[1;32m "
-@conslwhite = "\x1b[0m"
-@conslred = "\x1b[1;31m"
+$conslgreen = "\x1b[1;32m "
+$conslwhite = "\x1b[0m"
+$conslred = "\x1b[1;31m"
 @consfiolet = "\x1b[35m"
 
 @wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
@@ -58,7 +58,7 @@ def choiceBrws (max=1)
  ##       brws = "мозиле"
         $driver = Selenium::WebDriver.for :ff
     end
- ##   puts "#{@conslgreen} работает в #{brws} #{@conslwhite}"
+ ##   puts "#{$conslgreen} работает в #{brws} #{$conslwhite}"
     if !@lan
         $driver.manage.timeouts.implicit_wait = 10 # seconds
     else
@@ -78,13 +78,13 @@ def findTextInPage(arrtext, needPuts =1)
             @wait.until { $driver.find_element(:tag_name => "body").text.include?(i) }
 
             if  i == "Ошибка"
-                puts "#{@conslred}НА СТРАНИЦЕ ОШИБКА!!!!!!!!!!!!!!!!!!!!!!!!!1#{@conslwhite}"
+                puts "#{$conslred}НА СТРАНИЦЕ ОШИБКА!!!!!!!!!!!!!!!!!!!!!!!!!1#{$conslwhite}"
             end
             if  needPuts == 1
                 puts "Такой текст есть на странице:   #{i} "
             end
         rescue
-            @out_file.puts("\n\nОжидаемого текста не было: #{i} \n\n ")
+            $out_file.puts("\n\nОжидаемого текста не было: #{i} \n\n ")
             puts "Такого текста нет на странице:    #{i}"
         end
     end
@@ -123,10 +123,10 @@ def findDistr (nameDistr)
     if  $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{nameDistr}')]/../following-sibling::td[4]").text=="Нет (вкл)"
         puts "этот поставщик выключен"
     else
-        puts "Этот поставщик подключен. Всё #{@conslgreen}норм,#{@conslwhite} расслабся"
+        puts "Этот поставщик подключен. Всё #{$conslgreen}норм,#{$conslwhite} расслабся"
     end
     rescue
-        puts "#{@conslred} При поиске поставщика возникли оишбки!!!#{@conslwhite}"
+        puts "#{$conslred} При поиске поставщика возникли оишбки!!!#{$conslwhite}"
     end
 end
 
@@ -197,15 +197,15 @@ def visibleElement? text,neesSee=1
     a = $driver.find_element(:xpath, "//*[contains(text(),'#{text}')]").displayed?
 
     if a && neesSee==1
-        puts " Всё Норм! Отображается на странице текст: #{text} #{@conslwhite}"
+        puts " Всё Норм! Отображается на странице текст: #{text} #{$conslwhite}"
     elsif a==false && neesSee==0
-        puts " Всё Норм! НЕ видно этого элемента: #{text} #{@conslwhite}"
+        puts " Всё Норм! НЕ видно этого элемента: #{text} #{$conslwhite}"
     else
-        puts "#{@conslred} Видимость элемента не соответствует условию #{text} #{@conslwhite}"
+        puts "#{$conslred} Видимость элемента не соответствует условию #{text} #{$conslwhite}"
         return false
     end
     rescue
-        puts "#{@conslred}Вообще ошибка при попытке поиска отображения элемента/текста #{@conslwhite}"
+        puts "#{$conslred}Вообще ошибка при попытке поиска отображения элемента/текста #{$conslwhite}"
         return false
 
 end
@@ -255,9 +255,9 @@ def addReportToPage
     file = File.open(@namefile,"rb:UTF-8")
        @contents = file.read
     file.close
-    x2x2 = @err.to_s
+    x2x2 = $err.to_s
     puts "#{x2x2} -- Это кол-во ошибок, если оно не равно нулю, то не отображается сообщение |||| все тесты пройдены успешно"
-    if @err == 0
+    if $err == 0
         @contents = '|||| все тесты пройдены успешно
 
 ' + @contents
@@ -310,7 +310,7 @@ def waitUntilLoadPrice autharr,nameFra=false,nameDistr=false
 
 choiceBrws
 authPUservice autharr[0], autharr[1], autharr[2], 1
-@out_file.puts("\b \b Отчет . Проверям результат загрузки дистрибьюторов")
+$out_file.puts("\b \b Отчет . Проверям результат загрузки дистрибьюторов")
     if nameFra
         $driver.find_element(:link_text, "Клиенты").click
         $driver.find_element(:link_text, "Франчайзи").click
@@ -333,17 +333,17 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/span[contains(text(),'результаты')]").click
         ddd = $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{i}')]/../following-sibling::td[9]/*/*/div/a").text
         if  ddd == 'Успешно'
-            @out_file.puts("\b DISTR:#{ii} + в загрузке")
+            $out_file.puts("\b DISTR:#{ii} + в загрузке")
 
 
         else
-            @err+=1
-            @out_file.puts("ERR: При проверке загрузки дистрибьютора #{ii} есть ошибка!")
+            $err+=1
+            $out_file.puts("ERR: При проверке загрузки дистрибьютора #{ii} есть ошибка!")
             $driver.find_element(:xpath, "//table[*]/tbody/tr[*]/td/span[contains(text(),'#{ii}')]/../following-sibling::td[9]/*/*/div/a").click
             if isElementPresentlite(:xpath, "//*[contains(text(),'Номер, описание ошибки:')]")
-                @out_file.puts("\b DISTR:#{ii} ERR: в тексте загрузки прайса есть ОШИБКА")
+                $out_file.puts("\b DISTR:#{ii} ERR: в тексте загрузки прайса есть ОШИБКА")
             else
-                @out_file.puts("\b DISTR:#{ii} Проверяем успешную загрузку файла. В Успешном результате нет текста с ошибкой")
+                $out_file.puts("\b DISTR:#{ii} Проверяем успешную загрузку файла. В Успешном результате нет текста с ошибкой")
             end
             $driver.find_element(:xpath,"//a[@title='Close']").click
 
@@ -362,13 +362,13 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
             $driver.find_element(:xpath, "//*[contains(text(),'EmailEmploynodatest@nodasoft.com')]")
             $driver.switch_to.window $driver.window_handles.first
             $driver.find_element(:name,'text').clear
-            @out_file.puts("\b В руте проверено письмо о обновление дистрибьютора #{i} , которое отослано сотруднику")
+            $out_file.puts("\b В руте проверено письмо о обновление дистрибьютора #{i} , которое отослано сотруднику")
         end
     end
 
     rescue
-        @err+=1
-        @out_file.puts("\b \b \b \b \b #{@conslred}ERR Проверка поставщиков провалилась. 1. В ПУ нет успешного результата 2.В руте нет отосланного письма#{@conslwhite}")
+        $err+=1
+        $out_file.puts("\b \b \b \b \b #{$conslred}ERR Проверка поставщиков провалилась. 1. В ПУ нет успешного результата 2.В руте нет отосланного письма#{$conslwhite}")
 
     end
     $driver.quit
@@ -405,7 +405,7 @@ def parserCurrency
     arrNAME = ['Покупка доллара:','Продажа доллара:','Покупка евро:','Продажа евро:']
     x=0
     arrCURS.each do |e|
-        @out_file.puts(" \b #{arrNAME[x]} #{e} \b \b \b \b ")
+        $out_file.puts(" \b #{arrNAME[x]} #{e} \b \b \b \b ")
         x=x+1
     end
     rescue
@@ -421,7 +421,7 @@ def parserPogodaTGKMSK
         best_price = best_price.text
         find_words=best_price.scan(/[0-9a-zа-я]{5,66}/i)
         best_price=best_price.match(/Завтра\s*плюс\s*.{6}/)
-        @out_file.puts(" \b #{best_price}  \b \b \b \b ")
+        $out_file.puts(" \b #{best_price}  \b \b \b \b ")
         find_words.each do |e|
             if x == 1
                 @x2 = e + ' ' + @x2.to_s
@@ -430,7 +430,7 @@ def parserPogodaTGKMSK
                 x=1
             end
         end
-        @out_file.puts(" \b Теги погоды на завтра в Таганроге: #{@x2} \b \b \b \b ")
+        $out_file.puts(" \b Теги погоды на завтра в Таганроге: #{@x2} \b \b \b \b ")
     rescue
     end
 end

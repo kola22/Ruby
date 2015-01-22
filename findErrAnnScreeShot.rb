@@ -20,7 +20,7 @@ def findErrAnnScreeShot autharr
     puts 'сайт лег!'
     $driver.save_screenshot("screen/#{autharr[2]}___#{a}.png")
         if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
-            puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
+            puts "#{$conslred}ВИДИМ ОШИБКУ#{$conslwhite}"
         end
     end
     $driver.quit
@@ -70,7 +70,7 @@ def findErrAnnScreeShot2 autharr
         puts 'сайт лег!'
         $driver.save_screenshot("screen/#{autharr[2]}___#{a}.png")
         if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
-            puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
+            puts "#{$conslred}ВИДИМ ОШИБКУ#{$conslwhite}"
         end
     end
     $driver.quit
@@ -98,7 +98,7 @@ def findErrAnnScreeShotChida autharr
         puts 'сайт лег!'
         $driver.save_screenshot("screen/#{autharr[2]}.png")
         if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
-            puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
+            puts "#{$conslred}ВИДИМ ОШИБКУ#{$conslwhite}"
         end
     end
     $driver.quit
