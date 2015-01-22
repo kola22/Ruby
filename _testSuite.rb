@@ -12,7 +12,7 @@
 ## DONE: ценообразование.
 ## 2 задача у команды САши на тестирование онлайн поставщиков // наверно там всё таки нечего делать автотестам
 noRun = 0
-$nameDistr = []
+@nameDistr = []
 require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 require '/opt/projects/autotest/Ruby/addOrder'
@@ -24,7 +24,6 @@ require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
 require '/opt/projects/autotest/Ruby/findErrAnnScreeShot'
-require '/opt/projects/autotest/Ruby/class'
 
 if ARGV[0] == '.lan'
 @lan=ARGV[0]
@@ -38,13 +37,13 @@ end
 while Time.now.year < 2018
     a = timeNow
     ##a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-    $err = 0
+    @err = 0
     @namefile = "out_#{a}.txt"
-    $out_file = File.new(@namefile, 'w')
+    @out_file = File.new(@namefile, 'w')
     parserCurrency
     parserPogodaTGKMSK
-    ##$out_file.puts("Отчет прохождения теста\n ")
-    $out_file.puts("Время запуска теста: #{Time.now}\n ")
+    ##@out_file.puts("Отчет прохождения теста\n ")
+    @out_file.puts("Время запуска теста: #{Time.now}\n ")
 
     begin
             starttime = Time.now
@@ -56,9 +55,9 @@ while Time.now.year < 2018
             autArrSpecial_2 = ['piletskiy', 'nodakola22', 'chida.ru']
 
            # addPriceToDistr autArr,'priceautotes.xls',@nameCity
-           # waitUntilLoadPrice autArr,@nameCity,$nameDistr
+           # waitUntilLoadPrice autArr,@nameCity,@nameDistr
            # addPriceToDistr autArr,'priceautotes.xls'
-           # waitUntilLoadPrice autArr,false,$nameDistr
+           # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
 
 
@@ -95,13 +94,8 @@ while Time.now.year < 2018
             end
             ## </костыль>
 
-            ############################################## TEST #############################################
-            ############################################## TEST #############################################
-            addPrice = AddPriceToDistr.new
-            addPrice.addPriceToDistr autArr,'русский.xls'
-            # addPriceToDistr autArr,'русский.xls'
-            addPrice.addPriceToDistr autArr,'priceautotes.xls'
-            # addPriceToDistr autArr,'priceautotes.xls'
+            addPriceToDistr autArr,'русский.xls'
+            addPriceToDistr autArr,'priceautotes.xls'
             startTestaddFranch autArr
 
             if @lan !='.lan'
@@ -112,16 +106,16 @@ while Time.now.year < 2018
             end
 
             localText autArrAutotest,'Гуково'
-        waitUntilLoadPrice autArr,false,$nameDistr
+        waitUntilLoadPrice autArr,false,@nameDistr
             # # if rand(0..2) == 1
             verifPriceUp autArr,false,'OC90'
             # # end
-            $nameDistr = []
+            @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             addPriceToDistr autArr,'русский.xls',@nameCity
             addPriceToDistr autArr,'priceautotes.xls',@nameCity
             startTest_addOrder autArr
-        waitUntilLoadPrice autArr,@nameCity,$nameDistr
+        waitUntilLoadPrice autArr,@nameCity,@nameDistr
 
             if rand(0..2) == 1
             verifPriceUp autArr,@nameCity,'OC90'
@@ -130,19 +124,19 @@ while Time.now.year < 2018
         ## тут должен быть delResellerFra autArr, @nameCity
     rescue
         errrun = true
-        $out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
-        puts "#{$conslred}Весь набор не пройдён#{$conslwhite}"
+        @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
+        puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
         noRun+=1
         temp = 'Тестовый набор не прошел: ' + noRun.to_s + 'раз'
-        $out_file.puts("#{temp}\n ")
+        @out_file.puts("#{temp}\n ")
     end
     if errrun
         else
-            $out_file.puts("Время прохождения: #{allTime} минут")
-            $out_file.puts("Не прошло тестов: #{$err}")
+            @out_file.puts("Время прохождения: #{allTime} минут")
+            @out_file.puts("Не прошло тестов: #{@err}")
     end
-    $out_file.puts("\n Время окончания теста: #{Time.now}\n ")
-    $out_file.close
+    @out_file.puts("\n Время окончания теста: #{Time.now}\n ")
+    @out_file.close
     addReportToPage
     asleep 3600*2
 end
