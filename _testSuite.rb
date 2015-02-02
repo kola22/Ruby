@@ -93,33 +93,25 @@ while Time.now.year < 2018
                 end
             end
             ## </костыль>
-
             addPriceToDistr autArr,'русский.xls'
             addPriceToDistr autArr,'priceautotes.xls'
             startTestaddFranch autArr
-
             if @lan !='.lan'
                 forMcOtziviShop autArr4mc                       ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
-               # forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
+                forMcOtzivi autArr4mc                           ## нельзя локально проверить, из-за перенаправлений на 4мс из аккаунтс
                 startTest_addprofile autArr                     ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
                 startTest_addprofile_toFranch autArr, @nameCity ## нельзя локально проверить, из-за ошибки при посылке аякс запроса
             end
-
             localText autArrAutotest,'Гуково'
-        waitUntilLoadPrice autArr,false,@nameDistr
-            # # if rand(0..2) == 1
+            waitUntilLoadPrice autArr,false,@nameDistr
             verifPriceUp autArr,false,'OC90'
-            # # end
             @nameDistr = []
             startTestaddOrderFrtoGk @nameCity, 'OC90', 'Knecht', autArr
             addPriceToDistr autArr,'русский.xls',@nameCity
             addPriceToDistr autArr,'priceautotes.xls',@nameCity
             startTest_addOrder autArr
-        waitUntilLoadPrice autArr,@nameCity,@nameDistr
-
-            if rand(0..2) == 1
+            waitUntilLoadPrice autArr,@nameCity,@nameDistr
             verifPriceUp autArr,@nameCity,'OC90'
-            end
             allTime = ((Time.now - starttime)/60).round(2)
         ## тут должен быть delResellerFra autArr, @nameCity
     rescue

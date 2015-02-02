@@ -6,7 +6,6 @@
 require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
-
 def addPriceToDistr autharr,fileName,nameFra=false
     begin
         allstep = 5
@@ -60,10 +59,7 @@ def addPriceToDistr autharr,fileName,nameFra=false
                 end
             end
 
-
-
             ## создаем тестового сотрудника, которому будут отсыласть письма о обновлении прайс листа
-
             delAlldistr('PleaseDelMeBro')
             ##выключаем всех остальных поставщиков !!
             @out_file.puts("Шаг #{step+=1} из #{allstep} выключаем остальных поставщиков")

@@ -66,7 +66,7 @@ module TestFunctional
         test = :completion_in_method
         inputfile = "#{DIR}/data/#{test}-input.rb"
         outputfile = "#{DIR}/data/#{test}-output.rb"
-        test_script = "#{DIR}/data/#{test}-test.rb"
+        test_script = "#{DIR}/data/#{test}-test_class.rb"
         common_opts = ["--filename #{inputfile}", "--line 2"]
         right_output = File.read(outputfile)
         wrong_output = "\n"
@@ -113,7 +113,7 @@ module TestFunctional
                 f.puts "=========="
                 f.puts File.read("#{DIR}/data/#{test0}-output.rb")
                 f.puts "=========="
-                f.puts File.read("#{DIR}/data/#{test0}-test.rb")
+                f.puts File.read("#{DIR}/data/#{test0}-test_class.rb")
             end
 
         end
@@ -133,7 +133,7 @@ module TestFunctional
                 f.puts "=========="
                 f.puts File.read("#{DIR}/data/#{test0}-output.rb")
                 f.puts "=========="
-                f.puts File.read("#{DIR}/data/#{test0}-test.rb")
+                f.puts File.read("#{DIR}/data/#{test0}-test_class.rb")
             end
 
         end
@@ -153,7 +153,7 @@ module TestFunctional
                 f.puts "=========="
                 f.puts
                 f.puts "=========="
-                f.puts File.read("#{DIR}/data/#{test0}-test.rb")
+                f.puts File.read("#{DIR}/data/#{test0}-test_class.rb")
             end
 
         end
