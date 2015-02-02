@@ -50,7 +50,8 @@ def startTestaddFranch autharr
         $driver.find_element(:name, 'agreeWithCreation').click
         $driver.find_element(:id, 'clientAliveSearch').send_keys clientName
         sleep 3
-        $driver.find_element(:class, 'aliveSearchRow').click
+        # $driver.find_element(:class, 'aliveSearchRow').click
+        $driver.find_element(:xpath, "//td[contains(text(),'#{clientName}')]").click
         $driver.find_element(:name, 'email').send_keys("#{@nameCity}nodatest@nodasoft.com")
         $driver.find_element(:name, 'city').send_keys @nameCity
         #$driver.find_element(:class, 'btn').click
