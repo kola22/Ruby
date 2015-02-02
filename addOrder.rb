@@ -212,15 +212,16 @@ def startTestaddOrderFrtoGk nameFra, pnum, pbrand, autharr
         puts "#{@conslgreen}Тест по добавлению перезаказа успешно пройден#{@conslwhite}"
 
 
-
+        $driver.quit
     rescue
         @err+=1
         a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
-        $driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_заказа на ГК через франча.png")
+        # $driver.save_screenshot("screen/#{a}_ошибка_в_добавлении_заказа на ГК через франча.png")
         puts "#{@conslred}Тест по добавлению заказа на сайте Франчайзи и отправке в ГК не пройден, всё плохо #{@conslwhite}"
         @out_file.puts('ERR: тест прерван')
+        $driver.quit
     end
-    $driver.quit
+
 end
 
 
