@@ -47,9 +47,9 @@ def forMcOtzivi autharr
                 @out_file.puts("Шаг #{step+=1} из #{allstep} Подтвердили отзыв модератором на 4мс")
             end
             timeDMY = "#{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
-
-            $driver.get "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
-            $driver.find_element(:id, 'dateRange').clear
+            messagesUrl = "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
+            # messagesUrl = "http://root.abcp.ru/?page=messages_monitor&dateRange=#{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
+            $driver.get messagesUrl
             $driver.find_element(:name, 'recipient').send_keys 'kola22@mail.ru'
             $driver.find_element(:id, 'mysubmit').click
             if $driver.find_element(:xpath, '//tbody/tr[4]/td[8]').text == 'Ваш отзыв подтвержден модератором на сайте 4mycar.ru'
@@ -86,9 +86,7 @@ def forMcOtzivi autharr
                 @out_file.puts("Шаг #{step+=1} из #{allstep} Отклонён успешно")
             end
 
-            $driver.get "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
-            
-            $driver.find_element(:id, 'dateRange').clear
+            $driver.get messagesUrl
             $driver.find_element(:name, 'recipient').send_keys 'kola22@mail.ru'
             $driver.find_element(:id, 'mysubmit').click
             if $driver.find_element(:xpath, '//tbody/tr[4]/td[8]').text == 'Ваш отзыв отклонен модератором на сайте 4mycar.ru'

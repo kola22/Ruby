@@ -21,11 +21,7 @@ def sssss
 end
 
 
-puts "#{Time.now.day}.#{Time.now.month}.#{Time.now.year} - #{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
-a = Time.now
-puts a
 
-puts a[0,10]
-
-
+timeDMY = "#{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
+puts "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
 ## dateRange=04.02.2015
