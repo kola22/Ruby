@@ -20,4 +20,12 @@ def sssss
     qa = strstst[0,3]
 end
 
-puts sssss
+
+puts "#{Time.now.day}.#{Time.now.month}.#{Time.now.year} - #{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
+a = Time.now
+puts a
+
+puts a[0,10]
+
+
+## dateRange=04.02.2015

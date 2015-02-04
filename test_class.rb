@@ -1,76 +1,46 @@
 #!/bin/env ruby
 # encoding: utf-8
 #
-class Monkey
-    def initialize(height, weight)
-        @height = height
-        @weight = weight
-    end
 
-    def height
-        @height
+class Driver22
+    attr_accessor :a,:b
+    def initialize a=1,b=2,c=3
+        @a=a
+        @b=b
+        @c=c
     end
-
-    def weight
-        @weight
-    end
-
-    def height=(height)
-        @height = height
-    end
-
-    def weight=(weight)
-        @weight = weight
+    def putsXs
+        puts @a,@b,@c
     end
 end
 
-class Human < Monkey
-    def initialize(height, weight, name)
-        super(height, weight)
-        @name = name
+
+qub = Driver22.new
+qub.putsXs # 1,2,3
+qub.a = 777
+qub.putsXs # 777,2,3
+
+puts '__________'
+class NewDrive < Driver22
+    attr_accessor :c
+    attr_accessor :d
+    def initialize a,b,c,d
+        super a,b,c
+        @d = d
     end
-
-    def name
-        @name
-    end
-
-    def name=(name)
-        @name = name
-    end
-end
-
-class BlackHuman < Human
-
-    class << self
-        def obj_count
-            count = 0
-            ObjectSpace.each_object(self){|obj| count += 1}
-        end
-    end
-
-    def initialize(height, weight, name)
-        super(height, weight, name)
-        @skin_color = :black
-    end
-
-    def skin_color
-        @skin_color
-    end
-
-    def skin_color=(skin_color)
-        @skin_color = skin_color
+    def putsXs
+        super
+        puts @d
     end
 end
 
-bh = BlackHuman.new(180,90,"John")
-bh2 = BlackHuman.new(185,90,"Robert")
-bh3 = BlackHuman.new(170,70,"Thomas")
-
-puts BlackHuman.obj_count # 3
-
-
-
-
+op = NewDrive.new 3,4,5,6
+op.putsXs # 3,4,5,6
+op.c = 999
+op.putsXs # 3,4,999,6
+op.d = '000'
+op.putsXs # 3,4,999,000
+puts op.d
 
 
 
