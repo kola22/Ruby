@@ -2,26 +2,39 @@
 # encoding: utf-8
 #
 # так:
-def time2x
-    time = Time.now.strftime('%d-%m-%Y %H-%M-%S')
+
+class SpeedRun
+    attr_accessor :t,:s
+    def scanTime
+        @t=@t.scan(/[\d]{1,2}/)
+    end
+    def speed
+        self.scanTime
+        # sectofloat = @t[1].to_f*1.66
+        sectofloat = @t[1].to_f/60
+        mintofloat = @t[0].to_f+sectofloat
+        mintofloat =mintofloat.round(2)
+
+        speed = (@s/mintofloat)*60
+        speed.round(2)
+    end
 end
 
-#дата
-def date
-    date = time2x[0, 10]
+tt = SpeedRun.new
+tt.t ='31:35'
+tt.s =4.83
+# puts tt.speed
+
+
+def mt op
+    op*op
 end
 
-def strstst
-    zzzz =  '02021021030219310293812098310283103'
+def bbb z1z1z1
+    z1z1z1*z1z1z1
 end
 
-
-def sssss
-    qa = strstst[0,3]
-end
+zzz = bbb(mt(2))
+puts zzz #16
 
 
-
-timeDMY = "#{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
-puts "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
-## dateRange=04.02.2015

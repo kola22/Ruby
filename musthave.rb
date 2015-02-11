@@ -350,7 +350,9 @@ authPUservice autharr[0], autharr[1], autharr[2], 1
         end
 
         end
-        $driver.get 'http://root.abcp.ru/?page=messages_monitor'
+        timeDMY = "#{Time.now.day}.#{Time.now.month}.#{Time.now.year}"
+        messagesUrl = "http://root.abcp.ru/?page=messages_monitor&dateRange=#{timeDMY}"
+        $driver.get messagesUrl
         nameDistr.each do |i|
             puts i
             $driver.find_element(:name,'text').send_keys i

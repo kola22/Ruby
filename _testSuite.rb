@@ -24,7 +24,9 @@ require '/opt/projects/autotest/Ruby/forMcOtziviShop'
 require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
 require '/opt/projects/autotest/Ruby/findErrAnnScreeShot'
-
+# test
+require '/opt/projects/autotest/Ruby/test2'
+# test
 if ARGV[0] == '.lan'
 @lan=ARGV[0]
 end
@@ -60,7 +62,6 @@ while Time.now.year < 2018
            # waitUntilLoadPrice autArr,false,@nameDistr
            # verifPriceUp autArr,false,'OC90'
 
-
             ## <костыль> для проверочных запусков в виртуальной машине, хотел конечно задавть имя функции в передаваемый параметр, да вот только не знаю как это реализовать
             if @needrun == 'addPriceToDistr'
                 addPriceToDistr autArr,'русский.xls'
@@ -68,6 +69,8 @@ while Time.now.year < 2018
                 startTestaddFranch autArr
             elsif @needrun == 'forMcOtzivi'
                 forMcOtzivi autArr4mc
+            elsif @needrun == 'forMcOtziviShop'
+                forMcOtziviShop autArr4mc
             elsif @needrun == 'startTest_addOrder'
                 startTest_addOrder autArr
             elsif @needrun == 'startTest_addprofile'
