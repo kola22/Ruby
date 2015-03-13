@@ -233,7 +233,9 @@ def login4mc phone,pass ## куча костылей из-за кривой и �
     $driver.find_element(:xpath,"//button[@type='submit']").click
     isElementPresent?(:id,'loginEnter')
     $driver.find_element(:class,'logout').click
+    asleep 1
     $driver.find_element(:id,'inputPhone1').click
+    asleep 1
     $driver.find_element(:id,'inputPhone1').send_keys phone
         asleep
     $driver.find_element(:id,'inputPassword').click

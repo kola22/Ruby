@@ -29,13 +29,13 @@ def forMcOtziviShop autharr
             asleep
 
             login4mc '+79043459228','846952'
-
             @out_file.puts("Шаг #{step+=1} из #{allstep} Входим как клиент на 4мс")
             $driver.get 'http://4mycar.ru/shop/43170'
-            isElementPresent?(:xpath, "//*[@value='Изменить отзыв'][@id='editCommentButton']", 'clickAlert')
-            @out_file.puts("Шаг #{step+=1} из #{allstep} Меняем отзыв")
+            isElementPresent?(:xpath, "//*[@value='Изменить отзыв'][@id='editCommentButton']", 'clickAlert') or $driver.find_element(:xpath, "//*[@value='Написать отзыв']").click & writeOtziv=true
+            # @out_file.puts("Шаг #{step+=1} из #{allstep} Меняем отзыв")
             $driver.find_element(:id, 'noteText').clear
             $driver.find_element(:id, 'noteText').send_keys randomComment
+            $driver.find_element(:xpath,"//span[@class='star selectAllow'][@number='4']").click if writeOtziv
             $driver.find_element(:id, 'sendCommentButton').click
             @out_file.puts("Шаг #{step+=1} из #{allstep} Отправляем отзыв")
             asleep
@@ -44,6 +44,7 @@ def forMcOtziviShop autharr
             asleep
             $driver.find_element(:xpath, "//*[contains(text(),'#{randomComment}')]/../following-sibling::*/input[@class='do-approve-rating']").click
             asleep
+
             $driver.get 'http://root.abcp.ru/?page=reviews_approval'
             if isElementPresentlite(:xpath, "//*[contains(text(),'#{randomComment}')]/../following-sibling::*/input[@class='do-approve-rating']")
                 puts 'Отзыв НЕ подтвержден. ОШИБКА'
@@ -102,7 +103,7 @@ def forMcOtziviShop autharr
             findTextInPage ['Ответить'],1
 
 
-    rescue
+    # rescue
         @err+=1
       ##  a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
       ##  $driver.save_screenshot("screen/#{a}_ошибка_в_ОТЗЫВЕ_4мс.png")

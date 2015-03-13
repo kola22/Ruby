@@ -2,7 +2,24 @@
 # encoding: utf-8
 #
 # так:
+require 'selenium-webdriver'
+require '/opt/projects/autotest/Ruby/musthave'
 
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+#books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+
+puts books
+
+books.delete_if{|x| x!='War and Peace'}
+puts '______'
+puts books
+
+asleep 333
 class SpeedRun
     attr_accessor :t,:s
     def scanTime
@@ -10,7 +27,6 @@ class SpeedRun
     end
     def speed
         self.scanTime
-        # sectofloat = @t[1].to_f*1.66
         sectofloat = @t[1].to_f/60
         mintofloat = @t[0].to_f+sectofloat
         mintofloat =mintofloat.round(2)
@@ -21,20 +37,14 @@ class SpeedRun
 end
 
 tt = SpeedRun.new
-tt.t ='31:35'
+tt.t ='26:20'
 tt.s =4.83
-# puts tt.speed
+ puts tt.speed
 
-
-def mt op
-    op*op
+clientid = '123123'
+for i in 0 .. clientid.size
+    puts clientid[i]
+    sleep 1 #пауза в сек
 end
-
-def bbb z1z1z1
-    z1z1z1*z1z1z1
-end
-
-zzz = bbb(mt(2))
-puts zzz #16
 
 

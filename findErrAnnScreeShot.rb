@@ -76,27 +76,23 @@ def findErrAnnScreeShot2 autharr
     $driver.quit
 end
 
-def findErrAnnScreeShotChida autharr
+def findErrAnnScreeShotSIte
+    a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
+    puts a
     begin
         choiceBrws 1
-        authPUservice autharr[0], autharr[1], autharr[2],333
-        $driver.get @hrefPU
-        $driver.find_element(:link_text, 'Клиенты').click
-        $driver.find_element(:name,'filterCustomersBySearchString').send_keys 'emex'
-        $driver.find_element(:xpath,"//*[@value='Найти']").click
-        asleep
-        $driver.find_element(:xpath,"//*[@title='Редактировать информацию о клиенте']").click
-        $driver.get $driver.find_element(:class,'linkTempLogin').attribute("href")
-        asleep
-        $driver.find_element(:id, "pcode").send_keys "oc90"
-        $driver.find_element(:id, "pcode").submit
-        asleep 5
-        $driver.find_element(:xpath,"//*[contains(text(),'Запрашиваемый артикул')]")
-        $driver.find_element(:xpath,"//*[@value='Выход']").click
-        $driver.find_element(:xpath,"//*[contains(text(),'Личный Кабинет')]")
+        $driver.get 'http://zelzap.ru/'
+        $driver.get 'http://zelzap.ru/cart'
+        $driver.find_element(:xpath,"//*[contains(text(),'978-54-28')]")
+        $driver.get 'http://zelzap.ru/cart?pbrandnumber=PC9004&pbrandname=PATRON'
+        $driver.get 'http://zelzap.ru/carbase'
+        $driver.get 'http://zelzap.ru/about'
+        $driver.get 'http://zelzap.ru/mycatalog/?catalogId=1950'
+        $driver.find_element(:xpath,"//*[contains(text(),'978-54-28')]")
+
     rescue
         puts 'сайт лег!'
-        $driver.save_screenshot("screen/#{autharr[2]}.png")
+        $driver.save_screenshot("screen/#{a}.png")
         if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
             puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
         end

@@ -25,8 +25,6 @@ require '/opt/projects/autotest/Ruby/localText'
 require '/opt/projects/autotest/Ruby/verifPriceUp'
 require '/opt/projects/autotest/Ruby/findErrAnnScreeShot'
 # test
-require '/opt/projects/autotest/Ruby/test2'
-# test
 if ARGV[0] == '.lan'
 @lan=ARGV[0]
 end
@@ -89,10 +87,10 @@ while Time.now.year < 2018
                 end
 
             elsif @needrun == 'findErrAnnScreeShotChida'
-                while Time.now.year < 2018
-                    puts timeNow
-                    findErrAnnScreeShotChida autArrSpecial_2
-                    asleep 300
+                a = true
+                while a
+                    findErrAnnScreeShotSIte
+                    asleep asleep 300
                 end
             end
             ## </костыль>
@@ -117,7 +115,7 @@ while Time.now.year < 2018
             verifPriceUp autArr,@nameCity,'OC90'
             allTime = ((Time.now - starttime)/60).round(2)
         ## тут должен быть delResellerFra autArr, @nameCity
-    rescue
+    # rescue
         errrun = true
         @out_file.puts("\n \n  Весь тестовый набор не пройдён\n ")
         puts "#{@conslred}Весь набор не пройдён#{@conslwhite}"
