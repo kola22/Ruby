@@ -86,7 +86,7 @@ while Time.now.year < 2018
                     findErrAnnScreeShot autArrSpecial2
                 end
 
-            elsif @needrun == 'findErrAnnScreeShotChida'
+            elsif @needrun == 'findErrAnnScreeShotSIte'
                 a = true
                 while a
                     findErrAnnScreeShotSIte
