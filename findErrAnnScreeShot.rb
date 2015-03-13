@@ -88,7 +88,7 @@ def findErrAnnScreeShotSIte
         $driver.get 'http://zelzap.ru/carbase'
         $driver.get 'http://zelzap.ru/about'
         $driver.get 'http://zelzap.ru/mycatalog/?catalogId=1950'
-        $driver.find_element(:xpath,"//*[contains(text(),'978-54-2822')]")
+        $driver.find_element(:xpath,"//*[contains(text(),'978-54-28')]")
 
     rescue
         puts 'сайт лег!'
