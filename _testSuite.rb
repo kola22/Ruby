@@ -90,7 +90,7 @@ while Time.now.year < 2018
                 a = true
                 while a
                     findErrAnnScreeShotSIte
-                    asleep 300
+                    asleep 600
                 end
             end
             ## </костыль>
