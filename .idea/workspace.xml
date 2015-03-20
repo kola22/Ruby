@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5400e05f-7368-4991-a20a-720ad7d7702b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_testSuite.rb" afterPath="$PROJECT_DIR$/_testSuite.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findErrAnnScreeShot.rb" afterPath="$PROJECT_DIR$/findErrAnnScreeShot.rb" />
     </list>
     <ignored path="Ruby.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_testSuite.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_testSuite.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_testSuite.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.099236645" vertical-offset="1330" max-vertical-offset="2940">
-              <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1015" max-vertical-offset="2940">
+              <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="findErrAnnScreeShot.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="findErrAnnScreeShot.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findErrAnnScreeShot.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1183" max-vertical-offset="2499">
-              <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.5648855" vertical-offset="1246" max-vertical-offset="2499">
+              <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="kernel.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34551" max-vertical-offset="41034">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34550" max-vertical-offset="41034">
               <caret line="1660" column="8" selection-start-line="1660" selection-start-column="8" selection-end-line="1660" selection-end-column="8" />
               <folding />
             </state>
@@ -121,8 +121,8 @@
       <file leaf-file-name="musthave.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/musthave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.125" vertical-offset="2275" max-vertical-offset="10521">
-              <caret line="122" column="104" selection-start-line="122" selection-start-column="102" selection-end-line="122" selection-end-column="104" />
+            <state vertical-scroll-proportion="-11.125" vertical-offset="3304" max-vertical-offset="10521">
+              <caret line="187" column="103" selection-start-line="187" selection-start-column="103" selection-end-line="187" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -169,8 +169,8 @@
         <option value="$PROJECT_DIR$/out_11:54_13_February.txt" />
         <option value="$PROJECT_DIR$/example.rb" />
         <option value="$PROJECT_DIR$/test2.rb" />
-        <option value="$PROJECT_DIR$/findErrAnnScreeShot.rb" />
         <option value="$PROJECT_DIR$/_testSuite.rb" />
+        <option value="$PROJECT_DIR$/findErrAnnScreeShot.rb" />
       </list>
     </option>
   </component>
@@ -849,14 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34551" max-vertical-offset="41034">
-          <caret line="1660" column="8" selection-start-line="1660" selection-start-column="8" selection-end-line="1660" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="273">
@@ -873,6 +865,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_testSuite.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1015" max-vertical-offset="2940">
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/musthave.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.125" vertical-offset="3304" max-vertical-offset="10521">
+          <caret line="187" column="103" selection-start-line="187" selection-start-column="103" selection-end-line="187" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test2.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
@@ -881,26 +889,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/musthave.rb">
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.125" vertical-offset="2275" max-vertical-offset="10521">
-          <caret line="122" column="104" selection-start-line="122" selection-start-column="102" selection-end-line="122" selection-end-column="104" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="34551" max-vertical-offset="41034">
+          <caret line="1660" column="8" selection-start-line="1660" selection-start-column="8" selection-end-line="1660" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/findErrAnnScreeShot.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1183" max-vertical-offset="2499">
-          <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_testSuite.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.099236645" vertical-offset="1330" max-vertical-offset="2940">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.5648855" vertical-offset="1246" max-vertical-offset="2499">
+          <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
           <folding />
         </state>
       </provider>

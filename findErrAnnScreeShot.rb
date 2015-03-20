@@ -82,7 +82,7 @@ def findErrAnnScreeShotSIte autharr
     begin
         choiceBrws 1
 
-        b = (10..30)
+        b = rand(10..30)
         asleep b
         $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
         $driver.find_element(:xpath,"//*[contains(text(),' руб.')]")
