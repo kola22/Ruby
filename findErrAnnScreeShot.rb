@@ -76,23 +76,31 @@ def findErrAnnScreeShot2 autharr
     $driver.quit
 end
 
-def findErrAnnScreeShotSIte
+def findErrAnnScreeShotSIte autharr
     a = Time.now.hour.to_s + ':' + Time.now.min.to_s + '_'+Time.now.day.to_s + '_' + Time.now.strftime("%B").to_s
     puts a
     begin
         choiceBrws 1
-        $driver.get 'http://zelzap.ru/'
-        $driver.get 'http://zelzap.ru/cart'
-        $driver.find_element(:xpath,"//*[contains(text(),'978-54-28')]")
-        $driver.get 'http://zelzap.ru/cart?pbrandnumber=PC9004&pbrandname=PATRON'
-        $driver.get 'http://zelzap.ru/carbase'
-        $driver.get 'http://zelzap.ru/about'
-        $driver.get 'http://zelzap.ru/mycatalog/?catalogId=1950'
-        $driver.find_element(:xpath,"//*[contains(text(),'978-54-28')]")
+
+        b = (10..30)
+        asleep b
+        $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
+        $driver.find_element(:xpath,"//*[contains(text(),' руб.')]")
+        authPUservice autharr[0], autharr[1], autharr[2],333
+        $driver.get @hrefPU
+        $driver.find_element(:link_text, 'Клиенты').click
+        $driver.find_element(:name,'filterCustomersBySearchString').send_keys 'test'
+        $driver.find_element(:xpath,"//*[@value='Найти']").click
+        asleep
+        $driver.find_element(:xpath,"//*[@title='Редактировать информацию о клиенте']").click
+        $driver.get $driver.find_element(:class,'linkTempLogin').attribute("href")
+        asleep b
+        $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
+        $driver.find_element(:xpath,"//*[contains(text(),' руб.')]")
 
     rescue
-        puts 'сайт лег!'
-        $driver.save_screenshot("screen/#{a}.png")
+        puts 'Не нашли руб -- нет результатов поиска'
+        $driver.save_screenshot("screen/#{a}_#{b}.png")
         if isElementPresent?(:xpath,"//*[contains(text(),'Ошибка')]")
             puts "#{@conslred}ВИДИМ ОШИБКУ#{@conslwhite}"
         end
