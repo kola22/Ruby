@@ -52,7 +52,7 @@ while Time.now.year < 2018
             autArr = ['piletskiy', 'nodakola22', 'piletskiy.abcp.ru']
             autArr4mc = ['piletskiy', 'nodakola22', '4mycar.ru']
             autArrAutotest = ['piletskiy', 'nodakola22', 'autotestvirtual']
-            autArrSpecial_2 = ['piletskiy', 'nodakola22', 'autodoctor62']
+            autArrSpecial_2 = ['piletskiy', 'nodakola22', 'autodoctor62.ru']
 
            # addPriceToDistr autArr,'priceautotes.xls',@nameCity
            # waitUntilLoadPrice autArr,@nameCity,@nameDistr
