@@ -81,10 +81,10 @@ def findErrAnnScreeShotSIte autharr
     puts a
     begin
         choiceBrws 1
-
         b = rand(10..30)
-        asleep b
+
         $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
+        asleep b
         $driver.find_element(:xpath,"//*[contains(text(),' руб.')]")
         authPUservice autharr[0], autharr[1], autharr[2],333
         $driver.get @hrefPU
@@ -94,8 +94,8 @@ def findErrAnnScreeShotSIte autharr
         asleep
         $driver.find_element(:xpath,"//*[@title='Редактировать информацию о клиенте']").click
         $driver.get $driver.find_element(:class,'linkTempLogin').attribute("href")
-        asleep b
         $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
+        asleep b
         $driver.find_element(:xpath,"//*[contains(text(),' руб.')]")
 
     rescue
