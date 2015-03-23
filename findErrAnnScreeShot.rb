@@ -81,7 +81,7 @@ def findErrAnnScreeShotSIte autharr
     puts a
     begin
         choiceBrws 1
-        b = rand(2..15)
+        b = rand(1..5)
 
         $driver.get 'http://autodoctor62.ru/?pbrandnumber=2630035503&pbrandname=HYUNDAI'
         asleep b

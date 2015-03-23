@@ -5,6 +5,14 @@
 require 'selenium-webdriver'
 require '/opt/projects/autotest/Ruby/musthave'
 
+
+xyz = Proc.new do |ee|
+   puts 'xxxxxx'+ee
+end
+arr =['1x1','2dsfdsfsdfsdfd']
+arr.each(&xyz)
+asleep 333
+
 class SpeedRun
     attr_accessor :t,:s
     def scanTime
